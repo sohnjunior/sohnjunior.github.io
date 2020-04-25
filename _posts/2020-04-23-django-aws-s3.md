@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Django 와 AWS S3를 활용하여 데이터 관리하기
+title: Django와 AWS S3를 활용하여 데이터 관리하기
 excerpt: "Django와 AWS S3 사용시 필요한 작업들"
 categories: [django]
 tags: [django, aws s3]
