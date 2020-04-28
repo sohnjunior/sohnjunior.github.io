@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Node.js에서 네이버 Open API 활용하기
-excerpt: "파파고 오픈 API를 활용해서 텍스트 번역하기"
+excerpt: "파파고 오픈 API를 활용해서 텍스트 번역해보자"
 categories: [nodejs]
 tags: [nodejs]
 modified: 2020-04-25
