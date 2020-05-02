@@ -5,9 +5,9 @@
 #
 title: 코부기
 email:
-description: A simple and awesome blog theme powered by jekyll.
+description: 코부기의 코딩 및 개발 기록소
 url: # the base hostname & protocol for your site
-keywords: ["blog", "jekyll"]
+keywords: ["blog", "jekyll", "Tech"]
 
 #
 ###################################
@@ -48,7 +48,7 @@ owner:
     ad-client:
     ad-slot:
   bing-verify:
-  github: #username
+  github: sohnjunior
   gitlab: #username
   stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
   linkedin: #username
