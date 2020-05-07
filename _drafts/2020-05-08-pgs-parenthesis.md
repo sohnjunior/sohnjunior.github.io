@@ -4,7 +4,7 @@ title: 프로그래머스 Level 4 - 올바른 괄호의 개수
 excerpt: "프로그래머스 Level 4 올바른 괄호의 개수 with Python"
 categories: [Algorithm]
 tags: [Algorithm]
-modified: 2020-05-03
+modified: 2020-05-08
 comments: true
 ---
 
