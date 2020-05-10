@@ -4,7 +4,7 @@ title: Django에서 history mode 사용하는 법
 excerpt: "Django에서 Vue.js Router history 모드 적용을 위해 필요한 작업들에 대해 살펴보자"
 categories: [django, vue.js]
 tags: [django, vue.js]
-modified: 2020-05-04
+modified: 2020-05-10
 comments: true
 ---
 
