@@ -1,15 +1,15 @@
 ---
 layout: post
 title: Node.js와 MySQL 연동하기
-excerpt: "Node.js와 MySQL 연동하기"
+excerpt: "Node.js와 MySQL 연동하고 간단한 쿼리를 진헹해보자"
 categories: [nodejs]
 tags: [nodejs]
-modified: 2020-05-13
+modified: 2020-05-14
 comments: true
 ---
 
 ## MySQL 연동 방법
-Node.js 에서 MySQL을 사용하기 위해서는 Sequelize를 사용할 수도 있지만 <br>
+Node.js 에서 MySQL을 사용하기 위해서는 `Sequelize` 를 사용할 수도 있지만 <br>
 이번 포스팅에서는 raw query문을 사용하기 위해 직접 mysql을 연동하는 과정을 실습해보도록 하겠습니다.
 
 ## MySQL 데이터베이스 생성
@@ -20,12 +20,12 @@ $ mysql -u root -p
 ~~~
 
 ### database 및 table 생성
-데모를 위해 tutorial이라는 데이터베이스를 생성하도록 하겠습니다. <br>
+데모를 위해 `tutorial` 이라는 데이터베이스를 생성하도록 하겠습니다. <br>
 ~~~ bash
 mysql> create database tutorial;
 ~~~
 
-그리고 tutorial 데이터베이스에 게시글 정보를 담을 board 테이블을 생성합니다. <br>
+그리고 tutorial 데이터베이스에 게시글 정보를 담을 `board` 테이블을 생성합니다. <br>
 ~~~ bash
 mysql> use tutorial; 
 mysql> create table board ( 
@@ -65,8 +65,8 @@ $ npm i mysql
 ~~~
 
 ### database.js 생성
-Node.js에서 데이터베이스를 연동하기 위해 config 디렉토리를 생성한 다음, 그 안에 database.js를 통해 설정을 정의합니다. <br>
-init 함수를 통해 ~ 하고 실제 연결은 connect에서 수행됩니다.
+Node.js에서 데이터베이스를 연동하기 위해 `config` 디렉토리를 생성한 다음, 그 안에 `database.js` 를 만들어 필요한 설정을 정의합니다. <br>
+`init` 함수를 통해 Connection 객체를 생성하고 실제 연결은 `connect` 함수를 통해 수행됩니다. <br>
 
 #### config/database.js
 ~~~ javascript
@@ -97,6 +97,9 @@ module.exports = () => {
   }
 }
 ~~~
+<br>
+실제 쿼리는 이루어지지 않지만 서버 실행시 MySQL이 올바르게 연결 되었는지 확인하기 위해 <br>
+`app.js` 에서 `test_connection` 함수를 호출하도록 하겠습니다. <br>
 
 #### app.js
 ~~~ javascript
@@ -111,14 +114,14 @@ db_config.test_connection(connection);
 ~~~
 
 ### 실행
-설정을 마쳤다면 `npm start` 를 통해 서버를 실행시켜봅니다. 
+설정을 마쳤다면 `npm start` 를 통해 서버를 실행시켜봅니다. <br>
 만약 여러분이 mysql8을 사용하고 있다면 다음과 같은 원격 연결 오류를 마주칠수도 있습니다.
 
-{% raw %}
-mysql connection error : Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
-{% endraw %}
 
-이 경우에는 터미널을 열고 mysql client에 접속한 뒤 다음과 같이 mysql8 설정을 변경해줍니다.
+> mysql connection error : Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+
+
+이 경우에는 터미널을 열고 mysql에 접속한 뒤 다음과 같이 mysql8 설정을 변경해줍니다.
 
 ~~~ bash
 mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'your_new_password';
@@ -156,6 +159,9 @@ router.get('/', function(req, res, next) {
 module.exports = router;
 ~~~
 
+connection 객체의 query 함수의 인자로 원하는 쿼리문을 지정해서 호출하면 등록된 콜백 함수를 통해 그 결과를 받아 처리할 수 있습니다. <br>
+이제 쿼리 결과를 웹 페이지에서 확인하기 위해 index.ejs를 생성합니다. <br>
+
 #### index.ejs
 ~~~ html
 <!DOCTYPE html>
@@ -184,3 +190,4 @@ module.exports = router;
 #### 실행 결과
 이제 서버를 다시 켜고 메인 페이지로 접속하면 다음과 같은 화면을 볼 수 있습니다.
 
+![이미지](/img/nodejs/nodemysql.png){: width="500"}
