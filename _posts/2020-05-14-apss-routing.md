@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ALGOSPOT 신호 라우팅
-excerpt: "알고리즘 문제 해결 전략 Python으로 풀어보기"
+excerpt: "[알고리즘 문제 해결 전략] 도서 수록 문제 풀어보기(Python, C++)"
 categories: [Algorithm]
 tags: [Algorithm]
 modified: 2020-05-14
@@ -9,7 +9,7 @@ comments: true
 ---
 
 ## 문제
-[알고스팟 신호 라우팅](https://algospot.com/judge/problem/read/ROUTING)
+[알고스팟 - 신호 라우팅](https://algospot.com/judge/problem/read/ROUTING)
 
 
 ## 풀이 과정
