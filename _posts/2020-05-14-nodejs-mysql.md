@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Node.js와 MySQL 연동하기
+title: Node.js와 MySQL 연동해서 게시글 작성하기
 excerpt: "Node.js와 MySQL 연동하고 간단한 쿼리를 진헹해보자"
 categories: [nodejs]
 tags: [nodejs]

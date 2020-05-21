@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Node.js와 Multer 모듈 활용해서 파일 업로드
+title: Node.js와 Multer 모듈을 활용한 파일 업로드 방법
 excerpt: "Node.js와 Multer 모듈 활용해서 파일 업로드하기"
 categories: [nodejs]
 tags: [nodejs]
-modified: 2020-05-20
+modified: 2020-05-21
 comments: true
 ---
 
@@ -13,9 +13,9 @@ comments: true
 ## Multer 모듈
 Multer 모듈은 
 
-### Multer 모듈 설치
+### 패키지 설치
 ~~~ bash
-npm i multer
+$ npm i multer
 ~~~
 
 ## MySQL 컬럼 추가
@@ -78,12 +78,12 @@ form 태그의 속성으로 `enctype="multipart/form-data"` 가 지정되어야 
     </form>
 ~~~
 
-## multer 설정
+## router & multer 설정
 게시글 업로드를 담당하는 라우트 파일에 가서 몇 가지 설정을 해줍니다. <br>
-파일이 저장될 경로나 파일명을 변경해주기 위해서는 multer 객체의 옵션을 변경해주면 됩니다. <br>
+파일이 저장될 경로나 파일명을 변경해주기 위해서는 `multer` 객체의 옵션을 변경해주면 됩니다. <br>
 여기서는 현재 날짜를 파일명에 추가하여 중복된 사진이 생성되는 것을 방지하도록 하겠습니다. <br>
 이미지 업로드를 담당하는 라우터 파일 상단에 다음과 같은 코드를 통해 설정을 해줍니다. <br>
-express 프로젝트 생성 시 기본적으로 제공되는 public/images 디렉토리 하위에 이미지들을 저장해주도록 하겠습니다. <br> 
+express 프로젝트 생성 시 기본적으로 제공되는 `public/images` 디렉토리 하위에 이미지들을 저장해주도록 하겠습니다. <br> 
 
 ### routes/board.js
 ~~~ javascript
@@ -103,10 +103,9 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage })
 ~~~
 
-## router 설정
 또한 게시글 하나에는 하나의 이미지가 존재하므로 `upload.single('image')` 로 이미지 처리를 위한 미들웨어를 생성합니다. <br>
-여기서 image는 input 태그의 name 속성 이름입니다. <br>
-아까와 동일하게 board.js의 파일 업로드를 담당하는 라우터에 미들웨어를 설정해줍니다. <br>
+여기서 `image` 는 `input` 태그의 `name` 속성값입니다. <br>
+아까와 동일하게 `board.js` 의 파일 업로드를 담당하는 라우터에 미들웨어를 설정해줍니다. <br>
 
 ### routes/board.js
 ~~~ javascript
@@ -136,7 +135,7 @@ router.post('/write', upload.single('image'), (req, res, next) => {
 
 ## 이미지 저장 확인
 이제 터미널을 열고 새로운 게시글을 작성한 뒤 쿼리문을 통해 레코드를 확인해보면 다음과 같이 이미지 경로가 저장된 것을 확인할 수 있습니다. <br>
-기존에 이미지가 없는 게시글들은 기본적으로 null 값이 설정되어 있는 것을 확인할 수 있습니다. <br> 
+기존에 이미지가 없는 게시글들은 기본값이 설정되어 있는 것을 확인할 수 있습니다. <br> 
 
 ~~~ bash
 mysql> select * from board;
@@ -150,14 +149,15 @@ mysql> select * from board;
 
 또한 로컬 환경에 이미지가 올바르게 저장되었는지 확인해봅시다. <br>
 `public/images/` 하위에 다음과 같이 저장된 시간과 함께 새로운 파일명을 만든 뒤 저장되어있는 것을 확인할 수 있습니다. <br>
-[이미지]
+![이미지](/img/nodejs/multer-save.png){: width="350"}
 
 ## 게시글 이미지 출력
 현재는 게시글 조회 시 저장된 이미지를 출력하지 못하는 상태입니다. <br>
-![이미지]()
+![이미지](/img/nodejs/multer-read-before.png){: width="300"}
+
 
 이제 게시글 조회 시 이미지를 같이 출력해줄 수 있도록 기존의 라우터를 수정하겠습니다. <br>
-기존 쿼리문의 요청 필드에 image를 추가해줍니다. <br>
+기존 쿼리문의 요청 필드에 `image` 를 추가해줍니다. <br>
 
 ### routes/board.js
 ~~~ javascript
@@ -174,8 +174,8 @@ router.get('/read/:idx', (req, res, next) => {
 });
 ~~~
 
-그리고 ejs 파일에서 img 태그를 통해 정적 파일을 화면에 출력하도록 합니다. <br>
-이때 이미지 소스는 서버로부터 전달받은 row 객체에서 가져오도록 합니다. <br>
+그리고 ejs 파일에서 `img` 태그를 통해 정적 파일을 화면에 출력하도록 합니다. <br>
+이때 이미지 소스는 서버로부터 전달받은 `row` 객체에서 가져오도록 합니다. <br>
 
 ### read.ejs
 ~~~ html
@@ -189,7 +189,7 @@ router.get('/read/:idx', (req, res, next) => {
 ~~~
 
 ### 결과 확인
-[이미지]
+![이미지](/img/nodejs/multer-result.png){: width="350"}
 
 
 ## 참고 자료
