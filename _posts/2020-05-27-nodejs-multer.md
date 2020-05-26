@@ -11,7 +11,12 @@ comments: true
 ## 게시판에 이미지 업로드 기능 추가하기
 
 ## Multer 모듈
-Multer 모듈은 
+Multer 모듈은 `multipart/form-data` 를 처리하기 위한 node.js 미들웨어입니다. <br>
+이번 포스팅에서는 해당 모듈을 사용해서 이미지를 업로드하는 방법에 대해 살펴보겠습니다. <br> 
+
+현재 게시판 글쓰기 필드에는 다음과 같이 이미지 업로드 기능이 없는 상태라서 `multer` 모듈을 통해 게시글마다 이미지를 업로드하고 데이터베이스에 저장하도록 하겠습니다. <br>
+
+![이미지](/img/nodejs/multer-write-init.png){: width="250"}
 
 ### 패키지 설치
 ~~~ bash
