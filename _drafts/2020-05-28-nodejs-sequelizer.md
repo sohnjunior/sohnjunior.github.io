@@ -4,7 +4,7 @@ title: Sequelizer 와 MySQL을 사용해서 데이터 베이스 생성하기
 excerpt: "Node.js 환경에서 Sequelizer 와 MySQL을 사용해서 데이터 베이스 생성하기"
 categories: [nodejs]
 tags: [nodejs]
-modified: 2020-05-26
+modified: 2020-05-28
 comments: true
 ---
 
