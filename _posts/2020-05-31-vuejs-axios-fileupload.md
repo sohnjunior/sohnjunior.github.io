@@ -138,4 +138,4 @@ OPTIONS /product/create 204 0.205 ms - 0
 ~~~
 
 ## 참고 자료
-* https://router.vuejs.org/kr/guide/essentials/nested-routes.html
+* https://bezkoder.com/vuetify-file-upload/
