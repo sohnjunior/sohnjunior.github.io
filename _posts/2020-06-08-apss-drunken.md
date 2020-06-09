@@ -26,6 +26,7 @@ Python3 으로 제출해봤지만 도무지 시간 초과를 해결할 수 없�
 
 ## 코드
 
+### Python
 ~~~ python
 
 import sys
@@ -78,6 +79,7 @@ solution()
 
 ~~~
 
+### C++
 ~~~ C++
 #include <iostream>
 #include <vector>
