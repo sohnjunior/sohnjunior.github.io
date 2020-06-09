@@ -80,7 +80,7 @@ solution()
 ~~~
 
 ### C++
-~~~ C++
+~~~ c++
 #include <iostream>
 #include <vector>
 #include <algorithm>
