@@ -3,7 +3,7 @@ layout: post
 title: 프로그래머스 Level 3 - 섬 연결하기
 excerpt: "프로그래머스 Level 3 섬 연결하기 with Python"
 categories: [Algorithm]
-tags: [Algorithm]
+tags: [Programmers]
 modified: 2020-05-14
 comments: true
 ---

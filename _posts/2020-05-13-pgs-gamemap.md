@@ -3,7 +3,7 @@ layout: post
 title: 프로그래머스 Level 4 - 게임 맵 최단거리
 excerpt: "프로그래머스 Level 4 게임 맵 최단거리 with Python"
 categories: [Algorithm]
-tags: [Algorithm]
+tags: [Programmers]
 modified: 2020-05-13
 comments: true
 ---

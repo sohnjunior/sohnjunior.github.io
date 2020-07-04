@@ -3,7 +3,7 @@ layout: post
 title: 프로그래머스 Level 3 - 입국 심사
 excerpt: "프로그래머스 Level 3 입국 심사 with Python"
 categories: [Algorithm]
-tags: [Algorithm]
+tags: [Programmers]
 modified: 2020-05-08
 comments: true
 ---

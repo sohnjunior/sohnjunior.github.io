@@ -3,7 +3,7 @@ layout: post
 title: 프로그래머스 Level 3 - 추석 트래픽
 excerpt: "프로그래머스 Level 3 추석 트래픽 with Python"
 categories: [Algorithm]
-tags: [Algorithm]
+tags: [Programmers]
 modified: 2020-05-03
 comments: true
 ---
