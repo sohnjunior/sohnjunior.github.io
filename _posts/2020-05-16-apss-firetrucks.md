@@ -3,7 +3,7 @@ layout: post
 title: ALGOSPOT 소방차
 excerpt: "[알고리즘 문제 해결 전략] 도서 수록 문제 풀어보기(Python, C++)"
 categories: [Algorithm]
-tags: [Algorithm]
+tags: [알고리즘 문제해결 전략]
 modified: 2020-05-16
 comments: true
 ---

@@ -3,7 +3,7 @@ layout: post
 title: ALGOSPOT 선거 공약
 excerpt: "[알고리즘 문제 해결 전략] 도서 수록 문제 풀어보기(Python)"
 categories: [Algorithm]
-tags: [Algorithm]
+tags: [알고리즘 문제해결 전략]
 modified: 2020-06-25
 comments: true
 ---
