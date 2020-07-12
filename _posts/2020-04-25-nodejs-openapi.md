@@ -45,7 +45,7 @@ comments: true
 우선 [네이버 파파고 API 홈페이지](https://developers.naver.com/products/nmt/)로 가서 API 이용 신청을 해야합니다. <br>
 
 
-![첫화면](/img/nodejs-openapi/first.png){: width="800"}  
+![첫화면](/img/nodejs/api-first.png){: width="800"}  
 
 
 이용 신청을 누르면 다음과 같은 신청 폼을 작성하게 됩니다.
@@ -57,7 +57,7 @@ comments: true
 저는 현재 로컬 환경에서 테스트를 진행한 후 WEB환경에서 이를 활용할 것이므로 <br> 
 비로그인 오픈 API 환경을 `WEB` 로 하고 URL로 로컬 호스트임을 나타내는 `https://localhost:3000/` 를 입력하고 신청을 마치겠습니다.
 
-![클라이언트](/img/nodejs-openapi/info.png){: width="500"}
+![클라이언트](/img/nodejs/api-info.png){: width="500"}
 
 모든 신청을 마무리하면 위와 같이 클라이언트 ID와 Password를 발급해줍니다. <br> 
 이후의 샘플 코드에서 이 정보를 활용합니다.
@@ -110,7 +110,7 @@ request.post(options, function (error, response, body) {
 이때 request 모듈의 post 함수는 비동기 방식으로 수행되므로 콜백 함수를 등록하여 결과값을 확인합니다. <br>
 
 ## 결과 확인
-![결과사진](/img/nodejs-openapi/result.png){: width="500"}
+![결과사진](/img/nodejs/api-result.png){: width="500"}
 
 만약 성공적으로 요청이 전송되면 위와 같은 결과를 확인할 수 있습니다. <br>
 주어진 입력 값에 따라 번역이 올바르게 진행된 것을 알 수 있습니다.
