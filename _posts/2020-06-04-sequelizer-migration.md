@@ -61,6 +61,42 @@ module.exports = {
 $ sequelize db:migrate --env development
 ~~~
 
+### 다중 마이그레이션
+여러개의 마이그레이션 작업이 필요할 경우는 해당 작업들을 `Promise` 배열 형태로 반환해주면 됩니다. <br>
+예시로 다음과 같이 새로운 컬럼을 추가하거나 변경하는 작업이 가능합니다. <br>
+
+~~~ javascript
+'use strict';
+
+module.exports = {
+  up: (queryInterface, Sequelize) => {
+   return Promise.all([
+     queryInterface.addColumn("users", "admin", {
+       type: Sequelize.BOOLEAN,
+       allowNull: false,
+       defaultValue: false,
+     }),
+     queryInterface.changeColumn("users", "password", {
+       type: Sequelize.STRING(30),
+       allowNull: false,
+       unique: false,
+     }),
+   ]); 
+  },
+
+  down: (queryInterface, Sequelize) => {
+    /*
+      Add reverting commands here.
+      Return a promise to correctly handle asynchronicity.
+
+      Example:
+      return queryInterface.dropTable('users');
+    */
+  }
+};
+
+~~~
+
 
 ## 참고 자료
 * https://devonaws.com/back-end/node-js/node-js-orm-sequelize-add-column/
