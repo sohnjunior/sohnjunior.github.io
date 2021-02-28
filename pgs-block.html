@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Page Meta -->
+    <title>프로그래머스 Level 3 - 블록 이동하기</title>
+    <meta name="description" content="PS와 웹 개발 관련내용을 기록합니다." />
+
+    <!-- Mobile Meta -->
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Brand icon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" >
+
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" />
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!-- Ghost outputs important style and meta data with this tag -->
+        <link rel="canonical" href="https://sohnjunior.github.io//pgs-block" />
+    <meta name="referrer" content="origin" />
+    <link rel="next" href="/page2/" />
+
+    <meta property="og:site_name" content="sohnjunior의 Dev Log" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="프로그래머스 Level 3 - 블록 이동하기" />
+    <meta property="og:description" content="PS와 웹 개발 관련내용을 기록합니다." />
+    <meta property="og:url" content="https://sohnjunior.github.io//pgs-block" />
+    <meta property="og:image" content="/assets/images/cover2.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="프로그래머스 Level 3 - 블록 이동하기" />
+    <meta name="twitter:description" content="PS와 웹 개발 관련내용을 기록합니다." />
+    <meta name="twitter:url" content="https://sohnjunior.github.io//pgs-block" />
+    <meta name="twitter:image:src" content="/assets/images/cover2.jpg" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Website",
+        "publisher": "sohnjunior의 Dev Log",
+        "name": "프로그래머스 Level 3 - 블록 이동하기",
+        "url": "https://sohnjunior.github.io//pgs-block",
+        "image": "/assets/images/cover2.jpg",
+        "description": "PS와 웹 개발 관련내용을 기록합니다."
+    }
+    </script>
+
+    <meta name="generator" content="Jekyll 3.0.0" />
+    <link rel="alternate" type="application/rss+xml" title="sohnjunior의 Dev Log" href="/feed.xml" />
+
+
+</head>
+<body class="home-template nav-closed">
+
+    <!-- The blog navigation links -->
+    <div class="nav">
+  <h3 class="nav-title">카테고리</h3>
+  <a href="#" class="nav-close">
+    <span class="hidden">닫기</span>
+  </a>
+  <ul>
+    <li
+      class="nav-home "
+      role="presentation"
+    >
+      <a href="/">Home</a>
+    </li>
+    <li
+      class="nav-about "
+      role="presentation"
+    >
+      <a href="/about">About Me</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/boj">BOJ</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/leetcode">LeetCode</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/programmers">Programmers</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/알고리즘 문제해결 전략">알고리즘 문제해결 전략</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/javascript">Javascript</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/typescript">Typescript</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/vuejs">Vue.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/reactjs">React.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/nodejs">Node.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/aws">AWS</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/book-review">서평</a>
+    </li>
+  </ul>
+  <a class="subscribe-button icon-feed" href="/feed.xml">구독하기</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The comment above "< default" means - insert everything in this file into -->
+<!-- the [body] of the default.hbs template, which contains our header/footer. -->
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<header
+  class="main-header post-head "
+  style="background-image: url(/assets/images/cover2.jpg) "
+>
+  <nav class="main-nav  overlay  clearfix">
+    <a class="blog-logo" href="/"
+      ><img src="/assets/images/ghost.png" alt="Blog Logo" /></a
+    > 
+    <a class="menu-button icon-menu" href="#"><span class="word">카테고리</span></a>
+    
+  </nav>
+</header>
+
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">프로그래머스 Level 3 - 블록 이동하기</h1>
+      <section class="post-meta">
+        <!-- <a href='/'></a> -->
+
+         
+        <a href="/author/sohnjunior"
+          >sohnjunior</a
+        >
+         
+        <time class="post-date" datetime="2020-05-01"
+          >01 May 2020</time
+        >
+        <!-- [[tags prefix=" on "]] -->
+         on  
+        <a href="/tag/Programmers">Programmers</a>
+          
+      </section>
+    </header>
+
+    <section class="post-content"><h2 id="출처">출처</h2>
+
+<p><a href="https://programmers.co.kr/learn/courses/30/lessons/60063">프로그래머스 - 블록 이동하기</a></p>
+
+<h2 id="문제">문제</h2>
+
+<p><img src="/assets/images/programmers/block.jpg" alt="이미지" width="300" />
+<br />
+무지는 <code class="highlighter-rouge">N×N</code>크기의 지도 위에서 <code class="highlighter-rouge">2×1</code>크기의 로봇을 이동하여 목표지점에 도달할 수 있도록 프로그램을 구현하고자 한다. <br />
+로봇은 항상 <code class="highlighter-rouge">(1,1)</code>에서 시작하며 로봇이 차지하고 있는 칸중 어느 하나라도 <code class="highlighter-rouge">(N,N)</code>위치에 도달하면 된다. <br />
+로봇이 움직일때는 현재 상태를 유지하며 이동하고 다음 조건에 따라 90도씩 회전 연산도 가능하다. <br /><br /><br /></p>
+
+<p><img src="/assets/images/programmers/block-rotate.jpg" alt="이미지" width="300" />
+<br />
+0과 1로 이루어진 지도인 board가 주어질 때, 로봇이 <code class="highlighter-rouge">(N,N)</code> 위치까지 이동하는데 필요한 최소 시간을 return 하도록 solution 함수를 완성하라.</p>
+
+<h2 id="풀이-과정">풀이 과정</h2>
+
+<p>로봇이 이동할 수 있는 모든 경우를 따져보며 탐색을 수행하면 된다. <br />
+최단 경로를 찾으면 바로 탐색을 종료하면되므로 같은 depth의 상태들을 탐색하기 위해 <code class="highlighter-rouge">BFS</code>를 사용했다. <br /></p>
+
+<p>다만 로봇의 상태와 회전 연산을 구현하는 부분이 매우 까다로웠다..</p>
+
+<h3 id="로봇의-상태-나타내기">로봇의 상태 나타내기</h3>
+
+<p>처음에는 <code class="highlighter-rouge">board</code>에 로봇의 상태를 표시해주며 이를 탐색에 활용하였지만 얼마 지나지 않아 이 방법이 굉장히 비효율적이라는 것을 알게 되었다. <br />
+어차피 <code class="highlighter-rouge">board</code>는 고정이고 우리는 로봇의 위치만 변경시키면서 탐색을 수행하면 되므로 <code class="highlighter-rouge">board</code> 대신 로봇의 죄표값을 통해 탐색을 수행하도록 하였다.<br /></p>
+
+<blockquote>
+  <p>문제 풀이 후 다른 사람들의 코드도 봤는데 <code class="highlighter-rouge">visited</code> 배열을 따로 유지하고 Queue에 걸린 시간을 좌표값과 함께 넣어준 것이 인상적이었다. <br /> 이렇게 하면 hashable 객체로 바꿔서 딕셔너리에 넣으려고 굳이 list를 tuple로 변경하지 않아도 될 것 같다.</p>
+</blockquote>
+
+<h3 id="로봇-회전시키기">로봇 회전시키기</h3>
+
+<p>이번 문제에서 가장 까다로웠던 회전 연산을 구현하기 위해서는 상,하,좌,우 이동과 4가지의 회전 연산을 모두 체크해줘야한다.</p>
+
+<p>상하좌우 좌표값들을 검사하는건 다른 문제들과 다른 것이 없지만 회전 연산이 가능한지는 어떻게 알 수 있을까? <br /></p>
+
+<p>생각해보면 회전 연산을 위해서는 회전하고 싶은 방향이 무조건 모두 비어있는 상태여야 한다는 것을 알 수 있다.<br />
+아래와 같이 한군데라도 벽이 있다면 그 쪽으로는 회전이 불가능하다.<br /><br />
+<img src="/assets/images/programmers/block-example.png" alt="이미지" width="300" /></p>
+
+<p>따라서 나는 이전에 상,하,좌,우 중에서 이동이 가능했던 연산들을 저장해놓은 다음, 그에 맞는 회전 죄표값들을 생성해줬다. <br /></p>
+
+<blockquote>
+  <p>이때 주의할 점은 나의 구현 방식을 기준으로 회전된 좌표값은 로봇의 두 좌표중 항상 왼쪽 or 상단의 좌표가 먼저 나오도록 생성해줘야 한다는 것이다. <br />이거 때문에 처음에 계속 실패했었다..</p>
+</blockquote>
+
+<h2 id="코드">코드</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+
+
+<span class="n">dx</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">dy</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">here</span><span class="p">):</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+    <span class="n">movable</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">movable_dir</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c"># 이동 가능한 방향</span>
+    <span class="c"># 상하좌우</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="nb">next</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="nb">next</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">here</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">dx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="nb">next</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">here</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="nb">next</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">here</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">dx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="nb">next</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">here</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">dy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="nb">next</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">next</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">N</span> <span class="ow">or</span> <span class="nb">next</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">next</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">N</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="nb">next</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">next</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">N</span> <span class="ow">or</span> <span class="nb">next</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">next</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">N</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="nb">next</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="nb">next</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">board</span><span class="p">[</span><span class="nb">next</span><span class="p">[</span><span class="mi">2</span><span class="p">]][</span><span class="nb">next</span><span class="p">[</span><span class="mi">3</span><span class="p">]]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">movable</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="nb">next</span><span class="p">))</span>
+        <span class="n">movable_dir</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="c"># 회전</span>
+    <span class="n">axis1</span> <span class="o">=</span> <span class="n">here</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">axis2</span> <span class="o">=</span> <span class="n">here</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+
+    <span class="c"># 가로로 놓여있을 경우</span>
+    <span class="k">if</span> <span class="n">axis1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">axis2</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="c"># 아래가 다 비어서 이동 가능할 경우</span>
+        <span class="k">if</span> <span class="mi">2</span> <span class="ow">in</span> <span class="n">movable_dir</span><span class="p">:</span>
+            <span class="n">there1</span> <span class="o">=</span> <span class="n">axis1</span> <span class="o">+</span> <span class="p">(</span><span class="n">axis2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">axis2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">there2</span> <span class="o">=</span> <span class="n">axis2</span> <span class="o">+</span> <span class="p">(</span><span class="n">axis1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">axis1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">movable</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">there1</span><span class="p">)</span>
+            <span class="n">movable</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">there2</span><span class="p">)</span>
+        <span class="c"># 위에가 다 비어서 이동 가능할 경우</span>
+        <span class="k">if</span> <span class="mi">3</span> <span class="ow">in</span> <span class="n">movable_dir</span><span class="p">:</span>
+            <span class="n">there1</span> <span class="o">=</span> <span class="p">(</span><span class="n">axis2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">axis2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">axis1</span>
+            <span class="n">there2</span> <span class="o">=</span> <span class="p">(</span><span class="n">axis1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">axis1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">axis2</span>
+            <span class="n">movable</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">there1</span><span class="p">)</span>
+            <span class="n">movable</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">there2</span><span class="p">)</span>
+    <span class="c"># 세로로 놓여있을 경우</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c"># 오른쪽이 다 비어서 이동 가능할 경우</span>
+        <span class="k">if</span> <span class="mi">0</span> <span class="ow">in</span> <span class="n">movable_dir</span><span class="p">:</span>
+            <span class="n">there1</span> <span class="o">=</span> <span class="n">axis1</span> <span class="o">+</span> <span class="p">(</span><span class="n">axis2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">axis2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">there2</span> <span class="o">=</span> <span class="n">axis2</span> <span class="o">+</span> <span class="p">(</span><span class="n">axis1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">axis1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">movable</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">there1</span><span class="p">)</span>
+            <span class="n">movable</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">there2</span><span class="p">)</span>
+        <span class="c"># 왼쪽이 다 비어서 이동 가능할 경우</span>
+        <span class="k">if</span> <span class="mi">1</span> <span class="ow">in</span> <span class="n">movable_dir</span><span class="p">:</span>
+            <span class="n">there1</span> <span class="o">=</span> <span class="p">(</span><span class="n">axis2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">axis2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">axis1</span>
+            <span class="n">there2</span> <span class="o">=</span> <span class="p">(</span><span class="n">axis1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">axis1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">axis2</span>
+            <span class="n">movable</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">there1</span><span class="p">)</span>
+            <span class="n">movable</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">there2</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">movable</span>
+
+
+<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">board</span><span class="p">):</span>
+    <span class="c"># 처음 로봇 위치</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+    <span class="n">cost</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c"># 걸린 시간</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+
+    <span class="n">cost</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="n">here</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">q</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">here</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">here</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">here</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">here</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="n">cost</span><span class="p">[</span><span class="n">here</span><span class="p">]</span>
+            <span class="k">break</span>
+
+        <span class="n">move_list</span> <span class="o">=</span> <span class="n">move</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">here</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">there</span> <span class="ow">in</span> <span class="n">move_list</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">there</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cost</span><span class="p">:</span>
+                <span class="n">cost</span><span class="p">[</span><span class="n">there</span><span class="p">]</span> <span class="o">=</span> <span class="n">cost</span><span class="p">[</span><span class="n">here</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+                <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">there</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">answer</span>
+
+
+<span class="n">board</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">solution</span><span class="p">(</span><span class="n">board</span><span class="p">))</span>  <span class="c"># 결과는 7</span>
+
+</code></pre></div></div>
+</section>
+
+    <footer class="post-footer">
+      <!-- Everything inside the #author tags pulls data from the author -->
+      <!-- #author-->
+        
+      <figure class="author-image">
+        <a
+          class="img"
+          href="/author/sohnjunior"
+          style="background-image: url(/assets/images/avatar.png)"
+          ><span class="hidden">sohnjunior's Picture</span></a
+        >
+      </figure>
+      
+
+      <section class="author">
+        <h4>
+          <a href="/author/sohnjunior"
+            >sohnjunior</a
+          >
+        </h4>
+
+        
+        <p>주니어 웹 프론트엔드 개발자입니다. 😄</p>
+        
+        <div class="author-meta">
+          <span
+            class="author-location icon-location"
+          >
+            Seoul, Korea</span
+          > <span class="author-link icon-link"
+            ><a href="https://github.com/sohnjunior"> https://github.com/sohnjunior</a></span
+          >
+        </div>
+      </section>
+
+      <!-- /author  -->
+
+      <section class="share">
+        <h4>Share this post</h4>
+        <a
+          class="icon-twitter"
+          href="http://twitter.com/share?text=프로그래머스 Level 3 - 블록 이동하기&amp;url=https://sohnjunior.github.iopgs-block"
+          onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
+        >
+          <span class="hidden">Twitter</span>
+        </a>
+        <a
+          class="icon-facebook"
+          href="https://www.facebook.com/sharer/sharer.php?u=https://sohnjunior.github.iopgs-block"
+          onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
+        >
+          <span class="hidden">Facebook</span>
+        </a>
+        <a
+          class="icon-google-plus"
+          href="https://plus.google.com/share?url=https://sohnjunior.github.iopgs-block"
+          onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"
+        >
+          <span class="hidden">Google+</span>
+        </a>
+      </section>
+       
+
+      <!-- Add Disqus Comments -->
+      
+    </footer>
+  </article>
+</main>
+
+<aside class="read-next">
+  <!-- [[! next_post ]] --> 
+  <a
+    class="read-next-story "
+    style="background-image: url(/assets/images/cover2.jpg)"
+    href="/boj-14499"
+  >
+    <section class="post">
+      <h2>BOJ 14499 - 주사위 굴리기</h2>
+      <p>## 출처 [백준 온라인 저지 - 14499번](https://www.acmicpc.net/problem/14499) ## 문제 크기가 N×M인 지도가 존재한다. 지도의 오른쪽은...</p>
+    </section>
+  </a>
+  
+  <!-- [[! /next_post ]] -->
+  <!-- [[! prev_post ]] -->
+  
+  <a
+    class="read-next-story prev "
+    style="background-image: url(/assets/images/cover2.jpg)"
+    href="/boj-16234"
+  >
+    <section class="post">
+      <h2>BOJ 16234 - 인구이동</h2>
+      <p>출처 백준 온라인 저지 - 16234번 문제 N×N크기의 땅이 있고, 땅은 1×1개의 칸으로 나누어져 있다....</p>
+    </section>
+  </a>
+  
+  <!-- [[! /prev_post ]] -->
+</aside>
+
+<!-- /post -->
+
+
+        <!-- The tiny footer at the very bottom -->
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="/">sohnjunior의 Dev Log</a> &copy; 2021</section>
+          <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/jekyller/jasper">Jasper</a></section>
+        </footer>
+    </div>
+    <!-- highlight.js -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- jQuery needs to come before `` so that jQuery can be used in code injection -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Ghost outputs important scripts and data with this tag -->
+    <!--  -->
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i["GoogleAnalyticsObject"] = r;
+    (i[r] =
+      i[r] ||
+      function () {
+        (i[r].q = i[r].q || []).push(arguments);
+      }),
+      (i[r].l = 1 * new Date());
+    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(
+    window,
+    document,
+    "script",
+    "//www.google-analytics.com/analytics.js",
+    "ga"
+  );
+
+  ga("create", "UA-69281367-1", "auto");
+  ga("send", "pageview");
+</script>
+
+    <!-- Fitvids makes video embeds responsive and awesome -->
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <!-- The main JavaScript file for Casper -->
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+</body>
+</html>

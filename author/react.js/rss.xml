@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>sohnjunior.github.io/</title>
+   
+   <link>https://sohnjunior.github.io</link>
+   <description>PS와 웹 개발 관련내용을 기록합니다.</description>
+   <language>en-uk</language>
+   <managingEditor> </managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>React 컴포넌트에서 타이머 설정하기 (with Hooks)</title>
+	  <link>//react-timer</link>
+	  <author></author>
+	  <pubDate>2020-07-25T00:00:00+09:00</pubDate>
+	  <guid>//react-timer</guid>
+	  <description><![CDATA[
+	     <h2 id="들어가며">들어가며</h2>
+
+<p><img src="/assets/images/reactjs/react-timer.png" alt="이미지" width="400" /></p>
+
+<p><code class="highlighter-rouge">React</code> 를 활용해서 오목 게임을 구현하던 중에 위와 같이 화면 왼쪽 상단에 타이머를 설정해주고 싶었습니다. <br />
+사용자가 바둑돌을 놓으면 타이머가 재설정되어야 하기 때문에 <code class="highlighter-rouge">Timer</code> 컴포넌트를 <code class="highlighter-rouge">state</code> 에 따라 <code class="highlighter-rouge">useEffect</code> 를 활용하여 다시 설정해주는 방법을 사용하기로 했습니다. <br /></p>
+
+<p>현재 <code class="highlighter-rouge">hooks</code> 을 이용해서 컴포넌트를 작성하고 있었기 때문에 이번 포스팅에서는 타이머 리랜더링 로직은 제외하고 <br />
+<code class="highlighter-rouge">React Hooks</code> 을 활용하여 간단한 타이머를 설정하는 방법을 알아보겠습니다. <br /></p>
+
+<h2 id="자바스크립트-타이머-설정-함수">자바스크립트 타이머 설정 함수</h2>
+
+<p>자바스크립트에는 타이머를 설정할 수 있는 함수가 두 가지 존재합니다. <br />
+하나는 <code class="highlighter-rouge">setTimeout</code> 이고 나머지 하나는 <code class="highlighter-rouge">setInterval</code> 로 두 함수는 목적에 맞게 사용하면 됩니다. <br />
+이번 포스팅에서 사용할 <code class="highlighter-rouge">setInterval</code> 함수는 인자로 실행시킬 함수 <code class="highlighter-rouge">F</code> 와 실행 전 대기 시간 <code class="highlighter-rouge">T</code> 를 받아 호출 스케줄링을 합니다. <br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">timerId</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"2초마다 실행"</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+
+<span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">timerId</span><span class="p">);</span>
+<span class="p">},</span> <span class="mi">7000</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="useeffect-를-활용한-타이머-설정">useEffect 를 활용한 타이머 설정</h2>
+
+<p><code class="highlighter-rouge">useEffect</code> 는 <code class="highlighter-rouge">React Hook</code> 으로 컴포넌트를 설계할 때 라이프 사이클 중 <code class="highlighter-rouge">componentDidMount</code> 와 <code class="highlighter-rouge">componentDidUpdate</code> <br /> 그리고 <code class="highlighter-rouge">componentWillUnmount</code> 를 아우르는 역할을 담당하고 있습니다. <br />
+이번 포스팅에서는 타이머가 <code class="highlighter-rouge">DOM</code>에 랜더링 되는 시점에 설정되고 삭제될 때 해제되도록 하기 위해 <code class="highlighter-rouge">useEffect</code> 를 활용합니다. <br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"react"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">timerId</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="c1">// do something ...</span>
+    <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+    <span class="k">return</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timerId</span><span class="p">);</span>
+  <span class="p">},</span> <span class="p">[]);</span>
+
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="err">타이머</span> <span class="err">예제</span><span class="o">&lt;</span><span class="sr">/div&gt;</span><span class="err">;
+</span><span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>위와 같이 <code class="highlighter-rouge">useEffect</code> 의 두번째 인자를 빈 배열로 설정할 경우 의존성이 존재하는 요소가 없기 때문에 화면에 한번 랜더링 된 이후 다시 호출되지 않습니다. (<code class="highlighter-rouge">componentDidMount</code> 의 역할) <br />
+한 가지 주의할 점은 반환 값으로 함수를 지정해 컴포넌트가 마운트 해제되는 시점에 타이머를 해제해주도록 하는 것입니다. <br />
+이렇게 해주지 않으면 타이머는 비동기로 진행되기 때문에 컴포넌트가 마운트 해제되더라도 타이머는 없어지지 않는 상황이 발생합니다. <br /></p>
+
+<h2 id="프로젝트-적용">프로젝트 적용</h2>
+
+<p>이제 이를 활용해서 실제 프로젝트에 3분의 타이머를 구현해보겠습니다. <br />
+초 단위로 시간값을 계산해서 화면에 랜더링해줍니다. <br />
+초기 랜더링 시 타이머를 설정한 뒤, 만료가 될 경우 이벤트를 발생시키도록 설계하였습니다. <br />
+이때 해당 컴포넌트 자체가 다시 랜더링 되는 경우나 타임 아웃되는 경우 타이머를 해제해주기 위해 각각 <code class="highlighter-rouge">clearInterval</code> 을 수행했습니다. <br />
+여기서 눈여겨볼 점은 <code class="highlighter-rouge">useEffect</code> 의 <code class="highlighter-rouge">dependencies</code> 에 <code class="highlighter-rouge">time</code> 대신 <code class="highlighter-rouge">sec</code> 으로 지정해준 것입니다. <br />
+이는 <code class="highlighter-rouge">useRef</code> 는 값이 변화하더라도 리랜더링을 발생시키지 않기 때문에 <code class="highlighter-rouge">useEffect</code> 를 절대 호출하지 않기 때문입니다. <br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">Timer</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">min</span><span class="p">,</span> <span class="nx">setMin</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">sec</span><span class="p">,</span> <span class="nx">setSec</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">time</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">(</span><span class="mi">180</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">timerId</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">timerId</span><span class="p">.</span><span class="nx">current</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">setMin</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">current</span> <span class="o">/</span> <span class="mi">60</span><span class="p">));</span>
+      <span class="nx">setSec</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">current</span> <span class="o">%</span> <span class="mi">60</span><span class="p">);</span>
+      <span class="nx">time</span><span class="p">.</span><span class="nx">current</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">timerId</span><span class="p">.</span><span class="nx">current</span><span class="p">);</span>
+  <span class="p">},</span> <span class="p">[]);</span>
+
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 만약 타임 아웃이 발생했을 경우</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">current</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"타임 아웃"</span><span class="p">);</span>
+      <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">timerId</span><span class="p">.</span><span class="nx">current</span><span class="p">);</span>
+      <span class="c1">// dispatch event</span>
+    <span class="p">}</span>
+  <span class="p">},</span> <span class="p">[</span><span class="nx">sec</span><span class="p">]);</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s2">"timer"</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="nx">min</span><span class="p">}</span> <span class="err">분</span> <span class="p">{</span><span class="nx">sec</span><span class="p">}</span> <span class="err">초</span>
+    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li>https://ko.javascript.info/settimeout-setinterval</li>
+  <li>https://upmostly.com/tutorials/settimeout-in-react-components-using-hooks</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

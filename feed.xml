@@ -1,0 +1,5873 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sohnjunior의 Dev Log - Articles</title>
+    <description>PS와 웹 개발 관련내용을 기록합니다.</description>
+    <link>
+    https://sohnjunior.github.io</link>
+    
+      
+      <item>
+        <title>BOJ 16472 - 고냥이</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 25 Feb 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-16472</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-16472</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2688 - 줄어들지 않아</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 23 Feb 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2688</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2688</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 6156 - Cow Contest</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 22 Feb 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-6156</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-6156</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 14620 - 꽃길</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 21 Feb 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-14620</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-14620</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 9625 - BABBA</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 20 Feb 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-9625</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-9625</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 20055 - 컨베이어 벨트 위의 로봇</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 19 Feb 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-20055</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-20055</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 3109 - 빵집</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 17 Feb 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-3109</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-3109</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 20044 - Project Teams</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 16 Feb 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-20044</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-20044</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 11952 - 좀비</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 15 Feb 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-11952</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-11952</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1644 - 소수의 연속합</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 14 Feb 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1644</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1644</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1806 - 부분합</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 12 Feb 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1806</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1806</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 18111 - 마인크래프트</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 09 Feb 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-18111</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-18111</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 13164 - 행복 유치원</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 08 Feb 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-13164</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-13164</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 14925 - 목장 건설하기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 07 Feb 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-14925</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-14925</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 14588 - Line Friends (Small)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 06 Feb 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-14588</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-14588</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 20363 - 당근 키우기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 05 Feb 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-20363</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-20363</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 63 -  Unique Paths II (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 04 Feb 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-63</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-63</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 18242 - 네모네모 시력검사</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 03 Feb 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-18242</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-18242</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 17521 - Byte Coin</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 02 Feb 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-17521</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-17521</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 20005 - 보스몬스터 전리품</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 01 Feb 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-20005</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-20005</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2458 - 키 순서</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 31 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2458</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2458</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 9311 - Robot in a Maze</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 29 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-9311</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-9311</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 5980 - Corn Maze</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 28 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-5980</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-5980</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 1011 -  Capacity To Ship Packages Within D Days (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 26 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-1011</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-1011</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 9184 - 신나는 함수 실행</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 26 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-9184</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-9184</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 187 -  Repeated DNA Sequences (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 25 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-187</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-187</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 13424 - 비밀모임</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 25 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-13424</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-13424</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 13414 - 수강신청</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 24 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-13414</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-13414</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 3 - Longest Substring Without Repeating Characters (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 22 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-3</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-3</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 9251 - LCS</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 22 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-9251</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-9251</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 13905 - 세부</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 21 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-13905</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-13905</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 14226 - 이모티콘</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 20 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-14226</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-14226</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 14938 - 서강그라운드</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 19 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-14938</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-14938</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 17829 - 222-풀링</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 18 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-17829</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-17829</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 15723 - n단 논법</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 18 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-15723</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-15723</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 14754 - Pizza Boxes</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 18 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-14754</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-14754</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 881 -  Boats to Save People (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 17 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-881</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-881</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 14923 - 미로 탈출</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 17 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-14923</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-14923</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 19 -  Remove Nth Node From End of List (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 16 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-19</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-19</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 18243 - Small World Network</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 16 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-18243</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-18243</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 18238 - ZOAC2</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 15 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-18238</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-18238</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 14716 - 현수막</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 14 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-14716</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-14716</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 12763 - 지각하면 안 돼</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 13 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-12763</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-12763</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1802 - 종이 접기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 12 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1802</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1802</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2891 - 카약과 강풍</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 11 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2891</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2891</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1543 - 문서 검색</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 10 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1543</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1543</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 9518 - 로마 카톨릭 미사</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 09 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-9518</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-9518</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 14696 - 딱지놀이</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 08 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-14696</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-14696</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 16173 - 점프왕 쩰리(small)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 07 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-16173</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-16173</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 11403 - 경로 찾기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 07 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-11403</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-11403</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 4811 - 알약</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 06 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-4811</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-4811</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2529 - 부등호</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 05 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2529</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2529</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 17266 - 어두운 굴다리</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 04 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-17266</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-17266</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2096 - 내려가기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 03 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2096</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2096</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 16435 - 스네이크버드</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 03 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-16435</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-16435</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 17406 - 배열 돌리기 4</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 02 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-17406</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-17406</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 18352 - 특정 거리의 도시 찾기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 01 Jan 2021 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-18352</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-18352</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 4889 - 안정적인 문자열</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 30 Dec 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-4889</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-4889</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 13413 - 오셀로 재배치</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 27 Dec 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-13413</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-13413</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 19939 - 박 터뜨리기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 24 Dec 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-19939</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-19939</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 6087 - 레이저통신</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 23 Dec 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-6087</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-6087</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2812 - 크게 만들기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 23 Dec 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2812</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2812</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1781 - 컵라면</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 21 Dec 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1781</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1781</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2872 - 우리집엔 도서관이 있어</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 14 Dec 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2872</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2872</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2628 - 종이자르기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 07 Dec 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2628</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2628</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2665 - 미로만들기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 05 Dec 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2665</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2665</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 13702 - 이상한 술집</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 02 Dec 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-13702</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-13702</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2847 - 게임을 만든 동준이</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 02 Dec 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2847</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2847</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 16967 - 배열 복원하기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 30 Nov 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-16967</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-16967</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 11964 - Fruit Feast</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 29 Nov 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-11964</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-11964</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 14720 - 우유 축제</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 27 Nov 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-14720</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-14720</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 15558 - 점프 게임</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 27 Nov 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-15558</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-15558</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 3745 - 오름세</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 25 Nov 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-3745</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-3745</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 12018 - Yonsei TOTO</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 22 Nov 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-12018</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-12018</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 10159 - 저울</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 21 Nov 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-10159</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-10159</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 10836 - 여왕벌</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 14 Nov 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-10836</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-10836</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1189 - 컴백홈</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 13 Nov 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1189</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1189</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2230 - 수 고르기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 11 Nov 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2230</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2230</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 12782 - 비트 우정지수</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 06 Nov 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-12782</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-12782</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 17086 - 아기 상어2</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 05 Nov 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-17086</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-17086</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 89 -  Gray Code (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 02 Nov 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-89</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-89</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 13335 - 트럭</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 01 Nov 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-13335</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-13335</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 6497 - 전력난</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 30 Oct 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-6497</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-6497</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 118 -  Pascal's Triangle (Easy)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 29 Oct 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-118</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-118</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 4256 - 트리</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 29 Oct 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-4256</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-4256</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1484 - 다이어트</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 28 Oct 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1484</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1484</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2109 - 순회강연</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 26 Oct 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2109</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2109</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 17182 - 우주 탐사선</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 26 Oct 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-17182</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-17182</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 7795 - 먹을 것인가 먹힐 것인가</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 25 Oct 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-7795</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-7795</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 771 -  Jewels and Stones (Easy)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 24 Oct 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-771</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-771</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 16918 - 봄버맨</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 23 Oct 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-16918</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-16918</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1058 - 친구</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 22 Oct 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1058</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1058</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 234 -  Palindrome Linked List (Easy)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 20 Oct 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-234</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-234</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 11508 - 2+1 세일</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 16 Oct 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-11508</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-11508</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 11509 - 풍선 맞추기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 16 Oct 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-11509</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-11509</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1826 - 연료 채우기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 14 Oct 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1826</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1826</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 309 -  Best Time to Buy and Sell Stock with Cooldown (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 12 Oct 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-309</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-309</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2607 - 비슷한 단어</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 12 Oct 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2607</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2607</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 79 -  Word Search (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 10 Oct 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-79</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-79</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 75 -  Sort Colors (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 09 Oct 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-75</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-75</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 11497 - 통나무 건너뛰기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 08 Oct 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-11497</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-11497</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 10830 - 행렬 제곱</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 07 Oct 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-10830</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-10830</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1072 - 게임</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 07 Oct 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1072</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1072</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1063 - 킹</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 04 Oct 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1063</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1063</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2616 - 소형기관차</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 04 Oct 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2616</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2616</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1744 - 수 묶기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 03 Oct 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1744</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1744</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1647 - 도시 분할 계획</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 01 Oct 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1647</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1647</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1300 - K번째 수</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 30 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1300</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1300</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2151 - 거울 설치</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 29 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-16928</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-16928</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 416 -  Partition Equal Subset Sum (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 28 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-416</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-416</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 560 -  Subarray Sum Equals K (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 28 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-560</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-560</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1339 - 단어 수학</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 27 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1339</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1339</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2871 - 아름다운 단어</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 26 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2871</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2871</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 16928 - 뱀과 사다리 게임</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 25 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-16928</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-16928</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 15903 - 카드 합체 놀이</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 23 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-15903</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-15903</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 16988 - Baaaaaaaaaduk2 (Easy)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 22 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-16988</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-16988</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1912 - 연속합</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 22 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1912</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1912</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 752 -  Open the Lock (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 21 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-752</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-752</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 17281 - ⚾</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 19 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-17281</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-17281</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 5 -  Longest Palindromic Substring (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 18 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-5</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-5</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 16506 - CPU</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 18 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-16506</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-16506</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 11 -  Container With Most Water (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 17 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-11</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-11</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 763 -  Partition Labels (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 15 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-763</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-763</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2580 - 스도쿠</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 15 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2580</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2580</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1756 - 피자 굽기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 14 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1756</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1756</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2810 - 컵홀더</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 14 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2810</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2810</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 48 -  Rotate Image (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 13 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-48</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-48</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 13904 - 과제</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 13 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-13904</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-13904</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 236 -  Lowest Common Ancestor of a Binary Tree (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 12 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-236</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-236</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 4179 - 불!</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 12 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-4179</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-4179</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 494 -  Target Sum (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 08 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-494</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-494</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2630 - 색종이 만들기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 08 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2630</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2630</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2160 - 그림 비교</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 06 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2160</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2160</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 206 -  Reverse Linked List (Easy)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 05 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-206</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-206</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 14241 - 슬라임 합치기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 02 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-14241</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-14241</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 136 -  Single Number (Easy)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 01 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-136</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-136</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 104 -  Maximum Depth of Binary Tree (Easy)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 01 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-104</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-104</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2661 - 좋은수열</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 01 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2661</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2661</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2776 - 암기왕</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 01 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2776</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2776</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2638 - 치즈</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 01 Sep 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2638</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2638</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2840 - 행운의 바퀴</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 30 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2840</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2840</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 102 -  Binary Tree Level Order Traversal (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 29 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-102</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-102</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 17836 - 공주님을 구해라!</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 29 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-17836</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-17836</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 617 -  Merge Two Binary Trees (Easy)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 28 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-617</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-617</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 17135 - 캐슬 디펜스</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 28 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-17135</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-17135</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 98 -  Validate Binary Search Tree (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 27 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-98</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-98</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 5913 - 준규와 사과</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 27 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-5913</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-5913</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1365 - 꼬인 전깃줄</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 26 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1365</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1365</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 130 -  Surrounded Regions (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 25 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-130</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-130</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 17141 - 연구소 2</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 25 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-17141</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-17141</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 226 -  Invert Binary Tree (Easy)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 24 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-226</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-226</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1992 - 쿼드트리</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 24 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1992</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1992</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2841 - 외계인의 기타 연주</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 23 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2841</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2841</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 406 -  Queue Reconstruction by Height (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 22 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-406</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-406</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2550 - 전구</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 22 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2550</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2550</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 279 -  Perfect Squares (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 21 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-279</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-279</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 3187 - 양치기 꿍</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 18 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-3187</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-3187</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 94 - Binary Tree Inorder Traversal (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 17 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-94</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-94</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 394 - Decode String (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 16 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-394</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-394</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1926 - 그림</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 14 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1926</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1926</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2304 - 창고 다각형</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 11 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2304</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2304</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 78 - Subsets (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 10 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-78</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-78</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 739 - Daily Temperatures (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 09 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-739</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-739</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 114 - Flatten Binary Tree to Linked List (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 05 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-114</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-114</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 14395 - 4연산</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 04 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-14395</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-14395</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 5545 - 최고의 피자</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 03 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-5545</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-5545</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 287 - Find the Duplicate Number (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 02 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-287</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-287</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 347 - Top K Frequent Elements (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 01 Aug 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-347</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-347</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2447 - 별 찍기 - 10</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 31 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2447</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2447</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 15732 - 도토리 숨기기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 31 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-15732</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-15732</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 322 - Coin Change (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 29 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-322</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-322</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 15947 - 아기 석환 뚜루루 뚜루</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 29 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-15947</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-15947</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2966 - 찍기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 28 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2966</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2966</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 3986 - 좋은 단어</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 28 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-3986</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-3986</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 46 - Permutations (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 27 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-46</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-46</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 21 - Merge Two Sorted Lists (Easy)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 26 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-21</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-21</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>React 컴포넌트에서 타이머 설정하기 (with Hooks)</title>
+        
+          <description>&lt;h2 id=&quot;들어가며&quot;&gt;들어가며&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 25 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/react-timer</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/react-timer</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 240 - Search a 2D Matrix II (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 25 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-240</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-240</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 155 - Min Stack (Easy)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 25 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-155</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-155</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 39 - Combination Sum (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 24 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-39</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-39</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2178 - 미로 탐색</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 24 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2178</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2178</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 6593 - 상범 빌딩</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 24 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-6593</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-6593</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>ALGOSPOT 변화하는 중간 값</title>
+        
+          <description>&lt;h2 id=&quot;풀이-과정&quot;&gt;풀이 과정&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 24 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/apss-runningmedian</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/apss-runningmedian</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 20 - Valid Parentheses (Easy)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 23 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-20</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-20</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 16434 - 드래곤 앤 던전</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 23 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-16434</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-16434</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>ALGOSPOT 요새</title>
+        
+          <description>&lt;h2 id=&quot;풀이-과정&quot;&gt;풀이 과정&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 23 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/apss-fortress</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/apss-fortress</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 6236 - 용돈 관리</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 21 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-6236</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-6236</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1251 - 단어 나누기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 21 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1251</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1251</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1039 - 교환</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 21 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1039</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1039</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 787 - Cheapest Flights Within K Stops (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 20 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-787</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-787</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 417 - Pacific Atlantic Water Flow (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 20 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-417</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-417</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 3085 - 사탕 게임</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 20 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-3085</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-3085</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1780 - 종이의 개수</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 20 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1780</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1780</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1459 - 걷기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 19 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1459</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1459</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>ALGOSPOT 트리 순회 순서 변경</title>
+        
+          <description>&lt;h2 id=&quot;풀이-과정&quot;&gt;풀이 과정&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 19 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/apss-traversal</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/apss-traversal</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Vue.js 에서 반응형(Reactivity)을 다루는 방법</title>
+        
+          <description>&lt;h2 id=&quot;들어가며&quot;&gt;들어가며&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 18 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/vuejs-reactivity</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/vuejs-reactivity</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 17 - Letter Combinations of a Phone Number (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 18 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-17</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-17</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2798 - 블랙잭</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 18 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2798</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2798</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 16433 - 주디와 당근농장</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 18 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-16433</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-16433</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 230 - Kth Smallest Element in a BST (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 17 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-230</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-230</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1966 - 프린터 큐</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 17 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1966</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1966</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1911 - 흙길 보수하기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 17 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1911</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1911</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1213 - 팰린드롬 만들기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 17 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1213</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1213</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2503 - 숫자 야구</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 16 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2503</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2503</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2110 - 공유기 설치</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 16 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2110</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2110</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 15729 - 방탈출</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 16 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-15729</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-15729</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 5567 - 결혼식</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 15 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-5567</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-5567</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2346 - 풍선 터뜨리기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 15 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2346</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2346</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>ALGOSPOT 외계 신호 분석</title>
+        
+          <description>&lt;h2 id=&quot;풀이-과정&quot;&gt;풀이 과정&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 15 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/apss-ites</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/apss-ites</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 198 - House Robber (Easy)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 14 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-198</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-198</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 22 - Generate Parentheses (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 14 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-22</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-22</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 11286 - 절댓값 힙</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 14 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-11286</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-11286</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 12886 - 돌 그룹</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 14 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-12886</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-12886</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 11723 - 집합</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 14 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-11723</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-11723</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>ALGOSPOT 조세푸스 문제</title>
+        
+          <description>&lt;h2 id=&quot;풀이-과정&quot;&gt;풀이 과정&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 14 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/apss-josephus</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/apss-josephus</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 62 - Unique Paths (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 13 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-62</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-62</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1405 - 미친 로봇</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 13 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1405</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1405</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 7569 - 토마토</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 13 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-7569</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-7569</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 17471 - 게리맨더링</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 13 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-17471</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-17471</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Node.js CORS 설정하기</title>
+        
+          <description>&lt;h2 id=&quot;cors&quot;&gt;CORS?&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 13 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/nodejs-cors</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/nodejs-cors</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 121 - Best Time to Buy and Sell Stock (Easy)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 12 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-121</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-121</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 5427 - 불</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 12 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-5427</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-5427</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 17608 - 막대기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 12 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-17608</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-17608</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2828 - 사과 담기 게임</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 11 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2828</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2828</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>프로그래머스 Level 3 - 단어 변환</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 10 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/pgs-wordchange</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/pgs-wordchange</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>프로그래머스 Level 2 - 타겟 넘버</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 10 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/pgs-targetnum</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/pgs-targetnum</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>프로그래머스 Level 3 - 네트워크</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 10 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/pgs-network</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/pgs-network</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>프로그래머스 Level 3 - 최고의 집합</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 10 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/pgs-bestset</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/pgs-bestset</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 16197 - 두 동전</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 10 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-16197</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-16197</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 876 - Middle of the Linked List (Easy)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 09 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-876</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-876</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2959 - 거북이</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 09 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2959</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2959</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 16922 - 로마 숫자 만들기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 09 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-16922</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-16922</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1439 - 뒤집기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 09 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1439</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1439</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 221 - Maximal Square (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 08 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-221</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-221</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 9576 - 책 나눠주기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 08 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-9576</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-9576</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 543 - Diameter of Binary Tree (Easy)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 07 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-543</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-543</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 3780 - 네트워크 연결</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 07 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-3780</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-3780</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1786 - 찾기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 07 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1786</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1786</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1600 - 말이 되고픈 원숭이</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 07 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1600</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1600</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>비트마스크 활용 방법 with Python</title>
+        
+          <description>&lt;h2 id=&quot;비트마스크란&quot;&gt;비트마스크란?&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 07 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/apss-bitmask</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/apss-bitmask</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 101 - Symmetric Tree (Easy)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 06 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-101</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-101</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 678 - Valid Parenthesis String (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 06 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-678</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-678</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 9019 - DSLR</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 06 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-9019</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-9019</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1783 - 병든 나이트</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 06 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1783</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1783</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>KMP 알고리즘 구현 with Python</title>
+        
+          <description>&lt;h2 id=&quot;풀이-과정&quot;&gt;풀이 과정&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 06 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/apss-kmp</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/apss-kmp</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>ALGOSPOT 재하의 금고</title>
+        
+          <description>&lt;h2 id=&quot;풀이-과정&quot;&gt;풀이 과정&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 06 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/apss-jaehasafe</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/apss-jaehasafe</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 283 - Move Zeroes (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 04 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-283</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-283</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 678 - Valid Parenthesis String (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 04 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-678</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-678</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>프로그래머스 Level 2 - 큰 수 만들기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 03 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/pgs-bignum</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/pgs-bignum</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 8979 - 올림픽</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 03 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-8979</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-8979</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1939 - 중량제한</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 03 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1939</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1939</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1138 - 한 줄로 서기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 03 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1138</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1138</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1051 - 숫자 정사각형</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 03 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1051</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1051</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Vue.js 클래스와 스타일 바인딩 적용하기</title>
+        
+          <description>&lt;h2 id=&quot;하고-싶은-것&quot;&gt;하고 싶은 것&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 02 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/vuejs-class-style-binding</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/vuejs-class-style-binding</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1715 - 카드 정렬하기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 02 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1715</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1715</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1080 - 행렬</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 02 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1080</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1080</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 1094 - Car Pooling (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 01 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-1094</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-1094</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 49 - Group Anagrams (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 01 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-49</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-49</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2352 - 반도체 설계</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 01 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2352</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2352</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1325 - 효율적인 해킹</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 01 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1325</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1325</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 10282 - 해킹</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 01 Jul 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-10282</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-10282</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 64 - Minimum Path Sum (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 30 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-64</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-64</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 200 - Number of Islands (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 30 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-200</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-200</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2234 - 성곽</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 30 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2234</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2234</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1049 - 기타줄</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 30 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1049</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1049</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Vue-router 네비게이션 가드 활용하기</title>
+        
+          <description>&lt;h2 id=&quot;navigation-guard&quot;&gt;Navigation Guard?&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 29 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/vuejs-navigation-guard</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/vuejs-navigation-guard</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 55 - Jump Game (Medium)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 29 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-55</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-55</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 16932 - 모양 만들기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 29 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-16932</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-16932</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1120 - 문자열</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 29 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1120</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1120</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 10775 - 공항</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 29 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-10775</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-10775</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 70 - Climing Stairs (Easy)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 28 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-70</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-70</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2075 - N번째 큰 수</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 28 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2075</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2075</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1956 - 운동</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 28 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1956</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1956</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 11725 - 트리의 부모 찾기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 28 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-11725</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-11725</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>LeetCode 1 - Two Sum (Easy)</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 27 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/leetcode-1</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/leetcode-1</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1748 - 수 이어쓰기 1</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 27 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1748</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1748</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 12761 - 돌다리</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 27 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-12761</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-12761</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 10164 - 격자상의 경로</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 27 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-10164</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-10164</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 6118 - 숨바꼭질</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 26 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-6118</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-6118</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2343 - 기타 레슨</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 26 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2343</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2343</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1406 - 에디터</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 26 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1406</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1406</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>ALGOSPOT 선거 공약</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 25 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/apss-promises</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/apss-promises</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2331 - 반복수열</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 24 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2331</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2331</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 16973 - 직사각형 탈출</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 23 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-16973</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-16973</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 16947 - 서울 지하철 2호선</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 22 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-16947</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-16947</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 5397 - 키로거</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 21 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-5397</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-5397</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2563 - 색종이</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 21 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2563</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2563</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 16562 - 친구비</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 20 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-16562</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-16562</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 16397 - 탈출</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 20 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-16397</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-16397</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1613 - 역사</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 19 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1613</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1613</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1963 - 소수 경로</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 18 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1963</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1963</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1743 - 음식물 피하기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 16 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1743</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1743</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1976 - 여행 가자</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 15 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1976</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1976</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 4195 - 친구 네트워크</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 13 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-4195</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-4195</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 13023 - ABCDE</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 13 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-13023</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-13023</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 11404 - 플로이드</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 12 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-11404</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-11404</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 10451 - 순열 사이클</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 11 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-10451</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-10451</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 10971 - 외판원 순회 2</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 10 Jun 2020 19:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-10971</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-10971</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 11559 - Puyo Puyo</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 09 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-11559</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-11559</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 5014 - 스타트링크</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 08 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-5014</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-5014</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 11000 - 강의실 배정</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 07 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-11000</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-11000</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1700 - 멀티탭 스케줄링</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 06 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1700</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1700</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1389 - 케빈 베이컨의 6단계 법칙</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 06 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1389</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1389</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2252 - 줄 세우기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 05 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2252</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2252</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2589 - 보물섬</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 04 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2589</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2589</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1717 - 집합의 표현</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 04 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1717</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1717</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Sequelize ORM - migration</title>
+        
+          <description>&lt;h2 id=&quot;sequelize를-통한-db-접근&quot;&gt;Sequelize를 통한 DB 접근&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 04 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/sequelizer-migration</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/sequelizer-migration</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 10162 - 전자레인지</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 03 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-10162</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-10162</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2644 - 촌수계산</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 02 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2644</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2644</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1202 - 보석 도둑</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 02 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1202</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1202</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 11058 - 크리보드</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 02 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-11058</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-11058</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2240 - 자두나무</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 01 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2240</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2240</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2011 - 암호코드</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 01 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2011</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2011</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 12015 - 가장 긴 증가하는 부분 수열 2</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 01 Jun 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-12015</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-12015</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Vue.js와 Vuetify 활용해서 axios로 파일 업로드하기</title>
+        
+          <description>&lt;h2 id=&quot;vuetify&quot;&gt;Vuetify?&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 31 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/vuejs-axios-fileupload</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/vuejs-axios-fileupload</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 4796 - 캠핑</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 31 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-4796</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-4796</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1331 - 나이트 투어</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 31 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1331</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1331</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 10026 - 적록색약</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 31 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-10026</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-10026</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2573 - 빙산</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 30 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2573</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2573</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1969 - DNA</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 30 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1969</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1969</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1449 - 수리공 항승</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 30 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1449</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1449</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Vue.js Nested Router 사용하기</title>
+        
+          <description>&lt;h2 id=&quot;원하는-url-패턴&quot;&gt;원하는 URL 패턴&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 29 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/vuejs-nested-router</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/vuejs-nested-router</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2146 - 다리 만들기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 29 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2146</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2146</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 15565 - 귀여운 라이언</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 29 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-15565</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-15565</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 10816 - 숫자 카드2</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 29 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-10816</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-10816</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 7562 - 나이트의 이동</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 28 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-7562</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-7562</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2251 - 물통</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 28 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2251</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2251</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1654 - 랜선 자르기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 28 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1654</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1654</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 9372 - 상근이의 여행</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 27 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-9372</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-9372</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 4485 - 녹색 옷 입은 애가 젤다지?</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 27 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-4485</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-4485</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 3184 - 양</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 27 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-3184</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-3184</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1525 - 퍼즐</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 26 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1525</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1525</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1504 - 특정한 최단 경로</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 26 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1504</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1504</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2231 - 분해합</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 25 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2231</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2231</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2805 - 나무 자르기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 25 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2805</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2805</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2294 - 동전 2</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 25 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2294</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2294</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1967 - 트리의 지름</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 25 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1967</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1967</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1915 - 가장 큰 정사각형</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 25 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1915</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1915</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 3055 - 탈출</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 24 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-3055</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-3055</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1916 - 최소비용 구하기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 24 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1916</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1916</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 12865 - 평범한 배낭</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 24 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-12865</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-12865</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2206 - 벽 부수고 이동하기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 23 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2206</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2206</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1699 - 제곱수의 합</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 23 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1699</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1699</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1012 - 유기농 배추</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 23 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1012</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1012</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 9465 - 스티커</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 22 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-9465</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-9465</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1726 - 로봇</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 22 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1726</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1726</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1261 - 알고스팟</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 22 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1261</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1261</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2636 - 치즈</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 21 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2636</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2636</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 17070 - 파이프 옮기기 1</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 21 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-17070</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-17070</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Node.js와 Multer 모듈을 활용한 파일 업로드</title>
+        
+          <description>&lt;h2 id=&quot;게시판에-이미지-업로드-기능-추가하기&quot;&gt;게시판에 이미지 업로드 기능 추가하기&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 21 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/nodejs-multer</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/nodejs-multer</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1890 - 점프</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 20 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1890</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1890</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1697 - 숨바꼭질</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 20 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1697</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1697</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1238 - 파티</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 20 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1238</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1238</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 7576 - 토마토</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 19 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-7576</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-7576</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2583 - 영역 구하기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 19 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2583</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2583</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 11060 - 점프 점프</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 19 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-11060</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-11060</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2606 - 바이러스</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 18 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2606</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2606</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1026 - 보물</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 18 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1026</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1026</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 1028 - 체스판 다시 칠하기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 18 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-1018</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-1018</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2660 - 회장뽑기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 17 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2660</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2660</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2512 - 예산</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 17 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2512</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2512</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2669 - 직사각형 네개의 합집합의 면적 구하기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 16 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2669</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2669</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2668 - 숫자고르기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 16 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2668</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2668</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>ALGOSPOT 음주운전 단속</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 16 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/apss-drunken</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/apss-drunken</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>ALGOSPOT 소방차</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 16 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/apss-firetrucks</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/apss-firetrucks</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 2468 - 안전 영역</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 15 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-2468</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-2468</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 15684 - 사다리 조작</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 15 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-15684</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-15684</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>프로그래머스 Level 3 - 섬 연결하기</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 14 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/pgs-island</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/pgs-island</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>ALGOSPOT 신호 라우팅</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 14 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/apss-routing</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/apss-routing</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Node.js와 MySQL 연동해서 게시글 작성하기</title>
+        
+          <description>&lt;h2 id=&quot;mysql-연동-방법&quot;&gt;MySQL 연동 방법&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 14 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/nodejs-mysql</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/nodejs-mysql</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>프로그래머스 Level 4 - 게임 맵 최단거리</title>
+        
+          <description>&lt;h2 id=&quot;출처&quot;&gt;출처&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 13 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/pgs-gamemap</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/pgs-gamemap</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 17142 - 연구소 3</title>
+        
+          <description>&lt;h2 id=&quot;출처&quot;&gt;출처&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 12 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-17142</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-17142</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 17143 - 낚시왕</title>
+        
+          <description>&lt;h2 id=&quot;출처&quot;&gt;출처&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 11 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-17143</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-17143</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Vue-Router history mode 지원을 위한 Django 설정방법</title>
+        
+          <description>&lt;h2 id=&quot;vue-router와-django&quot;&gt;Vue-router와 Django&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 10 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/django-history-mode</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/django-history-mode</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 17140 - 이차원 배열과 연산</title>
+        
+          <description>&lt;h2 id=&quot;출처&quot;&gt;출처&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 10 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-17140</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-17140</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 16235 - 나무 재테크</title>
+        
+          <description>&lt;h2 id=&quot;출처&quot;&gt;출처&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 09 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-16235</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-16235</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>프로그래머스 Level 3 - 입국 심사</title>
+        
+          <description>&lt;h2 id=&quot;출처&quot;&gt;출처&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 08 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/pgs-immegration</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/pgs-immegration</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 17837 - 새로운 게임 2</title>
+        
+          <description>&lt;h2 id=&quot;출처&quot;&gt;출처&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 08 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-17837</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-17837</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 14500 - 테트로미노</title>
+        
+          <description>BOJ 14500 테트로미노 with Python</description>
+        
+        <pubDate>Thu, 07 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-14500</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-14500</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>AWS EC2에 원격 접속 및 파일 업로드하기</title>
+        
+          <description>&lt;h2 id=&quot;aws-ec2-인스턴스-연결&quot;&gt;AWS EC2 인스턴스 연결&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 07 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/aws-ec2-fileupload</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/aws-ec2-fileupload</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 12100 - 2048(Easy)</title>
+        
+          <description>&lt;h2 id=&quot;출처&quot;&gt;출처&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 06 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-12100</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-12100</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 16236 - 아기 상어</title>
+        
+          <description>&lt;h2 id=&quot;출처&quot;&gt;출처&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 05 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-16236</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-16236</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 15683 - 감시</title>
+        
+          <description>&lt;h2 id=&quot;출처&quot;&gt;출처&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 04 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-15683</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-15683</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>프로그래머스 Level 3 - 추석 트래픽</title>
+        
+          <description>&lt;h2 id=&quot;출처&quot;&gt;출처&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 03 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/pgs-holiday-traffic</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/pgs-holiday-traffic</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 15686 - 치킨배달</title>
+        
+          <description>&lt;h2 id=&quot;출처&quot;&gt;출처&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 03 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-15686</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-15686</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 14499 - 주사위 굴리기</title>
+        
+          <description>&lt;h2 id=&quot;출처&quot;&gt;출처&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 02 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-14499</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-14499</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>프로그래머스 Level 3 - 블록 이동하기</title>
+        
+          <description>&lt;h2 id=&quot;출처&quot;&gt;출처&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 01 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/pgs-block</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/pgs-block</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 16234 - 인구이동</title>
+        
+          <description>&lt;h2 id=&quot;출처&quot;&gt;출처&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 01 May 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-16234</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-16234</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>BOJ 3190 - 뱀</title>
+        
+          <description>&lt;h2 id=&quot;문제&quot;&gt;문제&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 30 Apr 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/boj-3190</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/boj-3190</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Node.js에서 네이버 Open API 활용하기</title>
+        
+          <description>&lt;h2 id=&quot;네이버-오픈-api란&quot;&gt;네이버 오픈 API란?&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 25 Apr 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/nodejs-openapi</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/nodejs-openapi</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Django와 AWS S3를 활용하여 데이터 관리하기</title>
+        
+          <description>&lt;h2 id=&quot;왜-aws-s3를-사용할까&quot;&gt;왜 AWS S3를 사용할까?&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Thu, 23 Apr 2020 00:00:00 +0900</pubDate>
+        <link>
+        https://sohnjunior.github.io/django-aws-s3</link>
+        <guid isPermaLink="true">https://sohnjunior.github.io/django-aws-s3</guid>
+      </item>
+      
+    
+  </channel>
+</rss>

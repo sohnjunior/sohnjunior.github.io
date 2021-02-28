@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Page Meta -->
+    <title>비트마스크 활용 방법 with Python</title>
+    <meta name="description" content="PS와 웹 개발 관련내용을 기록합니다." />
+
+    <!-- Mobile Meta -->
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Brand icon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" >
+
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" />
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!-- Ghost outputs important style and meta data with this tag -->
+        <link rel="canonical" href="https://sohnjunior.github.io//apss-bitmask" />
+    <meta name="referrer" content="origin" />
+    <link rel="next" href="/page2/" />
+
+    <meta property="og:site_name" content="sohnjunior의 Dev Log" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="비트마스크 활용 방법 with Python" />
+    <meta property="og:description" content="PS와 웹 개발 관련내용을 기록합니다." />
+    <meta property="og:url" content="https://sohnjunior.github.io//apss-bitmask" />
+    <meta property="og:image" content="/assets/images/cover2.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="비트마스크 활용 방법 with Python" />
+    <meta name="twitter:description" content="PS와 웹 개발 관련내용을 기록합니다." />
+    <meta name="twitter:url" content="https://sohnjunior.github.io//apss-bitmask" />
+    <meta name="twitter:image:src" content="/assets/images/cover2.jpg" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Website",
+        "publisher": "sohnjunior의 Dev Log",
+        "name": "비트마스크 활용 방법 with Python",
+        "url": "https://sohnjunior.github.io//apss-bitmask",
+        "image": "/assets/images/cover2.jpg",
+        "description": "PS와 웹 개발 관련내용을 기록합니다."
+    }
+    </script>
+
+    <meta name="generator" content="Jekyll 3.0.0" />
+    <link rel="alternate" type="application/rss+xml" title="sohnjunior의 Dev Log" href="/feed.xml" />
+
+
+</head>
+<body class="home-template nav-closed">
+
+    <!-- The blog navigation links -->
+    <div class="nav">
+  <h3 class="nav-title">카테고리</h3>
+  <a href="#" class="nav-close">
+    <span class="hidden">닫기</span>
+  </a>
+  <ul>
+    <li
+      class="nav-home "
+      role="presentation"
+    >
+      <a href="/">Home</a>
+    </li>
+    <li
+      class="nav-about "
+      role="presentation"
+    >
+      <a href="/about">About Me</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/boj">BOJ</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/leetcode">LeetCode</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/programmers">Programmers</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/알고리즘 문제해결 전략">알고리즘 문제해결 전략</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/javascript">Javascript</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/typescript">Typescript</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/vuejs">Vue.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/reactjs">React.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/nodejs">Node.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/aws">AWS</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/book-review">서평</a>
+    </li>
+  </ul>
+  <a class="subscribe-button icon-feed" href="/feed.xml">구독하기</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The comment above "< default" means - insert everything in this file into -->
+<!-- the [body] of the default.hbs template, which contains our header/footer. -->
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<header
+  class="main-header post-head "
+  style="background-image: url(/assets/images/cover2.jpg) "
+>
+  <nav class="main-nav  overlay  clearfix">
+    <a class="blog-logo" href="/"
+      ><img src="/assets/images/ghost.png" alt="Blog Logo" /></a
+    > 
+    <a class="menu-button icon-menu" href="#"><span class="word">카테고리</span></a>
+    
+  </nav>
+</header>
+
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">비트마스크 활용 방법 with Python</h1>
+      <section class="post-meta">
+        <!-- <a href='/'></a> -->
+
+         
+        <a href="/author/sohnjunior"
+          >sohnjunior</a
+        >
+         
+        <time class="post-date" datetime="2020-07-07"
+          >07 Jul 2020</time
+        >
+        <!-- [[tags prefix=" on "]] -->
+         on  
+        <a href="/tag/알고리즘 문제해결 전략">알고리즘 문제해결 전략</a>
+          
+      </section>
+    </header>
+
+    <section class="post-content"><h2 id="비트마스크란">비트마스크란?</h2>
+
+<p>비트마스크는 정수의 이진수 표현을 자료구조로 활용하는 기법입니다. <br />
+따라서 더 적은 메모리와 간결한 코드로 최적화를 할 수 있으며 비트 관련 연산은 대부분 상수 시간에 처리가 되기 때문에 더 빠른 속도를 기대할 수 있습니다. <br /></p>
+
+<h2 id="활용-방법">활용 방법</h2>
+
+<p>비트마스크를 사용하기 위해서는 우선 표현하고자 하는 상태를 이진수로 나타낼 수 있는 방법이 필요합니다. <br />
+가장 대표적으로 집합을 비트마스크로 표현할 수 있습니다. <br /></p>
+
+<h3 id="상태의-표현">상태의 표현</h3>
+
+<p>예를 들어, 집합 <code class="highlighter-rouge">S = {1, 2, 3, 4, 5}</code> 가 존재한다고 하며 이를 비트로 표현해주기 위해서는 각 숫자를 하니의 자리수에 매핑할 수 있습니다. <br /></p>
+
+<p>{5, 4, 3, 2, 1, x}
+1 1 1 1 1 0 =&gt; 2^1 + 2^2 + 2^3 + 2^4 + 2^5 의 값으로 표현이 가능하다.</p>
+
+<h2 id="비트-연산">비트 연산</h2>
+
+<p>단순히 상태를 표현하는 것에 그치지 않고 우리는 이를 적절히 변형하고 원하는 정보를 직관적인 자료구조를 사용하는 것에 못지 않도록 하는 방법이 필요합니다. 비트 마스크는 <code class="highlighter-rouge">비트 연산자</code> 를 통해서 원하는 정보에 접근하고 변형을 할 수 있는 방법을 제시합니다.<br /></p>
+
+<h3 id="공집합과-꽉찬-집합">공집합과 꽉찬 집합</h3>
+
+<p>앞선 예시에서 <code class="highlighter-rouge">S = {1, 2, 3, 4, 5}</code> 의 경우 0번째 비트를 제외하면 전부 1 이었습니다. <br />
+<code class="highlighter-rouge">&lt;&lt;</code> 연산자를 5번 사용해서 해당 집합을 만들 수도 있지만 이번에는 <code class="highlighter-rouge">꽉찬 집합</code> 을 사용해보겠습니다. <br />
+우선 공집합은 <code class="highlighter-rouge">모든 비트가 0</code> 이기 때문에 <code class="highlighter-rouge">0</code> 과 같다는 사실은 자명합니다. <br /></p>
+
+<p>꽉찬 집합의 경우 다음과 같은 코드로 생성할 수 있습니다. <br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">full</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c"># 11111</span>
+</code></pre></div></div>
+
+<p>동작 원리는 다음과 같습니다. <br /></p>
+
+<ul>
+  <li>(1 « 5) 에 의해 <code class="highlighter-rouge">100000</code> 가 생성됩니다. (하위 5개 비트가 0인 정수가 생성됨)</li>
+  <li>1을 빼기 때문에 비트간 뺄셈 연산으로 <code class="highlighter-rouge">11111</code> 이 생성됩니다.</li>
+</ul>
+
+<p>따라서 앞선 <code class="highlighter-rouge">S = {1, 2, 3, 4, 5}</code> 를 <code class="highlighter-rouge">11110</code> 로 표현하기 위해서는 다음과 같이 나타낼 수 있을 것입니다. <br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">S</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c"># 11110</span>
+</code></pre></div></div>
+
+<h3 id="원소-추가">원소 추가</h3>
+
+<p>원소 추가는 <code class="highlighter-rouge">|</code> 연산자를 활용합니다.(비트 연산 결과 둘 중 하나만 1이면 1이기 때문에) <br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">S</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">)</span>  <span class="c"># 1010</span>
+</code></pre></div></div>
+
+<h3 id="원소-포함-여부">원소 포함 여부</h3>
+
+<p>원소 포함 여부는 <code class="highlighter-rouge">&amp;</code> 연산자를 활용합니다.(비트 연산 결과 둘 다 1일 때만 1이기 때문에) <br />
+이때 주의할 점은 <code class="highlighter-rouge">&amp;</code> 연산 결과 존재하지 않으면 <code class="highlighter-rouge">0</code> , 존재할 경우는 <code class="highlighter-rouge">&amp;</code> 연산 결과가 반환된다는 것입니다. (1이 아니다!) <br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">S</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span><span class="p">)</span>  <span class="c"># 1000</span>
+<span class="n">Ss</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">)</span>  <span class="c"># 0</span>
+</code></pre></div></div>
+
+<h3 id="원소-삭제">원소 삭제</h3>
+
+<p>원소 삭제의 경우 약간 까다로운데 이번에는 <code class="highlighter-rouge">&amp;</code> 와 <code class="highlighter-rouge">~</code> 연산자를 함께 사용합니다. <br />
+삭제 대상에 해당하는 원소가 존재하지 않는 경우에도 문제없이 동작하는 코드를 위해 다음과 같이 구현할 수 있습니다. <br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">S</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">S</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">)</span>  <span class="c"># 000</span>
+</code></pre></div></div>
+
+<p>만약 그냥 1을 빼버리면 어떻게 될까요? <br />
+한번 예시를 들어 결과를 확인해보겠습니다. <br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">S</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">)</span>  <span class="c"># 010 이 나오므로 잘못된 결과!</span>
+</code></pre></div></div>
+
+<p>이 경우 비트 뺄셈 연산에 의해 <code class="highlighter-rouge">010</code> 이라는 잘못된 결과를 돌려주는 것을 확인할 수 있습니다. <br /></p>
+
+<h3 id="원소-토글">원소 토글</h3>
+
+<p>특정 비트의 현재 값이 0일 경우 1로, 1일 경우 0으로 바꿔주는 연산이 필요할 수 있습니다. <br />
+이때는 <code class="highlighter-rouge">^</code> 연산자를 통해 <code class="highlighter-rouge">XOR</code> 연산을 수행하면 원하는 결과를 얻을 수 있습니다. <br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">S</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c"># 111</span>
+<span class="n">S</span> <span class="o">^=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">)</span>  <span class="c"># 101</span>
+</code></pre></div></div>
+
+<h3 id="원소의-개수-구하기">원소의 개수 구하기</h3>
+
+<p>원소의 개수는 비트 중 1의 개수를 세어주면 됩니다. <br />
+Python의 경우 다음과 같은 코드로 쉽게 구할 수 있습니다. <br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">S</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="n">S</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">'1'</span><span class="p">))</span>  <span class="c"># 3</span>
+</code></pre></div></div>
+
+<h3 id="모든-부분-집합-생성하기">모든 부분 집합 생성하기</h3>
+
+<p>비트마스크를 사용하면 모든 부분집합을 쉽게 구할 수 있습니다. <br />
+<code class="highlighter-rouge">S = {사과, 배, 복숭아}</code> 의 집합의 부분 집합의 개수는 총 2^3 = 8 개일 것입니다. <br />
+위 집합의 부분집합을 다음과 같은 코드로 생성할 수 있습니다. <br /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">S</span> <span class="o">=</span> <span class="p">[</span><span class="s">'사과'</span><span class="p">,</span> <span class="s">'배'</span><span class="p">,</span> <span class="s">'복숭아'</span><span class="p">]</span>
+
+<span class="c"># 각 상태를 비트로 표현해준다.</span>
+<span class="c"># 사과 : 001</span>
+<span class="c"># 배 : 010</span>
+<span class="c"># 복숭아 : 100</span>
+<span class="n">masks</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">S</span><span class="p">))]</span>
+
+<span class="c"># 모든 부분집합을 생성한다. (000 ~ 111)</span>
+<span class="k">for</span> <span class="n">subset</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">S</span><span class="p">)):</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">mask</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">masks</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">mask</span> <span class="o">&amp;</span> <span class="n">subset</span><span class="p">:</span>
+            <span class="n">answer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p>유심히 봐야하는 부분은 <code class="highlighter-rouge">masks</code> 를 생성하는 것과 모든 부분집합을 생성하는 <code class="highlighter-rouge">range(1 &lt;&lt; len(S))</code> 입니다. <br />
+<code class="highlighter-rouge">range(1 &lt;&lt; len(S))</code> 는 사실 <code class="highlighter-rouge">0 ~ 1 &lt;&lt; len(S) - 1</code> 과 동일한 것이며 이는 <code class="highlighter-rouge">S</code> 의 길이가 3일 때 <code class="highlighter-rouge">000 ~ 111</code> 까지 모든 집합을 방문하게 됩니다. <br />
+각각의 집합에 표현되어 있는 실제 상태를 추출하기 위해 <code class="highlighter-rouge">&amp;</code> 연산자로 포함 여부를 검사하였고 이를 출력해주도록 하였습니다. <br /></p>
+
+<h2 id="활용-예시">활용 예시</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+<span class="c"># 3개의 토핑을 가진 피자 생성</span>
+<span class="n">fullPizza</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c"># 111</span>
+
+<span class="c"># 토핑 개수 출력 (집합의 크기 구하기)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="n">fullPizza</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">'1'</span><span class="p">))</span>  <span class="c"># 1이 3개 있으므로 3 출력</span>
+
+<span class="c"># 새로운 토핑 추가</span>
+<span class="n">fullPizza</span> <span class="o">|=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="n">fullPizza</span><span class="p">))</span>  <span class="c"># 10111</span>
+
+<span class="c"># 토핑이 제대로 추가되었는지 확인하자 (주의! 토핑이 있다면 (1 &lt;&lt; 4), 없으면 0을 반환합니다)</span>
+<span class="k">if</span> <span class="n">fullPizza</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'토핑이 추가되었습니다'</span><span class="p">)</span>  <span class="c"># 토핑이 존재하므로 출력됩니다.</span>
+
+<span class="c"># 오래된 두번째 토핑을 제거합니다.</span>
+<span class="n">fullPizza</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="n">fullPizza</span><span class="p">))</span>  <span class="c"># 10101</span>
+
+<span class="c"># 네번째 토핑이 존재하면 제거하고 만약 없다면 새로 추가합니다. (토글)</span>
+<span class="n">fullPizza</span> <span class="o">^=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="n">fullPizza</span><span class="p">))</span>  <span class="c"># 11101</span>
+
+<span class="c"># 최소 원소 지우기</span>
+<span class="n">fullPizza</span> <span class="o">&amp;=</span> <span class="p">(</span><span class="n">fullPizza</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="n">fullPizza</span><span class="p">))</span>  <span class="c"># 11100</span>
+
+<span class="c"># 모든 부분 집합 순회하기</span>
+<span class="s">"""
+아래와 같은 순서로 출력됩니다.
+0b0
+0b1
+0b10
+0b11
+0b100
+0b101
+0b110
+0b111
+"""</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"subset!!"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">subset</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="n">subset</span><span class="p">))</span>
+
+</code></pre></div></div>
+
+<h2 id="참고자료">참고자료</h2>
+
+<ul>
+  <li>https://stackoverflow.com/questions/9829578/fast-way-of-counting-non-zero-bits-in-positive-integer</li>
+  <li>https://blog.naver.com/PostView.nhn?blogId=kmh03214&amp;logNo=221702095617&amp;parentCategoryNo=&amp;categoryNo=23&amp;viewDate=&amp;isShowPopularPosts=true&amp;from=search</li>
+</ul>
+</section>
+
+    <footer class="post-footer">
+      <!-- Everything inside the #author tags pulls data from the author -->
+      <!-- #author-->
+        
+      <figure class="author-image">
+        <a
+          class="img"
+          href="/author/sohnjunior"
+          style="background-image: url(/assets/images/avatar.png)"
+          ><span class="hidden">sohnjunior's Picture</span></a
+        >
+      </figure>
+      
+
+      <section class="author">
+        <h4>
+          <a href="/author/sohnjunior"
+            >sohnjunior</a
+          >
+        </h4>
+
+        
+        <p>주니어 웹 프론트엔드 개발자입니다. 😄</p>
+        
+        <div class="author-meta">
+          <span
+            class="author-location icon-location"
+          >
+            Seoul, Korea</span
+          > <span class="author-link icon-link"
+            ><a href="https://github.com/sohnjunior"> https://github.com/sohnjunior</a></span
+          >
+        </div>
+      </section>
+
+      <!-- /author  -->
+
+      <section class="share">
+        <h4>Share this post</h4>
+        <a
+          class="icon-twitter"
+          href="http://twitter.com/share?text=비트마스크 활용 방법 with Python&amp;url=https://sohnjunior.github.ioapss-bitmask"
+          onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
+        >
+          <span class="hidden">Twitter</span>
+        </a>
+        <a
+          class="icon-facebook"
+          href="https://www.facebook.com/sharer/sharer.php?u=https://sohnjunior.github.ioapss-bitmask"
+          onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
+        >
+          <span class="hidden">Facebook</span>
+        </a>
+        <a
+          class="icon-google-plus"
+          href="https://plus.google.com/share?url=https://sohnjunior.github.ioapss-bitmask"
+          onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"
+        >
+          <span class="hidden">Google+</span>
+        </a>
+      </section>
+       
+
+      <!-- Add Disqus Comments -->
+      
+    </footer>
+  </article>
+</main>
+
+<aside class="read-next">
+  <!-- [[! next_post ]] --> 
+  <a
+    class="read-next-story "
+    style="background-image: url(/assets/images/cover2.jpg)"
+    href="/boj-1600"
+  >
+    <section class="post">
+      <h2>BOJ 1600 - 말이 되고픈 원숭이</h2>
+      <p>## 문제 [백준 온라인 저지 - 1600번](https://www.acmicpc.net/problem/1600) ## 풀이 과정 말처럼 움직일 수 있는 횟수가...</p>
+    </section>
+  </a>
+  
+  <!-- [[! /next_post ]] -->
+  <!-- [[! prev_post ]] -->
+  
+  <a
+    class="read-next-story prev "
+    style="background-image: url(/assets/images/cover2.jpg)"
+    href="/leetcode-101"
+  >
+    <section class="post">
+      <h2>LeetCode 101 - Symmetric Tree (Easy)</h2>
+      <p>문제 LeetCode - 101번 풀이 과정 주어진 트리가 최상위 루트를 중심으로 서로 대칭구조를 이루고 있는지...</p>
+    </section>
+  </a>
+  
+  <!-- [[! /prev_post ]] -->
+</aside>
+
+<!-- /post -->
+
+
+        <!-- The tiny footer at the very bottom -->
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="/">sohnjunior의 Dev Log</a> &copy; 2021</section>
+          <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/jekyller/jasper">Jasper</a></section>
+        </footer>
+    </div>
+    <!-- highlight.js -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- jQuery needs to come before `` so that jQuery can be used in code injection -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Ghost outputs important scripts and data with this tag -->
+    <!--  -->
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i["GoogleAnalyticsObject"] = r;
+    (i[r] =
+      i[r] ||
+      function () {
+        (i[r].q = i[r].q || []).push(arguments);
+      }),
+      (i[r].l = 1 * new Date());
+    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(
+    window,
+    document,
+    "script",
+    "//www.google-analytics.com/analytics.js",
+    "ga"
+  );
+
+  ga("create", "UA-69281367-1", "auto");
+  ga("send", "pageview");
+</script>
+
+    <!-- Fitvids makes video embeds responsive and awesome -->
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <!-- The main JavaScript file for Casper -->
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+</body>
+</html>

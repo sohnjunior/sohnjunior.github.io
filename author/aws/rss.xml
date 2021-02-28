@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>sohnjunior.github.io/</title>
+   
+   <link>https://sohnjunior.github.io</link>
+   <description>PS와 웹 개발 관련내용을 기록합니다.</description>
+   <language>en-uk</language>
+   <managingEditor> </managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>AWS EC2에 원격 접속 및 파일 업로드하기</title>
+	  <link>//aws-ec2-fileupload</link>
+	  <author></author>
+	  <pubDate>2020-05-07T00:00:00+09:00</pubDate>
+	  <guid>//aws-ec2-fileupload</guid>
+	  <description><![CDATA[
+	     <h2 id="aws-ec2-인스턴스-연결">AWS EC2 인스턴스 연결</h2>
+
+<p>AWS EC2 인스턴스에 원격으로 접속하기 위해서는 <code class="highlighter-rouge">SSH 클라이언트</code>를 사용해야합니다. <br />
+터미널을 열고 다음과 같은 명령어를 입력해줍니다. <br /></p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ssh <span class="nt">-i</span> <span class="o">[</span>키페어 경로] <span class="o">[</span>ec2 계정이름]@[퍼블릭 DNS주소]
+</code></pre></div></div>
+
+<p>예시</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ssh <span class="nt">-i</span> ~/.ssh/awskey.pem ubuntu@ec2-198-51-100-1.compute-1.amazonaws.com
+</code></pre></div></div>
+
+<h2 id="scp를-통한-파일-업로드">SCP를 통한 파일 업로드</h2>
+
+<p><code class="highlighter-rouge">SCP(Secure Copy Ptorocol)</code>은 로컬 컴퓨터에서 Linux 인스턴스로 파일을 전송할 수 있도록 해줍니다. <br />
+Linux, Mac 등에는 기본적으로 SCP 클라이언트가 내장되어있지만 Window OS의 경우에는 별도의 클라이언트 프로그램을 설치해줘야합니다. <br /><br />
+<a href="https://chp747.tistory.com/129" target="\_blank">Window SCP Client 사용법</a></p>
+
+<p>SCP 클라이언트 구성을 마쳤다면 이제 로컬 환경에서 새로운 터미널을 열고 <br />
+다음과 같은 명령어를 통해 파일을 전송할 수 있습니다. <br /></p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>scp <span class="nt">-i</span> <span class="o">[</span>키페어 경로] <span class="o">[</span>전송할 파일 경로] <span class="o">[</span>ec2 계정이름]@[퍼블릭 DNS 주소]:[전송할 EC2 경로]
+</code></pre></div></div>
+
+<p>예시</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>scp <span class="nt">-i</span> ~/.ssh/awskey.pem ./sample.txt ubuntu@ec2-198-51-100-1.compute-1.amazonaws.com:~
+</code></pre></div></div>
+
+<p>이 경우 현재 디렉토리에 존재하는 텍스트 파일이 EC2 인스턴스의 ~ 에 해당하는 경로(홈 디렉토리)에 전송됩니다. <br /></p>
+
+<h3 id="참고-자료">참고 자료</h3>
+
+<ul>
+  <li>https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Django와 AWS S3를 활용하여 데이터 관리하기</title>
+	  <link>//django-aws-s3</link>
+	  <author></author>
+	  <pubDate>2020-04-23T00:00:00+09:00</pubDate>
+	  <guid>//django-aws-s3</guid>
+	  <description><![CDATA[
+	     <h2 id="왜-aws-s3를-사용할까">왜 AWS S3를 사용할까?</h2>
+
+<p>이번에 딥랭킹 알고리즘을 활용한 장고 프로젝트를 진행하던 중, <br />
+딥러닝 모델 배포과정에서 인스턴스에서 제공하는 용량 초과로 인해 어려움이 있었습니다. <br />
+로컬 환경에서 모델 파라미터를 읽어오는 대신 AWS S3를 활용하여 <br />
+파일 원본은 클라우드 환경에 구성해놓고 이를 로드해서 사용하는 방식으로 변경했습니다.</p>
+
+<p>필요한 과정은 다음과 같습니다.</p>
+
+<ul>
+  <li>AWS S3 활용을 위한 설정</li>
+  <li>Django에서 AWS S3 스토리지 불러오기</li>
+</ul>
+
+<h2 id="boto3-패키지-활용">boto3 패키지 활용</h2>
+
+<p>Django에서 AWS S3와의 통신을 위해 먼저 python용 AWS SDK인 boto3를 설치해야합니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install boto3
+</code></pre></div></div>
+
+<h2 id="django에서-aws-s3-스토리지-불러오기">Django에서 AWS S3 스토리지 불러오기</h2>
+
+<p>Django에서 AWS S3에 접근해 파일을 불러오는 다양한 방법이 있지만 <br />
+서버 부하를 줄이기 위해 서버 시작시 필요한 파일을 한번만 불러오도록 하겠습니다.</p>
+
+<p>이를 위해선 본인의 django 앱 설정을 변경해야 하므로 apps.py에서 필요한 설정들을 정의합니다.</p>
+
+<h3 id="appspy">apps.py</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">class</span> <span class="nc">ApiConfig</span><span class="p">(</span><span class="n">AppConfig</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s">'api'</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">DeepRank</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">ready</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c"># create s3 client</span>
+        <span class="n">s3client</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s">'s3'</span><span class="p">,</span>
+                                <span class="n">aws_access_key_id</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">S3_ACCESS_KEY</span><span class="p">,</span>
+                                <span class="n">aws_secret_access_key</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">S3_SECRET_KEY</span><span class="p">)</span>
+
+        <span class="c"># get object from s3 /w hints</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">s3client</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="n">Bucket</span><span class="o">=</span><span class="s">'your-s3-bucket-name'</span><span class="p">,</span> <span class="n">Key</span><span class="o">=</span><span class="s">'model/deep.pt'</span><span class="p">)</span>
+
+        <span class="c"># read data from s3</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="s">'Body'</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="n">stream</span> <span class="o">=</span> <span class="n">BytesIO</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+        <span class="n">ApiConfig</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">stream</span><span class="p">))</span>  <span class="c"># load model</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'read deep.pt from s3'</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p>Django에서 제공하는 AppConfig 클래스의 ready() 메소드를 오버라이딩해 서버 실행시 필요한 초기화 작업들을 정의해줍니다. <br />
+여기서 우리는 AWS S3를 통해 딥러닝 모델 파라미터값(deep.pt)을 불러오도록 하면 되는 것입니다.</p>
+
+<p>이전에 설치한 boto3를 활용해 AWS S3와 통신할 client를 생성하고 원하는 파일을 불러옵니다. <br /><br /></p>
+
+<blockquote>
+  <p>현재 AWS S3를 통해 읽은 데이터는 Byte 값입니다.<br /> 따라서 다른 형태의 IO가 필요할 경우 <i>response[‘Body’]</i>의 값을 원하는 타입으로 변환하여 활용합니다.</p>
+</blockquote>
+
+<h2 id="서버-실행">서버 실행</h2>
+
+<p><img src="assets/images/django-aws-s3/before.png" alt="이미지" width="600" /></p>
+
+<p><em>왜 2번 호출되는 걸까..?</em></p>
+
+<p>여기서 우리가 주의할 점은 django가 기본적으로 서버 시작시 ApiConfig 를 2번 수행한다는 것입니다. <br />
+개발 과정에서 이 부분이 번거롭다고 느껴진다면 python의 auto-reloader 설정을 disable하는 아래와 같은 옵션도 고려해볼 수 있습니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python manage.py runserver <span class="nt">--noreload</span>
+</code></pre></div></div>
+
+<p><br />
+<img src="assets/images/django-aws-s3/after.png" alt="이미지" width="600" /></p>
+
+<p><em>이미 메모리에 존재하는 모듈은 다시 불러오지 않는다.</em></p>
+
+<p>유용하지만, noreload 옵션은 python 스크립트의 어떠한 변화가 일어나도 해당 모듈이 이미 메모리에 존재하면 다시 로드하지 않으므로 주의가 필요합니다.</p>
+
+<h3 id="참고-자료">참고 자료</h3>
+
+<ul>
+  <li>https://towardsdatascience.com/how-to-load-data-from-a-pickle-file-in-s3-using-python-ffe2866b7eba</li>
+  <li>https://docs.djangoproject.com/en/3.0/ref/django-admin/</li>
+  <li>http://blog.quantylab.com/django_onstartup.html</li>
+  <li>https://stackoverflow.com/questions/36420833/django-is-there-a-way-to-keep-the-dev-server-from-restarting-when-a-local-py-f/36420989</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>sohnjunior.github.io/</title>
+   
+   <link>https://sohnjunior.github.io</link>
+   <description>PS와 웹 개발 관련내용을 기록합니다.</description>
+   <language>en-uk</language>
+   <managingEditor> </managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>Node.js CORS 설정하기</title>
+	  <link>//nodejs-cors</link>
+	  <author></author>
+	  <pubDate>2020-07-13T00:00:00+09:00</pubDate>
+	  <guid>//nodejs-cors</guid>
+	  <description><![CDATA[
+	     <h2 id="cors">CORS?</h2>
+
+<p><code class="highlighter-rouge">CORS(Cross Origin Resource Sharing)</code> 는 추가적인 HTTP 헤더를 사용해서 한 출처에서 실행 중인 웹 애플리케이션이 <br />
+다른 출처의 자원에 접근할 수 있는 권한을 관리하는 체제입니다. <br /></p>
+
+<p><img src="/assets/images/nodejs/cors-example.png" alt="이미지" width="400" /></p>
+
+<p>즉 위와 같이 <code class="highlighter-rouge">domain-a.com</code> 에서 같은 주소의 <code class="highlighter-rouge">domain-a.com</code> 에 접근하여 자원을 요청할때는 문제가 발생하지 않지만, <br />
+<code class="highlighter-rouge">domain-b.com</code> 에 요청할 경우 도메인이 다르기 때문에 보안상의 이유로 제한됩니다. <br /></p>
+
+<p><img src="/assets/images/nodejs/cors-error.png" alt="이미지" width="800" /></p>
+
+<p>만약 서버에서 올바른 CORS 헤더를 포함한 응답을 반환하지 않으면 위와 같은 오류가 발생하게 됩니다. <br />
+위 예시에서는 자원을 가지고 있는 서버단의 도메인인 <code class="highlighter-rouge">http://127.0.0.1:3000</code> 과 자원을 요청한 <code class="highlighter-rouge">http://localhost:8080</code> 의 출처가 다르기 때문에 발생한 오류입니다. <br /></p>
+
+<h2 id="nodejs에서-cors-설정">Node.js에서 CORS 설정</h2>
+
+<h3 id="cors-패키지-설치">CORS 패키지 설치</h3>
+
+<p>우선 CORS 미들웨어를 사용하기 위해 패키지를 설치합니다. <br /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$npm</span> i cors
+</code></pre></div></div>
+
+<h3 id="모든-cors-request-허용하기">모든 CORS Request 허용하기</h3>
+
+<p>모든 요청을 허용할 경우 다음과 같이 간단하게 미들웨어를 불러와서 추가해주는 것으로 해결할 수 있습니다. <br /></p>
+
+<h4 id="appjs">app.js</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"express"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">cors</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"cors"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cors</span><span class="p">());</span> <span class="c1">// CORS 미들웨어 등록</span>
+
+<span class="c1">// ...</span>
+</code></pre></div></div>
+
+<h3 id="whitelist로-특정-주소만-허용하기">Whitelist로 특정 주소만 허용하기</h3>
+
+<p>모든 CORS 요청을 허용해주는 것이 때로는 보안상의 문제로 이어질 수 있습니다. <br />
+만약 특정 호스트만 CORS 요청을 허용해주고 싶다면 다음과 같이 <code class="highlighter-rouge">whitelist</code> 를 추가해서 검증하는 방법을 사용할 수 있습니다. <br />
+요청을 허용할 주소를 담은 <code class="highlighter-rouge">whitelist</code> 를 생성해주고 요청 HTTP 헤더의 <code class="highlighter-rouge">Origin</code> 속성을 확인해서 일치하는 항목이 있을 경우 허용해주는 방식입니다. <br /></p>
+
+<h4 id="appjs-1">app.js</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"express"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">cors</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"cors"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+
+<span class="kd">const</span> <span class="nx">whitelist</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"http://localhost:8080"</span><span class="p">];</span>
+<span class="kd">const</span> <span class="nx">corsOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">origin</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">origin</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">whitelist</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">origin</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">callback</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">"Not Allowed Origin!"</span><span class="p">));</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cors</span><span class="p">(</span><span class="nx">corsOptions</span><span class="p">));</span> <span class="c1">// 옵션을 추가한 CORS 미들웨어 추가</span>
+
+<span class="c1">// ...</span>
+</code></pre></div></div>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li>https://expressjs.com/en/resources/middleware/cors.html</li>
+  <li>https://developer.mozilla.org/ko/docs/Web/HTTP/CORS</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Sequelize ORM - migration</title>
+	  <link>//sequelizer-migration</link>
+	  <author></author>
+	  <pubDate>2020-06-04T00:00:00+09:00</pubDate>
+	  <guid>//sequelizer-migration</guid>
+	  <description><![CDATA[
+	     <h2 id="sequelize를-통한-db-접근">Sequelize를 통한 DB 접근</h2>
+
+<p>프로젝트 진행 도중 유저 모델에 관리자 유무 컬럼을 추가하는 것을 깜빡해 이를 수정해야할 일이 생겼습니다. <br />
+DB를 다시 생성하는 방법도 존재하겠지만 그렇게 하면 기존의 데이터들의 복구가 힘들기 때문에 다른 방법을 사용하기로 했습니다. <br />
+이럴때 유용하게 사용할 수 있는 것이 <code class="highlighter-rouge">sequelize</code> 의 <code class="highlighter-rouge">migration</code> 입니다. <br /></p>
+
+<h2 id="컬럼-추가하기">컬럼 추가하기</h2>
+
+<p>현재 <code class="highlighter-rouge">User</code> 테이블은 <code class="highlighter-rouge">admin</code> 이라는 컬럼이 존재하지 않습니다. <br />
+따라서 <code class="highlighter-rouge">migration</code> 파일을 생성한 뒤 이를 기존의 DB에 반영하도록 하겠습니다. <br /></p>
+
+<h3 id="migration-파일-생성">migration 파일 생성</h3>
+
+<p>우선 컬럼을 추가할 <code class="highlighter-rouge">migration</code> 파일을 생성해줍니다. <br />
+아래 명령어를 수행하면 <code class="highlighter-rouge">migrations</code> 디렉토리 하위에 <code class="highlighter-rouge">addColumn.js</code> 파일이 생성됩니다. <br /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sequelize migration:create –-name addcolumn
+</code></pre></div></div>
+
+<h3 id="migration-용-js-파일-수정">migration 용 js 파일 수정</h3>
+
+<p><code class="highlighter-rouge">migration</code> 파일을 생성했으면 이제 기존 테이블애 새로운 컬럼을 추가하기 위한 코드를 작성합니다. <br />
+<code class="highlighter-rouge">queryInterface</code> 의 <code class="highlighter-rouge">addColumn</code> 메소드를 통해 <code class="highlighter-rouge">user</code> 테이블에 <code class="highlighter-rouge">admin</code> 컬럼을 추가합니다. <br />
+이때 해당 컬럼의 속성은 객체 형태로 정의한 뒤 인자값으로 넘겨줍니다. <br /></p>
+
+<h4 id="migrationsaddcolumnjs">migrations/addColumn.js</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"use strict"</span><span class="p">;</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">up</span><span class="p">:</span> <span class="p">(</span><span class="nx">queryInterface</span><span class="p">,</span> <span class="nx">Sequelize</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="cm">/*
+      Add altering commands here.
+      Return a promise to correctly handle asynchronicity.
+    */</span>
+    <span class="k">return</span> <span class="nx">queryInterface</span><span class="p">.</span><span class="nx">addColumn</span><span class="p">(</span><span class="s2">"users"</span><span class="p">,</span> <span class="s2">"admin"</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">type</span><span class="p">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">BOOLEAN</span><span class="p">,</span>
+      <span class="na">allowNull</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="na">defaultValue</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="p">});</span>
+  <span class="p">},</span>
+
+  <span class="na">down</span><span class="p">:</span> <span class="p">(</span><span class="nx">queryInterface</span><span class="p">,</span> <span class="nx">Sequelize</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{},</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h3 id="migrate-하기">migrate 하기</h3>
+
+<p><code class="highlighter-rouge">addColumn.js</code> 파일 편집을 마쳤다면 이제 변경사항을 실제 DB에 반영해주기 위해 <code class="highlighter-rouge">migrate</code> 작업을 수행합니다. <br />
+저는 현재 개발환경에서 DB를 조작하고 있어서 인자로 <code class="highlighter-rouge">development</code> 를 설정했습니다. (config 설정을 따름) <br />
+이후 DB 스키마를 조회해보면 <code class="highlighter-rouge">User</code> 테이블에 <code class="highlighter-rouge">admin</code> 컬럼이 추가된 것을 확인할 수 있습니다. <br /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sequelize db:migrate <span class="nt">--env</span> development
+</code></pre></div></div>
+
+<h3 id="다중-마이그레이션">다중 마이그레이션</h3>
+
+<p>여러개의 마이그레이션 작업이 필요할 경우는 해당 작업들을 <code class="highlighter-rouge">Promise</code> 배열 형태로 반환해주면 됩니다. <br />
+예시로 다음과 같이 새로운 컬럼을 추가하거나 변경하는 작업이 가능합니다. <br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"use strict"</span><span class="p">;</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">up</span><span class="p">:</span> <span class="p">(</span><span class="nx">queryInterface</span><span class="p">,</span> <span class="nx">Sequelize</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span>
+      <span class="nx">queryInterface</span><span class="p">.</span><span class="nx">addColumn</span><span class="p">(</span><span class="s2">"users"</span><span class="p">,</span> <span class="s2">"admin"</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">type</span><span class="p">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">BOOLEAN</span><span class="p">,</span>
+        <span class="na">allowNull</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="na">defaultValue</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="p">}),</span>
+      <span class="nx">queryInterface</span><span class="p">.</span><span class="nx">changeColumn</span><span class="p">(</span><span class="s2">"users"</span><span class="p">,</span> <span class="s2">"password"</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">type</span><span class="p">:</span> <span class="nx">Sequelize</span><span class="p">.</span><span class="nx">STRING</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span>
+        <span class="na">allowNull</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="na">unique</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="p">}),</span>
+    <span class="p">]);</span>
+  <span class="p">},</span>
+
+  <span class="na">down</span><span class="p">:</span> <span class="p">(</span><span class="nx">queryInterface</span><span class="p">,</span> <span class="nx">Sequelize</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="cm">/*
+      Add reverting commands here.
+      Return a promise to correctly handle asynchronicity.
+
+      Example:
+      return queryInterface.dropTable('users');
+    */</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li>https://devonaws.com/back-end/node-js/node-js-orm-sequelize-add-column/</li>
+  <li>https://stackoverflow.com/questions/49890998/how-to-add-column-in-sequelize-existing-model</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Node.js와 Multer 모듈을 활용한 파일 업로드</title>
+	  <link>//nodejs-multer</link>
+	  <author></author>
+	  <pubDate>2020-05-21T00:00:00+09:00</pubDate>
+	  <guid>//nodejs-multer</guid>
+	  <description><![CDATA[
+	     <h2 id="게시판에-이미지-업로드-기능-추가하기">게시판에 이미지 업로드 기능 추가하기</h2>
+
+<h2 id="multer-모듈">Multer 모듈</h2>
+
+<p>Multer 모듈은 <code class="highlighter-rouge">multipart/form-data</code> 를 처리하기 위한 node.js 미들웨어입니다. <br />
+이번 포스팅에서는 해당 모듈을 사용해서 이미지를 업로드하는 방법에 대해 살펴보겠습니다. <br /></p>
+
+<p>현재 게시판 글쓰기 필드에는 다음과 같이 이미지 업로드 기능이 없는 상태라서 <code class="highlighter-rouge">multer</code> 모듈을 통해 게시글마다 이미지를 업로드하고 데이터베이스에 저장하도록 하겠습니다. <br /></p>
+
+<p><img src="/assets/images/nodejs/multer-write-init.png" alt="이미지" width="250" /></p>
+
+<h3 id="패키지-설치">패키지 설치</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm i multer
+</code></pre></div></div>
+
+<h2 id="mysql-컬럼-추가">MySQL 컬럼 추가</h2>
+
+<p>기존의 게시글 테이블은 다음과 같은 형태를 띄고 있습니다. <br /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| idx        | int unsigned | NO   | PRI | NULL    | auto_increment |
+| creator_id | varchar<span class="o">(</span>100<span class="o">)</span> | NO   |     | NULL    |                |
+| title      | varchar<span class="o">(</span>100<span class="o">)</span> | NO   |     | NULL    |                |
+| content    | mediumtext   | NO   |     | NULL    |                |
+| passwd     | varchar<span class="o">(</span>100<span class="o">)</span> | NO   |     | NULL    |                |
+| hit        | int unsigned | NO   |     | 0       |                |
++------------+--------------+------+-----+---------+----------------+
+</code></pre></div></div>
+
+<p>이제 각 게시글마다 이미지를 추가적으로 관리해야하므로 이미지 경로를 저장할 컬럼을 새로 만들어줍니다. <br />
+바이너리 데이터로 DB에 저장할 경우 부하가 크기 때문에 이미지 경로만 저장해놓고 서버에서 로드해서 제공해주는 형태로 한 것입니다. <br /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql&gt; ALTER TABLE board ADD image VARCHAR<span class="o">(</span>200<span class="o">)</span> NOT NULL DEFAULT <span class="s1">''</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>이제 다시 게시글 테이블을 확인해보면 다음과 같이 새로운 컬럼이 추가된 것을 확인할 수 있습니다. <br /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql&gt; desc board<span class="p">;</span>
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| idx        | int unsigned | NO   | PRI | NULL    | auto_increment |
+| creator_id | varchar<span class="o">(</span>100<span class="o">)</span> | NO   |     | NULL    |                |
+| title      | varchar<span class="o">(</span>100<span class="o">)</span> | NO   |     | NULL    |                |
+| content    | mediumtext   | NO   |     | NULL    |                |
+| passwd     | varchar<span class="o">(</span>100<span class="o">)</span> | NO   |     | NULL    |                |
+| hit        | int unsigned | NO   |     | 0       |                |
+| image      | varchar<span class="o">(</span>200<span class="o">)</span> | NO   |     |         |                |
++------------+--------------+------+-----+---------+----------------+
+</code></pre></div></div>
+
+<h2 id="파일-업로드-폼-생성">파일 업로드 폼 생성</h2>
+
+<p>이제 기존의 글 작성 폼에서 이미지 업로드를 위한 파일 선택 창을 새로 추가해줍니다. <br />
+form 태그의 속성으로 <code class="highlighter-rouge">enctype="multipart/form-data"</code> 가 지정되어야 함에 유의합니다. <br /></p>
+
+<h3 id="writeejs">write.ejs</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"/board/write"</span> <span class="na">method=</span><span class="s">"post"</span> <span class="na">enctype=</span><span class="s">"multipart/form-data"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;table</span> <span class="na">border=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- 중략 --&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;</span>이미지<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">name=</span><span class="s">"image"</span> <span class="nt">/&gt;&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">"2"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>글쓰기<span class="nt">&lt;/button&gt;</span>
+      <span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/table&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+
+<h2 id="router--multer-설정">router &amp; multer 설정</h2>
+
+<p>게시글 업로드를 담당하는 라우트 파일에 가서 몇 가지 설정을 해줍니다. <br />
+파일이 저장될 경로나 파일명을 변경해주기 위해서는 <code class="highlighter-rouge">multer</code> 객체의 옵션을 변경해주면 됩니다. <br />
+여기서는 현재 날짜를 파일명에 추가하여 중복된 사진이 생성되는 것을 방지하도록 하겠습니다. <br />
+이미지 업로드를 담당하는 라우터 파일 상단에 다음과 같은 코드를 통해 설정을 해줍니다. <br />
+express 프로젝트 생성 시 기본적으로 제공되는 <code class="highlighter-rouge">public/images</code> 디렉토리 하위에 이미지들을 저장해주도록 하겠습니다. <br /></p>
+
+<h3 id="routesboardjs">routes/board.js</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">multer</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"multer"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"path"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">storage</span> <span class="o">=</span> <span class="nx">multer</span><span class="p">.</span><span class="nx">diskStorage</span><span class="p">({</span>
+  <span class="na">destination</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">file</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">cb</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="s2">"public/images/"</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="na">filename</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">file</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">ext</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nx">extname</span><span class="p">(</span><span class="nx">file</span><span class="p">.</span><span class="nx">originalname</span><span class="p">);</span>
+    <span class="nx">cb</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">path</span><span class="p">.</span><span class="nx">basename</span><span class="p">(</span><span class="nx">file</span><span class="p">.</span><span class="nx">originalname</span><span class="p">,</span> <span class="nx">ext</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"-"</span> <span class="o">+</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span> <span class="o">+</span> <span class="nx">ext</span><span class="p">);</span>
+  <span class="p">},</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">upload</span> <span class="o">=</span> <span class="nx">multer</span><span class="p">({</span> <span class="na">storage</span><span class="p">:</span> <span class="nx">storage</span> <span class="p">});</span>
+</code></pre></div></div>
+
+<p>또한 게시글 하나에는 하나의 이미지가 존재하므로 <code class="highlighter-rouge">upload.single('image')</code> 로 이미지 처리를 위한 미들웨어를 생성합니다. <br />
+여기서 <code class="highlighter-rouge">image</code> 는 <code class="highlighter-rouge">input</code> 태그의 <code class="highlighter-rouge">name</code> 속성값입니다. <br />
+아까와 동일하게 <code class="highlighter-rouge">board.js</code> 의 파일 업로드를 담당하는 라우터에 미들웨어를 설정해줍니다. <br /></p>
+
+<h3 id="routesboardjs-1">routes/board.js</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ... 중략</span>
+
+<span class="c1">// 파일 업로드 라우터</span>
+<span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">"/write"</span><span class="p">,</span> <span class="nx">upload</span><span class="p">.</span><span class="nx">single</span><span class="p">(</span><span class="s2">"image"</span><span class="p">),</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">creator_id</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">creator_id</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">title</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">title</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">content</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">content</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">passwd</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">passwd</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">image</span> <span class="o">=</span> <span class="s2">`/images/</span><span class="p">${</span><span class="nx">req</span><span class="p">.</span><span class="nx">file</span><span class="p">.</span><span class="nx">filename</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span> <span class="c1">// image 경로 만들기</span>
+  <span class="kd">const</span> <span class="nx">datas</span> <span class="o">=</span> <span class="p">[</span><span class="nx">creator_id</span><span class="p">,</span> <span class="nx">title</span><span class="p">,</span> <span class="nx">content</span><span class="p">,</span> <span class="nx">passwd</span><span class="p">,</span> <span class="nx">image</span><span class="p">];</span>
+
+  <span class="kd">const</span> <span class="nx">sql</span> <span class="o">=</span>
+    <span class="s2">"INSERT INTO board(creator_id, title, content, passwd, image) values(?, ?, ?, ?, ?)"</span><span class="p">;</span>
+  <span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sql</span><span class="p">,</span> <span class="nx">datas</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">rows</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">"err : "</span> <span class="o">+</span> <span class="nx">err</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"rows: "</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">rows</span><span class="p">));</span>
+
+      <span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s2">"/board"</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="이미지-저장-확인">이미지 저장 확인</h2>
+
+<p>이제 터미널을 열고 새로운 게시글을 작성한 뒤 쿼리문을 통해 레코드를 확인해보면 다음과 같이 이미지 경로가 저장된 것을 확인할 수 있습니다. <br />
+기존에 이미지가 없는 게시글들은 기본값이 설정되어 있는 것을 확인할 수 있습니다. <br /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql&gt; <span class="k">select</span> <span class="k">*</span> from board<span class="p">;</span>
++-----+------------+----------------------+---------------------+--------+-----+----------------------------------------+
+| idx | creator_id | title                | content             | passwd | hit | image                                  |
++-----+------------+----------------------+---------------------+--------+-----+----------------------------------------+
+|  12 | simpson    | springfield          | 게시글 작성            | 3020   |   0 |                                        |
+|  15 | apple      | lenna                | lenna <span class="nb">test</span>          | 3020   |   0 | /images/lenna-1589908536559.png        |
++-----+------------+----------------------+---------------------+--------+-----+----------------------------------------+
+</code></pre></div></div>
+
+<p>또한 로컬 환경에 이미지가 올바르게 저장되었는지 확인해봅시다. <br />
+<code class="highlighter-rouge">public/images/</code> 하위에 다음과 같이 저장된 시간과 함께 새로운 파일명을 만든 뒤 저장되어있는 것을 확인할 수 있습니다. <br />
+<img src="/assets/images/nodejs/multer-save.png" alt="이미지" width="350" /></p>
+
+<h2 id="게시글-이미지-출력">게시글 이미지 출력</h2>
+
+<p>현재는 게시글 조회 시 저장된 이미지를 출력하지 못하는 상태입니다. <br />
+<img src="/assets/images/nodejs/multer-read-before.png" alt="이미지" width="300" /></p>
+
+<p>이제 게시글 조회 시 이미지를 같이 출력해줄 수 있도록 기존의 라우터를 수정하겠습니다. <br />
+기존 쿼리문의 요청 필드에 <code class="highlighter-rouge">image</code> 를 추가해줍니다. <br /></p>
+
+<h3 id="routesboardjs-2">routes/board.js</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">router</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"/read/:idx"</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">idx</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">idx</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">sql</span> <span class="o">=</span>
+    <span class="s2">"SELECT idx, creator_id, title, content, hit, image FROM board WHERE idx=?"</span><span class="p">;</span>
+  <span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sql</span><span class="p">,</span> <span class="p">[</span><span class="nx">idx</span><span class="p">],</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">row</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s2">"read"</span><span class="p">,</span> <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="s2">"글 조회"</span><span class="p">,</span> <span class="na">row</span><span class="p">:</span> <span class="nx">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">});</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>그리고 ejs 파일에서 <code class="highlighter-rouge">img</code> 태그를 통해 정적 파일을 화면에 출력하도록 합니다. <br />
+이때 이미지 소스는 서버로부터 전달받은 <code class="highlighter-rouge">row</code> 객체에서 가져오도록 합니다. <br /></p>
+
+<h3 id="readejs">read.ejs</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;table&gt;</span>
+  <span class="c">&lt;!-- 중략 --&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span>이미지<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;&lt;img</span> <span class="na">src=</span><span class="s">"&lt;%= row.image %&gt; "</span> <span class="na">alt=</span><span class="s">"이미지"</span> <span class="na">width=</span><span class="s">"300"</span> <span class="nt">/&gt;&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</code></pre></div></div>
+
+<h3 id="결과-확인">결과 확인</h3>
+
+<p><img src="/assets/images/nodejs/multer-result.png" alt="이미지" width="350" /></p>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li>https://velog.io/@josworks27/2020-01-18-0001-%EC%9E%91%EC%84%B1%EB%90%A8-qrk5iamlmv</li>
+  <li>https://github.com/expressjs/multer/blob/master/doc/README-ko.md</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Node.js와 MySQL 연동해서 게시글 작성하기</title>
+	  <link>//nodejs-mysql</link>
+	  <author></author>
+	  <pubDate>2020-05-14T00:00:00+09:00</pubDate>
+	  <guid>//nodejs-mysql</guid>
+	  <description><![CDATA[
+	     <h2 id="mysql-연동-방법">MySQL 연동 방법</h2>
+
+<p>Node.js 에서 MySQL을 사용하기 위해서는 <code class="highlighter-rouge">Sequelize</code> 를 사용할 수도 있지만 <br />
+이번 포스팅에서는 raw query문을 사용하기 위해 직접 mysql을 연동하는 과정을 실습해보도록 하겠습니다.</p>
+
+<h2 id="mysql-데이터베이스-생성">MySQL 데이터베이스 생성</h2>
+
+<h3 id="mysql-접속">mysql 접속</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mysql <span class="nt">-u</span> root <span class="nt">-p</span>
+</code></pre></div></div>
+
+<h3 id="database-및-table-생성">database 및 table 생성</h3>
+
+<p>데모를 위해 <code class="highlighter-rouge">tutorial</code> 이라는 데이터베이스를 생성하도록 하겠습니다. <br /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql&gt; create database tutorial<span class="p">;</span>
+</code></pre></div></div>
+
+<p>그리고 tutorial 데이터베이스에 게시글 정보를 담을 <code class="highlighter-rouge">board</code> 테이블을 생성합니다. <br /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql&gt; use tutorial<span class="p">;</span>
+mysql&gt; create table board <span class="o">(</span>
+    idx int unsigned not null primary key auto_increment,
+    creator_id varchar<span class="o">(</span>100<span class="o">)</span> not null,
+    title varchar<span class="o">(</span>100<span class="o">)</span> not null,
+    content MEDIUMTEXT not null,
+    passwd varchar<span class="o">(</span>100<span class="o">)</span> not null,
+    hit int unsigned not null default 0
+  <span class="o">)</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>이후 테스트를 위해 임의의 레코드를 2개 생성합니다. <br /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql&gt; insert into board<span class="o">(</span>
+  creator_id, title, content, passwd, hit<span class="o">)</span> values
+  <span class="o">(</span><span class="s1">'simpson'</span>, <span class="s1">'tutorial blog'</span>, <span class="s1">'hello'</span>, <span class="s1">'1234'</span>, 0<span class="o">)</span>, <span class="o">(</span><span class="s1">'bart'</span>, <span class="s1">'another blog'</span>, <span class="s1">'hello'</span>, <span class="s1">'1234'</span>, 0<span class="o">)</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>값이 올바르게 입력되었는지 SELECT 문을 통해 확인해봅시다. <br /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql&gt; <span class="k">select</span> <span class="k">*</span> from board<span class="p">;</span>
++-----+------------+---------------+---------+--------+-----+
+| idx | creator_id | title         | content | passwd | hit |
++-----+------------+---------------+---------+--------+-----+
+|   3 | simpson    | tutorial blog | hello   | 1234   |   0 |
+|   4 | bart       | another blog  | hello   | 1234   |   0 |
++-----+------------+---------------+---------+--------+-----+
+</code></pre></div></div>
+
+<h2 id="nodejs-설정">Node.js 설정</h2>
+
+<h3 id="mysql-패키지-설치">mysql 패키지 설치</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm i mysql
+</code></pre></div></div>
+
+<h3 id="databasejs-생성">database.js 생성</h3>
+
+<p>Node.js에서 데이터베이스를 연동하기 위해 <code class="highlighter-rouge">config</code> 디렉토리를 생성한 다음, 그 안에 <code class="highlighter-rouge">database.js</code> 를 만들어 필요한 설정을 정의합니다. <br />
+<code class="highlighter-rouge">init</code> 함수를 통해 Connection 객체를 생성하고 실제 연결은 <code class="highlighter-rouge">connect</code> 함수를 통해 수행됩니다. <br /></p>
+
+<h4 id="configdatabasejs">config/database.js</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mysql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"mysql"</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">db_config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">host</span><span class="p">:</span> <span class="s2">"localhost"</span><span class="p">,</span>
+  <span class="na">port</span><span class="p">:</span> <span class="s2">"3306"</span><span class="p">,</span>
+  <span class="na">user</span><span class="p">:</span> <span class="s2">"root"</span><span class="p">,</span>
+  <span class="na">password</span><span class="p">:</span> <span class="s2">"비밀번호"</span><span class="p">,</span>
+  <span class="na">database</span><span class="p">:</span> <span class="s2">"tutorial"</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">init</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">mysql</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">(</span><span class="nx">db_config</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="nx">test_connection</span><span class="p">(</span><span class="nx">con</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">con</span><span class="p">.</span><span class="nx">connect</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">"mysql connection error : "</span> <span class="o">+</span> <span class="nx">err</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"mysql connected successfully!"</span><span class="p">);</span>
+        <span class="p">}</span>
+      <span class="p">});</span>
+    <span class="p">},</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p><br />
+실제 쿼리는 이루어지지 않지만 서버 실행시 MySQL이 올바르게 연결 되었는지 확인하기 위해 <br />
+<code class="highlighter-rouge">app.js</code> 에서 <code class="highlighter-rouge">test_connection</code> 함수를 호출하도록 하겠습니다. <br /></p>
+
+<h4 id="appjs">app.js</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ... 중략</span>
+<span class="kd">const</span> <span class="nx">db_config</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"./config/database"</span><span class="p">)();</span>
+
+<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
+
+<span class="c1">// database connection</span>
+<span class="kd">const</span> <span class="nx">connection</span> <span class="o">=</span> <span class="nx">db_config</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
+<span class="nx">db_config</span><span class="p">.</span><span class="nx">test_connection</span><span class="p">(</span><span class="nx">connection</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="실행">실행</h3>
+
+<p>설정을 마쳤다면 <code class="highlighter-rouge">npm start</code> 를 통해 서버를 실행시켜봅니다. <br />
+만약 여러분이 mysql8을 사용하고 있다면 다음과 같은 원격 연결 오류를 마주칠수도 있습니다.</p>
+
+<blockquote>
+  <p>mysql connection error : Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client</p>
+</blockquote>
+
+<p>이 경우에는 터미널을 열고 mysql에 접속한 뒤 다음과 같이 mysql8 설정을 변경해줍니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql&gt; ALTER USER <span class="s1">'root'</span>@<span class="s1">'localhost'</span> IDENTIFIED WITH mysql_native_password BY <span class="s1">'your_new_password'</span><span class="p">;</span>
+mysql&gt; FLUSH PRIVILEGES<span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="sql-호출">SQL 호출</h3>
+
+<p>이제 라우터를 하나 생성해서 쿼리문을 통해 board 테이블의 데이터를 화면에 출력해보겠습니다.
+routes 디렉토리의 index.js에서 메인 화면에 출력해줄 데이터를 쿼리문을 통해 호출합니다.</p>
+
+<h4 id="routesindexjs">routes/index.js</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"express"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">db_config</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"../config/database"</span><span class="p">)();</span>
+
+<span class="kd">var</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">express</span><span class="p">.</span><span class="nx">Router</span><span class="p">();</span>
+
+<span class="c1">// database connection</span>
+<span class="kd">const</span> <span class="nx">connection</span> <span class="o">=</span> <span class="nx">db_config</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
+<span class="nx">connection</span><span class="p">.</span><span class="nx">connect</span><span class="p">();</span>
+
+<span class="cm">/* GET home page. */</span>
+<span class="nx">router</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s2">"/"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">qry</span> <span class="o">=</span> <span class="s2">"SELECT * FROM board"</span><span class="p">;</span>
+  <span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">qry</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">rows</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">"query error"</span> <span class="o">+</span> <span class="nx">err</span><span class="p">);</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">send</span><span class="p">(</span><span class="s2">"Internal Server Error"</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s2">"index"</span><span class="p">,</span> <span class="p">{</span> <span class="na">title</span><span class="p">:</span> <span class="s2">"MySQL 연동 Demo"</span><span class="p">,</span> <span class="na">rows</span><span class="p">:</span> <span class="nx">rows</span> <span class="p">});</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">router</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>connection 객체의 query 함수의 인자로 원하는 쿼리문을 지정해서 호출하면 등록된 콜백 함수를 통해 그 결과를 받아 처리할 수 있습니다. <br />
+이제 쿼리 결과를 웹 페이지에서 확인하기 위해 index.ejs를 생성합니다. <br /></p>
+
+<h4 id="indexejs">index.ejs</h4>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;&lt;</span><span class="err">%=</span> <span class="na">title</span> <span class="err">%</span><span class="nt">&gt;&lt;/title&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/stylesheets/style.css"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;&lt;</span><span class="err">%=</span> <span class="na">title</span> <span class="err">%</span><span class="nt">&gt;&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Welcome to <span class="nt">&lt;</span><span class="err">%=</span> <span class="na">title</span> <span class="err">%</span><span class="nt">&gt;&lt;/p&gt;</span>
+
+    <span class="nt">&lt;</span><span class="err">%</span> <span class="na">for</span><span class="err">(</span><span class="na">let</span> <span class="na">row</span> <span class="na">of</span> <span class="na">rows</span><span class="err">)</span> <span class="err">{</span> <span class="err">%</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;&lt;</span><span class="err">%=</span> <span class="na">row</span><span class="err">.</span><span class="na">idx</span><span class="err">%</span><span class="nt">&gt;&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;&lt;</span><span class="err">%=</span> <span class="na">row</span><span class="err">.</span><span class="na">creator_id</span><span class="err">%</span><span class="nt">&gt;&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;&lt;</span><span class="err">%=</span> <span class="na">row</span><span class="err">.</span><span class="na">title</span><span class="err">%</span><span class="nt">&gt;&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;&lt;</span><span class="err">%=</span> <span class="na">row</span><span class="err">.</span><span class="na">content</span><span class="err">%</span><span class="nt">&gt;&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;&lt;</span><span class="err">%=</span> <span class="na">row</span><span class="err">.</span><span class="na">regdate</span><span class="err">%</span><span class="nt">&gt;&lt;/p&gt;</span>
+    <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;</span><span class="err">%</span> <span class="err">}</span> <span class="err">%</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h4 id="실행-결과">실행 결과</h4>
+
+<p>이제 서버를 다시 켜고 메인 페이지로 접속하면 다음과 같은 화면을 볼 수 있습니다.</p>
+
+<p><img src="assets/images/nodejs/nodemysql.png" alt="이미지" width="500" /></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Node.js에서 네이버 Open API 활용하기</title>
+	  <link>//nodejs-openapi</link>
+	  <author></author>
+	  <pubDate>2020-04-25T00:00:00+09:00</pubDate>
+	  <guid>//nodejs-openapi</guid>
+	  <description><![CDATA[
+	     <h2 id="네이버-오픈-api란">네이버 오픈 API란?</h2>
+
+<p>네이버는 개발자들이 활용할수있도록 다양한 기능들을 오픈 API 형태로 제공하고 있습니다. <br />
+이번 포스팅에서는 네이버 Open API에 대한 설명과 이를 활용할 수 있는 방법들에 대해 소개하겠습니다. <br /></p>
+
+<p>네이버 개발자 홈페이지에 가보면 다음과 같이 오픈 API를 정의하고 있습니다. <br /></p>
+
+<blockquote>
+  <p>네이버 오픈API는 네이버 플랫폼의 기능을 외부 개발자가 쉽게 이용할 수 있게 웹 또는 SDK 형태로 공개한 기술들입니다.</p>
+</blockquote>
+
+<p>쉽게 말해 네이버에서 외부 개발자들이 자사의 다양한 서비스들을 이용할 수 있도록 외부에 공개해놓은 것입니다. <br />
+저희는 해당 API를 사용하기 위해 주어진 형식에 맞춰 요청을 보내주기만 하면 됩니다. <br /></p>
+
+<p><a href="https://developers.naver.com/docs/common/openapiguide/">네이버 개발자 홈페이지</a>에 가면 활용 가능한 오픈 API들을 확인할 수 있습니다. <br /></p>
+
+<h2 id="네이버-오픈-api-활용하기">네이버 오픈 API 활용하기</h2>
+
+<p>네이버 오픈 API는 크게 두 가지로 분류됩니다.</p>
+
+<ul>
+  <li>로그인 방식</li>
+  <li>비로그인 방식</li>
+</ul>
+
+<p>로그인 방식은 회원 정보가 필요한 API(회원 정보 조회, 블로그 및 카페, 개인 일정 관련 기능)들을 사용할 때 이용하는 방식입니다. <br />
+해당 API를 사용하기 위해서는 먼저 로그인을 통해 인증과정을 거친 후 발급받은 토큰을 API 요청에 포함시켜줘야 합니다. <br /></p>
+
+<p>반대로 비로그인 방식은 별도의 인증 과정없이 개발자가 HTTP 헤더에 클라이언트 정보를 함께 전송하기만 하면 이용할 수 있는 방식입니다.</p>
+
+<blockquote>
+  <p>클라이언트 정보? <br />
+네이버 오픈 API를 활용하기 위해서는 기본적으로 원하는 API에 대해 사용 신청이 필요합니다. <br />
+이때 신청 후 발급받은 유저 정보를 의미합니다.</p>
+</blockquote>
+
+<h2 id="파파고-오픈-api">파파고 오픈 API</h2>
+
+<p>네이버 파파고 오픈 API는 자연어 처리 관련 다양한 인공지능 기술들을 개발자들이 쉽게 이용할 수 있도록 오픈 API로 제공하고 있습니다. <br />
+이번 포스팅에서는 파파고의 번역 기능을 활용하여 주어진 텍스트를 번역한 뒤 결과를 확인해보도록 하겠습니다. <br /></p>
+
+<p>우선 <a href="https://developers.naver.com/products/nmt/">네이버 파파고 API 홈페이지</a>로 가서 API 이용 신청을 해야합니다. <br /></p>
+
+<p><img src="assets/images/nodejs/api-first.png" alt="첫화면" width="800" /></p>
+
+<p>이용 신청을 누르면 다음과 같은 신청 폼을 작성하게 됩니다.</p>
+
+<ul>
+  <li>애플리케이션 이름 : 파파고 오픈 API를 활용할 애플리케이션 이름 작성</li>
+  <li>사용 API : 해당 애플리케이션에서 사용할 오픈 API들을 선택합니다. (복수 선택 가능)</li>
+  <li>비로그인 오픈 API 서비스 환경 : 네이버에게 어떤 환경에서 해당 API가 활용되는지 알려줍니다.</li>
+</ul>
+
+<p>저는 현재 로컬 환경에서 테스트를 진행한 후 WEB환경에서 이를 활용할 것이므로 <br />
+비로그인 오픈 API 환경을 <code class="highlighter-rouge">WEB</code> 로 하고 URL로 로컬 호스트임을 나타내는 <code class="highlighter-rouge">https://localhost:3000/</code> 를 입력하고 신청을 마치겠습니다.</p>
+
+<p><img src="assets/images/nodejs/api-info.png" alt="클라이언트" width="500" /></p>
+
+<p>모든 신청을 마무리하면 위와 같이 클라이언트 ID와 Password를 발급해줍니다. <br />
+이후의 샘플 코드에서 이 정보를 활용합니다.</p>
+
+<h2 id="샘플-코드-작성">샘플 코드 작성</h2>
+
+<p>이제 테스트 코드를 작성하고 해당 API가 잘 동작하는지 확인해보겠습니다. <br />
+이를 위해 새로운 프로젝트를 생성한 뒤 package.json을 생성하고 request 모듈을 설치합니다. <br /></p>
+
+<h3 id="프로젝트-npm-설정-packagejson-생성">프로젝트 npm 설정 (package.json 생성)</h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm init
+</code></pre></div></div>
+
+<h3 id="request-모듈-설치">request 모듈 설치</h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i request
+</code></pre></div></div>
+
+<blockquote>
+  <p>request 모듈은 http 통신을 위한 npm 패키지입니다.</p>
+</blockquote>
+
+<h3 id="samplejs">sample.js</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
+
+<span class="c1">// api 요청 변수</span>
+<span class="kd">const</span> <span class="nx">api_url</span> <span class="o">=</span> <span class="s2">"https://openapi.naver.com/v1/papago/n2mt"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">client_id</span> <span class="o">=</span> <span class="s2">"your-client-id"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">client_secret</span> <span class="o">=</span> <span class="s2">"your-client-secret-key"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">query</span> <span class="o">=</span> <span class="s2">"papago open api translation success!"</span><span class="p">;</span>
+
+<span class="c1">// api 요청 옵션 (번역: 영어 -&gt; 한글)</span>
+<span class="kd">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">url</span><span class="p">:</span> <span class="nx">api_url</span><span class="p">,</span>
+  <span class="na">form</span><span class="p">:</span> <span class="p">{</span> <span class="na">source</span><span class="p">:</span> <span class="s2">"en"</span><span class="p">,</span> <span class="na">target</span><span class="p">:</span> <span class="s2">"ko"</span><span class="p">,</span> <span class="na">text</span><span class="p">:</span> <span class="nx">query</span> <span class="p">},</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"X-Naver-Client-Id"</span><span class="p">:</span> <span class="nx">client_id</span><span class="p">,</span>
+    <span class="s2">"X-Naver-Client-Secret"</span><span class="p">:</span> <span class="nx">client_secret</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="c1">// api 요청 보내고 콜백으로 결과 받기</span>
+<span class="nx">request</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">error</span> <span class="o">&amp;&amp;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">body</span><span class="p">));</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"error = "</span> <span class="o">+</span> <span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>앞서 설치한 request 모듈을 통해 API 주소로 http 요청을 보내면 해당 API가 클라이언트 검증을 한 뒤 결과값을 JSON 형식으로 반환해줍니다. <br />
+이때 request 모듈의 post 함수는 비동기 방식으로 수행되므로 콜백 함수를 등록하여 결과값을 확인합니다. <br /></p>
+
+<h2 id="결과-확인">결과 확인</h2>
+
+<p><img src="assets/images/nodejs/api-result.png" alt="결과사진" width="500" /></p>
+
+<p>만약 성공적으로 요청이 전송되면 위와 같은 결과를 확인할 수 있습니다. <br />
+주어진 입력 값에 따라 번역이 올바르게 진행된 것을 알 수 있습니다.</p>
+
+<h2 id="주의">주의!</h2>
+
+<p>request 모듈은 2020년 2월 11일 부로 <b>deprecated</b> 되었습니다. <br />
+이번 예제에서는 간단한 테스트를 위해 request 모듈을 사용했지만 <br />
+실제 서비스에서는 http 통신을 위해 다른 패키지를 사용하는 것을 검토할 필요가 있습니다. <br /></p>
+
+<p><a href="https://www.npmjs.com/package/request">request 모듈 deprecated 관련 공지</a> <br />
+<a href="https://github.com/request/request/issues/3143">request 모듈을 대체할 수 있는 패키지들</a></p>
+
+<h2 id="마치며">마치며</h2>
+
+<p>네이버 뿐만 아니라 다양한 기업 혹은 공공기관에서 제공하는 오픈 API를 활용하면 훨씬 더 다양한 애플리케이션 개발이 가능해집니다. <br />
+본인이 필요한 API를 검색해본 뒤 마찬가지 방법으로 활용하면 될 것입니다.</p>
+
+<h3 id="참고-자료">참고 자료</h3>
+
+<ul>
+  <li>https://developers.naver.com/docs/papago/papago-nmt-overview.md</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

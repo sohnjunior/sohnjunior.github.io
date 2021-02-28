@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Page Meta -->
+    <title>BOJ 12015 - 가장 긴 증가하는 부분 수열 2</title>
+    <meta name="description" content="PS와 웹 개발 관련내용을 기록합니다." />
+
+    <!-- Mobile Meta -->
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Brand icon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" >
+
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" />
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!-- Ghost outputs important style and meta data with this tag -->
+        <link rel="canonical" href="https://sohnjunior.github.io//boj-12015" />
+    <meta name="referrer" content="origin" />
+    <link rel="next" href="/page2/" />
+
+    <meta property="og:site_name" content="sohnjunior의 Dev Log" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="BOJ 12015 - 가장 긴 증가하는 부분 수열 2" />
+    <meta property="og:description" content="PS와 웹 개발 관련내용을 기록합니다." />
+    <meta property="og:url" content="https://sohnjunior.github.io//boj-12015" />
+    <meta property="og:image" content="/assets/images/cover2.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BOJ 12015 - 가장 긴 증가하는 부분 수열 2" />
+    <meta name="twitter:description" content="PS와 웹 개발 관련내용을 기록합니다." />
+    <meta name="twitter:url" content="https://sohnjunior.github.io//boj-12015" />
+    <meta name="twitter:image:src" content="/assets/images/cover2.jpg" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Website",
+        "publisher": "sohnjunior의 Dev Log",
+        "name": "BOJ 12015 - 가장 긴 증가하는 부분 수열 2",
+        "url": "https://sohnjunior.github.io//boj-12015",
+        "image": "/assets/images/cover2.jpg",
+        "description": "PS와 웹 개발 관련내용을 기록합니다."
+    }
+    </script>
+
+    <meta name="generator" content="Jekyll 3.0.0" />
+    <link rel="alternate" type="application/rss+xml" title="sohnjunior의 Dev Log" href="/feed.xml" />
+
+
+</head>
+<body class="home-template nav-closed">
+
+    <!-- The blog navigation links -->
+    <div class="nav">
+  <h3 class="nav-title">카테고리</h3>
+  <a href="#" class="nav-close">
+    <span class="hidden">닫기</span>
+  </a>
+  <ul>
+    <li
+      class="nav-home "
+      role="presentation"
+    >
+      <a href="/">Home</a>
+    </li>
+    <li
+      class="nav-about "
+      role="presentation"
+    >
+      <a href="/about">About Me</a>
+    </li>
+    <li
+      class="nav-fiction  nav-current"
+      role="presentation"
+    >
+      <a href="/tag/boj">BOJ</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/leetcode">LeetCode</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/programmers">Programmers</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/알고리즘 문제해결 전략">알고리즘 문제해결 전략</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/javascript">Javascript</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/typescript">Typescript</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/vuejs">Vue.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/reactjs">React.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/nodejs">Node.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/aws">AWS</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/book-review">서평</a>
+    </li>
+  </ul>
+  <a class="subscribe-button icon-feed" href="/feed.xml">구독하기</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The comment above "< default" means - insert everything in this file into -->
+<!-- the [body] of the default.hbs template, which contains our header/footer. -->
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<header
+  class="main-header post-head "
+  style="background-image: url(/assets/images/cover2.jpg) "
+>
+  <nav class="main-nav  overlay  clearfix">
+    <a class="blog-logo" href="/"
+      ><img src="/assets/images/ghost.png" alt="Blog Logo" /></a
+    > 
+    <a class="menu-button icon-menu" href="#"><span class="word">카테고리</span></a>
+    
+  </nav>
+</header>
+
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">BOJ 12015 - 가장 긴 증가하는 부분 수열 2</h1>
+      <section class="post-meta">
+        <!-- <a href='/'></a> -->
+
+         
+        <a href="/author/sohnjunior"
+          >sohnjunior</a
+        >
+         
+        <time class="post-date" datetime="2020-06-01"
+          >01 Jun 2020</time
+        >
+        <!-- [[tags prefix=" on "]] -->
+         on  
+        <a href="/tag/BOJ">Boj</a>
+          
+      </section>
+    </header>
+
+    <section class="post-content"><h2 id="문제">문제</h2>
+
+<p><a href="https://www.acmicpc.net/problem/12015">백준 온라인 저지 - 12015번</a></p>
+
+<h2 id="풀이-과정">풀이 과정</h2>
+
+<p><code class="highlighter-rouge">동적 계획법</code> 을 사용할 경우 시간 복잡도가 <code class="highlighter-rouge">O(N^2)</code> 이기 때문에 주어진 입력값을 시간안에 수행할 수 없습니다. <br />
+효율적으로 구현할 수 있는 방법이 도저히 떠오르지 않아 <a href="https://jason9319.tistory.com/113">다른 사람의 풀이</a>를 참고하여 해결할 수 있었습니다. <br /></p>
+
+<h3 id="onlogn-으로-lis-문제-해결하기">O(nlogn) 으로 LIS 문제 해결하기</h3>
+
+<p>LIS 문제를 해결하기 위한 보다 효율적인 방법은 <code class="highlighter-rouge">이분 탐색</code> 을 사용하는 것입니다. <br />
+우선 다음과 같은 수열 <code class="highlighter-rouge">A</code> 가 존재한다고 합시다.<br />
+그리고 해당 수열에서 가장 긴 부분 수열을 추적하기 위한 배열 <code class="highlighter-rouge">B</code> 를 정의합니다. <br />
+우리는 배열 <code class="highlighter-rouge">B</code> 의 마지막 원소와 수열 <code class="highlighter-rouge">A</code> 를 하나씩 비교하며 수열 <code class="highlighter-rouge">A</code> 의 원소가 <code class="highlighter-rouge">B</code> 에 위치할 수 있는 자리를 <code class="highlighter-rouge">이분 탐색</code> 을 통해 찾습니다. <br /></p>
+
+<p><img src="/assets/images/boj/boj-12015-2.jpg" alt="이미지" width="600" /></p>
+
+<p>이분 탐색은 <code class="highlighter-rouge">O(logN)</code> 이고 총 <code class="highlighter-rouge">N</code> 개의 원소를 탐색하므로 전체 시간복잡도는 <code class="highlighter-rouge">O(NlogN)</code> 이 됩니다. <br /></p>
+
+<h3 id="주의사항">주의사항</h3>
+
+<p>하지만 이 방법을 사용할 경우 <b>LIS의 길이</b>는 알아낼 수 있지만 올바른 수열을 얻을 수는 없습니다. <br />
+다음과 같은 수열을 고려해볼까요? <br /></p>
+
+<p><img src="/assets/images/boj/boj-12015-1.jpg" alt="이미지" width="600" /></p>
+
+<p>이러한 일이 생기는 이유는 해당 알고리즘의 정당성을 따져보면 알 수 있습니다. <br />
+현재 우리는 <code class="highlighter-rouge">B</code> 의 마지막 원소와 수열 <code class="highlighter-rouge">A</code> 의 값들을 하나씩 비교하면서 값을 갱신하고 있습니다. <br /><br />
+이를 위해 다음과 같은 가정을 하도록 하겠습니다. <br /></p>
+
+<blockquote>
+  <p><code class="highlighter-rouge">B[j] = j 개의 값으로 이루어진 수열 중 가장 작은 값</code></p>
+</blockquote>
+
+<p>만약 <code class="highlighter-rouge">A</code> 의 원소값이 <code class="highlighter-rouge">B</code> 의 i번째 값보다 커서 i+1의 위치에 <code class="highlighter-rouge">A</code> 의 윈소값을 넣었다고 합시다. <br />
+이 경우 B의 i+1 번째 값은 i+1 개의 값으로 이루어진 수열 중 가장 작은 값이라는 가정을 만족하고 <br />
+마찬가지로 i 번째 값도 i 개의 값으로 이루어진 수열 중 가장 작은 값이므로 해당 연산은 정당하다고 할 수 있습니다. <br /></p>
+
+<p><code class="highlighter-rouge">A</code> 의 원소값이 <code class="highlighter-rouge">B</code> 의 i 번째 값보다 작을 경우 우리는 <code class="highlighter-rouge">B</code> 에서 해당 값이 들어갈 가장 작은 위치를 찾습니다. <br />
+만약 찾은 위치가 j 라고 할 경우에 <code class="highlighter-rouge">B</code> 의 j 번째 요소에 <code class="highlighter-rouge">A</code> 의 원소값을 넣는 것은 앞선 가정을 만족하므로 해당 연산은 정당합니다. <br /></p>
+
+<p>따라서 배열 <code class="highlighter-rouge">B</code> 에는 <b>각 요소의 인덱스를 길이로 하는 가장 긴 수열의 마지막 값이 저장되어 있는 것</b> 입니다. <br />
+그러므로 <code class="highlighter-rouge">A</code> 에 존재하는 가장 긴 수열의 길이는 찾을 수 있지만 정확한 수열은 찾을 수 없습니다. <br /></p>
+
+<h2 id="코드">코드</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">bisect</span>
+
+<span class="n">sys</span><span class="o">.</span><span class="n">setrecursionlimit</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+<span class="n">memo</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">solution</span><span class="p">():</span>
+    <span class="n">picks</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">picks</span> <span class="ow">or</span> <span class="n">picks</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">num</span><span class="p">:</span>
+            <span class="n">picks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">pos</span> <span class="o">=</span> <span class="n">bisect</span><span class="o">.</span><span class="n">bisect_left</span><span class="p">(</span><span class="n">picks</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+            <span class="n">picks</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="n">num</span>
+
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">picks</span><span class="p">)</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">solution</span><span class="p">())</span>
+
+</code></pre></div></div>
+</section>
+
+    <footer class="post-footer">
+      <!-- Everything inside the #author tags pulls data from the author -->
+      <!-- #author-->
+        
+      <figure class="author-image">
+        <a
+          class="img"
+          href="/author/sohnjunior"
+          style="background-image: url(/assets/images/avatar.png)"
+          ><span class="hidden">sohnjunior's Picture</span></a
+        >
+      </figure>
+      
+
+      <section class="author">
+        <h4>
+          <a href="/author/sohnjunior"
+            >sohnjunior</a
+          >
+        </h4>
+
+        
+        <p>주니어 웹 프론트엔드 개발자입니다. 😄</p>
+        
+        <div class="author-meta">
+          <span
+            class="author-location icon-location"
+          >
+            Seoul, Korea</span
+          > <span class="author-link icon-link"
+            ><a href="https://github.com/sohnjunior"> https://github.com/sohnjunior</a></span
+          >
+        </div>
+      </section>
+
+      <!-- /author  -->
+
+      <section class="share">
+        <h4>Share this post</h4>
+        <a
+          class="icon-twitter"
+          href="http://twitter.com/share?text=BOJ 12015 - 가장 긴 증가하는 부분 수열 2&amp;url=https://sohnjunior.github.ioboj-12015"
+          onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
+        >
+          <span class="hidden">Twitter</span>
+        </a>
+        <a
+          class="icon-facebook"
+          href="https://www.facebook.com/sharer/sharer.php?u=https://sohnjunior.github.ioboj-12015"
+          onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
+        >
+          <span class="hidden">Facebook</span>
+        </a>
+        <a
+          class="icon-google-plus"
+          href="https://plus.google.com/share?url=https://sohnjunior.github.ioboj-12015"
+          onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"
+        >
+          <span class="hidden">Google+</span>
+        </a>
+      </section>
+       
+
+      <!-- Add Disqus Comments -->
+      
+    </footer>
+  </article>
+</main>
+
+<aside class="read-next">
+  <!-- [[! next_post ]] --> 
+  <a
+    class="read-next-story "
+    style="background-image: url(/assets/images/cover2.jpg)"
+    href="/boj-2011"
+  >
+    <section class="post">
+      <h2>BOJ 2011 - 암호코드</h2>
+      <p>## 문제 [백준 온라인 저지 - 2011번](https://www.acmicpc.net/problem/2011) ## 풀이 과정 ### Top-down 우선 하향식 접근방법을...</p>
+    </section>
+  </a>
+  
+  <!-- [[! /next_post ]] -->
+  <!-- [[! prev_post ]] -->
+  
+  <a
+    class="read-next-story prev "
+    style="background-image: url(/assets/images/cover1.jpg)"
+    href="/vuejs-axios-fileupload"
+  >
+    <section class="post">
+      <h2>Vue.js와 Vuetify 활용해서 axios로 파일 업로드하기</h2>
+      <p>Vuetify? Vuetify는 Vue.js를 위한 디자인 프레임워크입니다. 이번 포스팅에서는 Vue.js와 Vuetify 를 활용해서 서버에 파일을 업로드하는...</p>
+    </section>
+  </a>
+  
+  <!-- [[! /prev_post ]] -->
+</aside>
+
+<!-- /post -->
+
+
+        <!-- The tiny footer at the very bottom -->
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="/">sohnjunior의 Dev Log</a> &copy; 2021</section>
+          <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/jekyller/jasper">Jasper</a></section>
+        </footer>
+    </div>
+    <!-- highlight.js -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- jQuery needs to come before `` so that jQuery can be used in code injection -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Ghost outputs important scripts and data with this tag -->
+    <!--  -->
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i["GoogleAnalyticsObject"] = r;
+    (i[r] =
+      i[r] ||
+      function () {
+        (i[r].q = i[r].q || []).push(arguments);
+      }),
+      (i[r].l = 1 * new Date());
+    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(
+    window,
+    document,
+    "script",
+    "//www.google-analytics.com/analytics.js",
+    "ga"
+  );
+
+  ga("create", "UA-69281367-1", "auto");
+  ga("send", "pageview");
+</script>
+
+    <!-- Fitvids makes video embeds responsive and awesome -->
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <!-- The main JavaScript file for Casper -->
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+</body>
+</html>

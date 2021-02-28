@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>sohnjunior.github.io/</title>
+   
+   <link>https://sohnjunior.github.io</link>
+   <description>PS와 웹 개발 관련내용을 기록합니다.</description>
+   <language>en-uk</language>
+   <managingEditor> </managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>Vue.js 에서 반응형(Reactivity)을 다루는 방법</title>
+	  <link>//vuejs-reactivity</link>
+	  <author></author>
+	  <pubDate>2020-07-18T00:00:00+09:00</pubDate>
+	  <guid>//vuejs-reactivity</guid>
+	  <description><![CDATA[
+	     <h2 id="들어가며">들어가며</h2>
+
+<p>이번 포스팅에서는 <code class="highlighter-rouge">Vue.js</code> 의 반응형 시스템에 대해 알아보고자 합니다. <br />
+최근 진행하고 있는 <code class="highlighter-rouge">Avocado</code> 프로젝트에서 컴포넌트의 <code class="highlighter-rouge">data</code> 에 변경을 해줘도 <code class="highlighter-rouge">props</code> 로 자식에게 전달해준 값이 갱신되지 않는 문제가 발생했습니다. <br />
+혹시나 해서 찾아보니 바로 <code class="highlighter-rouge">reactivity</code> 를 고려하지 않았던 것이 원인이 되었다는 것을 알게되었습니다. <br /></p>
+
+<h2 id="반응형이란">반응형이란?</h2>
+
+<p><img src="/assets/images/vuejs/vue-reactivity-diagram.png" alt="이미지" width="400" /></p>
+
+<p><code class="highlighter-rouge">Vue.js</code> 에서는 어떻게 컴포넌트 인스턴스의 <code class="highlighter-rouge">data</code> 속성 값을 추적하여 화면에 랜더링을 해줄 수 있는 것일까요? <br />
+이는 바로 각 컴포넌트 인스턴스마다 할당된 <code class="highlighter-rouge">watcher</code> 를 통해 변경 사항을 추적 및 관리하기 때문에 가능한 일입니다. <br />
+<code class="highlighter-rouge">Vue.js</code> 는 인스턴스 초기화 단계에서 <code class="highlighter-rouge">data</code> 의 모든 속성에 <code class="highlighter-rouge">getter / setter</code> 를 추가하여 관리 및 갱신에 필요한 연산을 수행합니다. <br /><br /></p>
+
+<p>또 한가지 중요한 사실은 <code class="highlighter-rouge">Vue.js</code> 는 <code class="highlighter-rouge">DOM</code> 업데이트를 <code class="highlighter-rouge">비동기</code> 로 수행한다는 것입니다. <br />
+따라서 데이터 변경이 발생하여 <code class="highlighter-rouge">DOM</code> 을 업데이트 해야할 경우 큐를 열고 모든 데이터 변경을 버퍼에 기록합니다. <br />
+이후 해당 변경 사항들은 이벤트 루프 <code class="highlighter-rouge">tick</code> 에서 대기열을 비우고 실제 변경 작업을 수행합니다. <br /></p>
+
+<h2 id="리스트-렌더링-시-주의사항">리스트 렌더링 시 주의사항</h2>
+
+<p><code class="highlighter-rouge">Vue.js</code> 는 배열에 인덱스로 항목을 직접 설정하는 경우나 배열 길이를 수정하는 경우 <b>변경 사항을 추적할 수 없습니다.</b> <br />
+하지만 그 외 아래의 변이 메소드같은 경우는 래핑되어 뷰 갱신을 추적할 수 있습니다. <br /></p>
+
+<ul>
+  <li>push(), pop()</li>
+  <li>shift(), unshift()</li>
+  <li>splice()</li>
+  <li>sort()</li>
+  <li>reverse()</li>
+</ul>
+
+<h2 id="문제-발생-원인은-무엇일까">문제 발생 원인은 무엇일까?</h2>
+
+<h3 id="리스트-렌더링-이슈">리스트 렌더링 이슈</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">current</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="c1">// 현재 배열 인덱스</span>
+      <span class="na">answer</span><span class="p">:</span> <span class="p">[],</span> <span class="c1">// 사용자 입력 값들을 저장하는 배열</span>
+      <span class="na">userInput</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span> <span class="c1">// 사용자 입력 값</span>
+    <span class="p">};</span>
+  <span class="p">},</span>
+
+  <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nx">handleNext</span><span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// currnt(인덱스) 증가, answer 가 추가된 이후 실행됨</span>
+    <span class="p">},</span>
+
+    <span class="nx">saveData</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">answer</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">current</span><span class="p">]</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">handleNext</span><span class="p">();</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>그렇다면 기존 코드를 살펴보며 무엇이 문제였는지 파악해보겠습니다. <br />
+기존에는 사용자가 입력한 단어들을 저장하는 배열 <code class="highlighter-rouge">answer</code> 가 위와 같이 <code class="highlighter-rouge">data</code> 에 선언되어 있습니다. <br />
+또한 사용자가 단어를 입력할 경우 발생하는 이벤트 핸들러인 <code class="highlighter-rouge">saveData</code> 함수의 경우 현재 배열의 인덱스값에 있는 값을
+새로운 값으로 대체하는 작업을 하고 있죠. <br />
+그런데 위에서 살펴봤듯이 <code class="highlighter-rouge">Vue.js</code> 는 인덱스로 직접적인 접근을 통해 값을 변경할 경우 이 변경사항을 추적할 수 없기 때문에 다시 랜더링이 발생하지 않습니다. <br />
+따라서 아래와 같이 <code class="highlighter-rouge">Vue</code> 에서 제공하는 <code class="highlighter-rouge">set</code> 메소드나 <code class="highlighter-rouge">splice</code> 를 활용하여 값을 변경해줍니다. <br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">saveData</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">$set</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">answer</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">current</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">handleNext</span><span class="p">();</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="비동기-처리-이슈">비동기 처리 이슈</h3>
+
+<p>아직 한 가지 문제점이 남아있습니다. <br />
+위 코드를 보시면 데이터를 갱신하고 인덱스를 증가시키는 <code class="highlighter-rouge">handleNext</code> 함수를 수행하는 것을 알 수 있습니다. <br />
+하지만 그대로 실행시킬 경우 다음과 같이 단어가 잘려서 입력되는 문제가 발생하는 것을 확인할 수 있습니다. <br /></p>
+
+<p><img src="/assets/images/vuejs/vue-async.png" alt="이미지" width="600" /></p>
+
+<p>이는 <code class="highlighter-rouge">Vue.js</code> 의 <code class="highlighter-rouge">비동기 처리 방식</code> 때문에 인덱스가 증가함과 동시에 데이터가 변경되어 발생한 일입니다. <br />
+따라서 데이터 변경을 마친 후 <code class="highlighter-rouge">DOM</code> 업데이트를 마칠 때까지 기다리기 위해 <code class="highlighter-rouge">Vue.nextTick(콜백)</code> 을 사용하도록 합니다. <br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">saveData</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">$set</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">answer</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">current</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">$nextTick</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">handleNext</span><span class="p">();</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li>https://vuejs.org/v2/guide/reactivity.html</li>
+  <li>https://kr.vuejs.org/v2/guide/list.html#nav</li>
+  <li>https://laracasts.com/discuss/channels/vue/vuejs-component-rendering-after-prop-update</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Vue.js 클래스와 스타일 바인딩 적용하기</title>
+	  <link>//vuejs-class-style-binding</link>
+	  <author></author>
+	  <pubDate>2020-07-02T00:00:00+09:00</pubDate>
+	  <guid>//vuejs-class-style-binding</guid>
+	  <description><![CDATA[
+	     <h2 id="하고-싶은-것">하고 싶은 것</h2>
+
+<p><img src="/assets/images/vuejs/vue-class-style-1.png" alt="이미지" width="700" /></p>
+
+<p>쇼핑몰 프로젝트 진행 도중 장바구니 기능 구현에서 상품의 상태에 따라 구매 가능 유무를 사용자에게 보여주도록 했습니다. <br />
+하지만 별다른 스타일 없는 밋밋한 텍스트는 의미를 파악하는데 있어서 확 와닿지가 않다고 생각해서 상태별로 스타일을 적용하는 것을 고려하던 찰나 <br />
+다행히도 Vue.js 에서는 <code class="highlighter-rouge">동적 클래스 및 스타일 바인딩</code> 을 지원해주고 있어서 이번 포스트에서는 해당 기능을 활용해보겠습니다. <br /></p>
+
+<h2 id="클래스와-스타일-동적-바인딩">클래스와 스타일 동적 바인딩</h2>
+
+<p>Vue.js 에서는 데이터를 동적으로 랜더링하기 위해 <code class="highlighter-rouge">v-bind</code> 를 지원하고 있습니다. <br />
+따라서 특정 컴포넌트의 스타일 혹은 클래스를 동적으로 할당해주기 위해서는 해당 기능을 활용하면 됩니다. <br /><br /></p>
+
+<p>크게 객체를 통해 지정하는 방법과 배열을 통해 지정하는 방법으로 나뉘게 되는데 <br />
+클래서를 동적으로 할당하기 위한 샘플 코드를 공식 문서를 통해 살펴보고 이번 프로젝트에 적용해보도록 하겠습니다. <br />
+(스타일 랜더링은 실제 프로젝트 적용 과정에서 사용하도록 하겠습니다.) <br /></p>
+
+<p>두 가지는 상황에 따라 본인에게 편리한 방법을 선택해서 활용하면 됩니다.<br /></p>
+
+<h3 id="객체-구문">객체 구문</h3>
+
+<p>객체 구문에서는 <code class="highlighter-rouge">v-bind</code> 값에 클래스들을 <code class="highlighter-rouge">Object</code> 형태로 정의해주면 됩니다. 다음과 같은 코드를 살펴보겠습니다.<br /></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"static"</span> <span class="na">v-bind:class=</span><span class="s">"{ active: isActive, error: hasError }"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>이 경우 <code class="highlighter-rouge">isActive</code> 값이 <code class="highlighter-rouge">true</code> 일 때만 <code class="highlighter-rouge">active</code> 라는 클래스가 바안딩됩니다. (<code class="highlighter-rouge">error</code> 도 마찬가지) <br />
+따라서 두 값이 모두 <code class="highlighter-rouge">true</code> 일때 최종 랜더링 되는 컴포넌트는 다음과 같습니다. <br /></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"static active error"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>이때 static은 바인딩 되어 있지 않은 정적인 클래스이므로 isActive의 유무와 관계없이 추가됩니다.</p>
+</blockquote>
+
+<h3 id="배열-구문">배열 구문</h3>
+
+<p>배열 구문은 여러개의 클래스 혹은 스타일을 배열 형태로 정의하여 나타내는 것입니다. <br />
+한가지 차이점은 동적으로 랜더링하고 싶다면 <code class="highlighter-rouge">삼항 연산자 혹은 객체 구문</code> 을 같이 활용해야 한다는 점입니다. <br /><br /></p>
+
+<p>조건이 없는 클래스 나열은 다음과 같습니다. <br /></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">v-bind:class=</span><span class="s">"[activeClass, errorClass]"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">data</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nl">activeClass</span><span class="p">:</span> <span class="s1">'active'</span><span class="p">,</span>
+  <span class="nx">errorClass</span><span class="p">:</span> <span class="s1">'text-danger'</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>만약 조건부 랜더링이 필요하다면 다음과 같이 내부에 <code class="highlighter-rouge">삼항 연산자</code> 를 사용하거나 <code class="highlighter-rouge">객체 구문</code> 을 같이 사용하면 됩니다. <br /></p>
+
+<h4 id="삼항-연산자">삼항 연산자</h4>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">v-bind:class=</span><span class="s">"[isActive ? activeClass : '', errorClass]"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h4 id="내부에-객체-구문-활용">내부에 객체 구문 활용</h4>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">v-bind:class=</span><span class="s">"[{ active: isActive }, errorClass]"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h2 id="프로젝트에-적용하기">프로젝트에 적용하기</h2>
+
+<p>현재 각 상품에 대한 정보는 별도의 컴포넌트로 랜더링해주고 있는 상황입니다. <br />
+각각의 카드는 부모 컴포넌트로부터 <code class="highlighter-rouge">props</code> 로 상품에 대한 정보를 전달받고 있으므로 <br />
+이중 현재 상품의 판매 유무를 나타내는 <code class="highlighter-rouge">status</code> 값을 활용해 동적으로 랜더링해주도록 하겠습니다. <br />
+이번에는 <code class="highlighter-rouge">클래스 바인딩</code> 이 아닌 <code class="highlighter-rouge">스타일 바인딩</code> 을 적용해보도록 하겠습니다. <br /></p>
+
+<p>스타일 바인딩의 경우 적용하고자 하는 스타일을 <code class="highlighter-rouge">Camel case</code> 로 작성해서 Javascript 객체 형태로 전달해줘야합니다. <br /></p>
+
+<h3 id="스타일-객체-선언">스타일 객체 선언</h3>
+
+<p>현재 상품이 판매중일때는 초록색, 그렇지 않다면 붉은색을 적용하도록 하겠습니다. <br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">onSale</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">color</span><span class="p">:</span> <span class="s1">'darkseagreen'</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="na">soldOut</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">color</span><span class="p">:</span> <span class="s1">'crimson'</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+</code></pre></div></div>
+
+<h3 id="템플릿-코드">템플릿 코드</h3>
+
+<p>기존에는 아직 스타일이 적용 안된 단순한 <code class="highlighter-rouge">span</code> 태그입니다. <br /></p>
+
+<p><span>{{ statusMessage }}</span></p>
+
+<p>이제 위 코드를 아래와 같이 바꿔줍니다. <br /></p>
+
+<p>&lt;span :style=”[status ? soldOut : onSale]”&gt;{{ statusMessage }}&lt;/span&gt;</p>
+
+<h3 id="결과-화면">결과 화면</h3>
+
+<p><img src="/assets/images/vuejs/vue-class-style-2.png" alt="이미지" width="700" /></p>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li>https://kr.vuejs.org/v2/guide/class-and-style.html</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Vue-router 네비게이션 가드 활용하기</title>
+	  <link>//vuejs-navigation-guard</link>
+	  <author></author>
+	  <pubDate>2020-06-29T00:00:00+09:00</pubDate>
+	  <guid>//vuejs-navigation-guard</guid>
+	  <description><![CDATA[
+	     <h2 id="navigation-guard">Navigation Guard?</h2>
+
+<h3 id="전역-가드">전역 가드</h3>
+
+<p><code class="highlighter-rouge">router.beforeEach</code> 를 사용해서 모든 라우터 객체에 가드를 적용합니다. <br />
+따라서 네비게이션이 트리거 될 때마다 어떤 라우트가 발생했는지 알 필요가 있는데 이를 위해 다음 세 가지 인자를 전달받습니다. <br /></p>
+
+<ul>
+  <li>to : <code class="highlighter-rouge">to</code> 에 해당하는 라우트 객체로 다음에 이동</li>
+  <li>from : 현재 라우터로 오기 이전의 라우트</li>
+  <li>next : 훅을 해결하기 위해 호출됩니다. 동작 방식은 <code class="highlighter-rouge">next</code> 에 전달하는 인자에 따라 달라집니다.</li>
+</ul>
+
+<p><code class="highlighter-rouge">next()</code> 함수의 경우 호출되지 않으면 훅이 절대 불러지지 않으므로 반드시 가드 내에서 호출해야합니다. <br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VueRouter</span><span class="p">({</span> <span class="p">...</span> <span class="p">})</span>
+
+<span class="nx">router</span><span class="p">.</span><span class="nx">beforeEach</span><span class="p">((</span><span class="nx">to</span><span class="p">,</span> <span class="k">from</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">})</span>
+
+</code></pre></div></div>
+
+<h3 id="라우트-별-가드">라우트 별 가드</h3>
+
+<p><code class="highlighter-rouge">beforeEnter</code> 를 라우트 객체에 직접 정의하여 해당 라우트가 발생하기 이전에 원하는 로직을 처리할 수 있습니다. <br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VueRouter</span><span class="p">({</span>
+  <span class="na">routes</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="na">path</span><span class="p">:</span> <span class="s2">"/foo"</span><span class="p">,</span>
+      <span class="na">component</span><span class="p">:</span> <span class="nx">Foo</span><span class="p">,</span>
+      <span class="na">beforeEnter</span><span class="p">:</span> <span class="p">(</span><span class="nx">to</span><span class="p">,</span> <span class="k">from</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+      <span class="p">},</span>
+    <span class="p">},</span>
+  <span class="p">],</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h3 id="컴포넌트-내부-가드">컴포넌트 내부 가드</h3>
+
+<p>컴포넌트 내부에서 <code class="highlighter-rouge">beforeRouteEnter</code>, <code class="highlighter-rouge">beforeRouteUpdate</code>, <code class="highlighter-rouge">beforeRouteLeave</code> 세 가지로 네비게이션 가드를 설정할 수 있습니다. <br />
+<code class="highlighter-rouge">beforeRouteEnter</code> 는 아직 컴포넌트가 랜더링 되지 않았기 때문에 <code class="highlighter-rouge">this</code> 객체에 접근할 수 없지만 나머지 두 개는 접근이 가능합니다. <br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">Foo</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">template</span><span class="p">:</span> <span class="s2">`...`</span><span class="p">,</span>
+  <span class="nx">beforeRouteEnter</span><span class="p">(</span><span class="nx">to</span><span class="p">,</span> <span class="k">from</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">},</span>
+  <span class="nx">beforeRouteUpdate</span><span class="p">(</span><span class="nx">to</span><span class="p">,</span> <span class="k">from</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">},</span>
+  <span class="nx">beforeRouteLeave</span><span class="p">(</span><span class="nx">to</span><span class="p">,</span> <span class="k">from</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>하지만 <code class="highlighter-rouge">next</code> 함수에 콜백 함수를 지정할 경우 콜백에 전달받는 인자로 컴포넌트 인스턴스에 접근하여 <code class="highlighter-rouge">this</code> 에 직접 접근할 수 있습니다. <br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nx">beforeRouteEnter</span> <span class="p">(</span><span class="nx">to</span><span class="p">,</span> <span class="k">from</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">next</span><span class="p">(</span><span class="nx">vm</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// `vm`을 통한 컴포넌트 인스턴스 접근</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h2 id="beforeenter를-통한-라우트-별-권한-체크">beforeEnter를 통한 라우트 별 권한 체크</h2>
+
+<p>이번 포스팅에서는 라우트 객체 내부에 네비게이션 가드를 설정하여 사용자 권한을 체크해줬습니다. <br />
+만약 사용자가 상품 게시글 생성 페이지에 로그인을 안한 상태에서 접근하여고 한다면 <code class="highlighter-rouge">alert</code> 로 알람을 띄워준 뒤 홈 화면으로 리다이렉트 합니다. <br /></p>
+
+<h3 id="routesindexjs">routes/index.js</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// import components</span>
+<span class="c1">// ...</span>
+
+<span class="c1">// import store for navigation gurad</span>
+<span class="k">import</span> <span class="nx">store</span> <span class="k">from</span> <span class="s2">"../store/index"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VueRouter</span><span class="p">({</span>
+  <span class="na">routes</span><span class="p">:</span> <span class="p">[</span>
+    <span class="c1">// ...</span>
+    <span class="p">{</span>
+      <span class="c1">// 상품 게시글 생성 페이지</span>
+      <span class="na">path</span><span class="p">:</span> <span class="s2">"/product/new"</span><span class="p">,</span>
+      <span class="na">component</span><span class="p">:</span> <span class="nx">ProductCreateView</span><span class="p">,</span>
+      <span class="na">beforeEnter</span><span class="p">:</span> <span class="p">(</span><span class="nx">to</span><span class="p">,</span> <span class="k">from</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="c1">// 만약 로그인 상태라면</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">store</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">email</span> <span class="o">!==</span> <span class="s2">""</span> <span class="o">&amp;&amp;</span> <span class="nx">store</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">token</span> <span class="o">!==</span> <span class="s2">""</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="nx">next</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">"로그인이 필요한 서비스입니다."</span><span class="p">);</span>
+        <span class="nx">next</span><span class="p">(</span><span class="s2">"/"</span><span class="p">);</span>
+      <span class="p">},</span>
+    <span class="p">},</span>
+  <span class="p">],</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li>https://router.vuejs.org/kr/guide/advanced/navigation-guards.html</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Vue.js와 Vuetify 활용해서 axios로 파일 업로드하기</title>
+	  <link>//vuejs-axios-fileupload</link>
+	  <author></author>
+	  <pubDate>2020-05-31T00:00:00+09:00</pubDate>
+	  <guid>//vuejs-axios-fileupload</guid>
+	  <description><![CDATA[
+	     <h2 id="vuetify">Vuetify?</h2>
+
+<p>Vuetify는 Vue.js를 위한 디자인 프레임워크입니다. <br />
+이번 포스팅에서는 Vue.js와 Vuetify 를 활용해서 서버에 파일을 업로드하는 방법에 대해 알아보고자 합니다. <br /></p>
+
+<blockquote>
+  <p>해당 포스팅은 사전에 파일 업로드를 처리할 수 있는 백엔드 서버가 구성되어있다는 전재하에 진행됩니다.</p>
+</blockquote>
+
+<h2 id="vuetify-file-input-컴포넌트-사용">Vuetify File input 컴포넌트 사용</h2>
+
+<p>Vuetify 에서는 기존의 HTML <code class="highlighter-rouge">input</code> 태그 역할을 하는 여러가지 입력 전용 컴포넌트들이 존재합니다. <br />
+이중 저희는 파일 업로드를 위한 <code class="highlighter-rouge">v-file-input</code> 태그를 활용합니다. <br /></p>
+
+<h3 id="productvue">Product.vue</h3>
+
+<h4 id="v-file-input-컴포넌트">v-file-input 컴포넌트</h4>
+
+<p><code class="highlighter-rouge">v-file-input</code> 은 선택된 파일에 변경이 있다면 <code class="highlighter-rouge">change</code> 이벤트를 통해 원하는 작업을 수행할 수 있습니다. <br />
+해당 이벤트 핸들링 함수를 등록해준 뒤 선택된 파일을 추적할 수 있도록 합니다. <br /></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    상품 등록하기
+
+    <span class="nt">&lt;v-file-input</span> <span class="na">label=</span><span class="s">"File input"</span> <span class="err">@</span><span class="na">change=</span><span class="s">"selectFile"</span><span class="nt">&gt;&lt;/v-file-input&gt;</span>
+
+    <span class="nt">&lt;v-btn</span> <span class="err">@</span><span class="na">click=</span><span class="s">"submit"</span><span class="nt">&gt;</span>서버에 전송하기<span class="nt">&lt;/v-btn&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre></div></div>
+
+<h4 id="파일-정보를-저장할-데이터-선언">파일 정보를 저장할 데이터 선언</h4>
+
+<p>선택된 파일 객체를 관리할 데이터 속성을 선언해줍니다. <br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">image</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+</code></pre></div></div>
+
+<h4 id="파일-선택-이벤트-처리">파일 선택 이벤트 처리</h4>
+
+<p>앞서 <code class="highlighter-rouge">change</code> 이벤트 핸들러 함수로 등록한 <code class="highlighter-rouge">selectFile</code> 함수에서는 인자로 선택된 파일 객체를 전달받습니다. <br />
+해당 객체를 <code class="highlighter-rouge">data</code> 의 <code class="highlighter-rouge">image</code> 에 할당해줍니다. <br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// 파일 변경 시 이벤트 핸들러</span>
+  <span class="nx">selectFile</span><span class="p">(</span><span class="nx">file</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">image</span> <span class="o">=</span> <span class="nx">file</span><span class="p">;</span>
+  <span class="p">},</span>
+</code></pre></div></div>
+
+<h4 id="axios-로-서버에-파일-업로드하기">axios 로 서버에 파일 업로드하기</h4>
+
+<p>이제 선택된 파일을 전송하기 위해 <code class="highlighter-rouge">formData</code> 를 생성합니다. <br />
+<code class="highlighter-rouge">axios</code> 의 요청 인자로 서버 api 주소를 지정하고 Node.js의 <code class="highlighter-rouge">multer</code> 모듈을 위해 <code class="highlighter-rouge">Content-Type</code> 을 <code class="highlighter-rouge">multipart/form-data</code> 로 지정해줬습니다. <br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="nx">submit</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">formData</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
+      <span class="nx">formData</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">'image'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">image</span><span class="p">);</span>
+
+      <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="p">{</span> <span class="nx">data</span> <span class="p">}</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">'http://127.0.0.1:3000/product/create'</span><span class="p">,</span> <span class="nx">formData</span><span class="p">,</span> <span class="p">{</span>
+          <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'multipart/form-data'</span>
+            <span class="p">}</span>
+          <span class="p">});</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="전체-코드">전체 코드</h4>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;template&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    상품 등록하기
+
+    <span class="nt">&lt;v-file-input</span> <span class="na">label=</span><span class="s">"File input"</span> <span class="err">@</span><span class="na">change=</span><span class="s">"selectFile"</span><span class="nt">&gt;&lt;/v-file-input&gt;</span>
+
+    <span class="nt">&lt;v-btn</span> <span class="err">@</span><span class="na">click=</span><span class="s">"submit"</span><span class="nt">&gt;</span>서버에 전송하기<span class="nt">&lt;/v-btn&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">axios</span> <span class="k">from</span> <span class="s2">"axios"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="na">image</span><span class="p">:</span> <span class="s2">"test image"</span><span class="p">,</span>
+    <span class="p">};</span>
+  <span class="p">},</span>
+
+  <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+    <span class="k">async</span> <span class="nx">submit</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">formData</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
+      <span class="nx">formData</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"image"</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">image</span><span class="p">);</span>
+
+      <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="p">{</span> <span class="nx">data</span> <span class="p">}</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span>
+          <span class="s2">"http://127.0.0.1:3000/product/create"</span><span class="p">,</span>
+          <span class="nx">formData</span><span class="p">,</span>
+          <span class="p">{</span>
+            <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"multipart/form-data"</span><span class="p">,</span>
+            <span class="p">},</span>
+          <span class="p">}</span>
+        <span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+
+    <span class="c1">// 파일 변경 시 이벤트 핸들러</span>
+    <span class="nx">selectFile</span><span class="p">(</span><span class="nx">file</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">image</span> <span class="o">=</span> <span class="nx">file</span><span class="p">;</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="실행-결과서버-로그">실행 결과(서버 로그)</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /product/create 200 11.313 ms - 129
+OPTIONS /product/create 204 0.205 ms - 0
+<span class="o">{</span>
+  image: <span class="s1">'profile-1590918594170.jpg'</span>,
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li>https://bezkoder.com/vuetify-file-upload/</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Vue.js Nested Router 사용하기</title>
+	  <link>//vuejs-nested-router</link>
+	  <author></author>
+	  <pubDate>2020-05-29T00:00:00+09:00</pubDate>
+	  <guid>//vuejs-nested-router</guid>
+	  <description><![CDATA[
+	     <h2 id="원하는-url-패턴">원하는 URL 패턴</h2>
+
+<p>쇼핑몰 프로젝트를 진행하면서 다수의 컴포넌트로 이루어진 화면 랜더링이 필요한 상황이 생겼습니다. <br />
+유저 관련 정보들을 위한 대시보드를 구현하면서 화면 설계를 다음과 같이 했습니다. <br /></p>
+
+<p>/board /board/wishlist
++——————+ +—————–+
+| board | | board |
+| +————–+ | | +————-+ |
+| | main | | +————&gt; | | wishlist | |
+| | | | | | | |
+| +————–+ | | +————-+ |
++——————+ +—————–+</p>
+
+<p>이를 위해서는 특정 URL별로 화면을 구성하는 컴포넌트를 랜더링할 수 있도록 해야합니다. <br />
+다행히도 Vue.js 에서는 이를 위한 <code class="highlighter-rouge">중첩 라우팅</code> 을 지원하고 있으니 이를 잘 활용하기만 하면 됩니다. <br /></p>
+
+<h2 id="중첩된-라우터">중첩된 라우터</h2>
+
+<p>중첩된 라우터는 여러 단계로 중첩 된 컴포넌트를 다루기 위해 Vue.js에서 제공하는 라우팅 기능입니다. <br />
+개발자는 이를 통해 특정 URL 패턴에 따라 원하는 자식 컴포넌트를 랜더링할 수 있습니다.<br /></p>
+
+<h3 id="자식-컴포넌트-정의">자식 컴포넌트 정의</h3>
+
+<p>우선 부모 컴포넌트 하위에 랜더링될 자식 컴포넌트들을 정의합니다. <br /></p>
+
+<h4 id="componentsdashboardvue">components/DashBoard.vue</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="err">대시보드</span> <span class="err">메인</span>
+    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/template</span><span class="err">&gt;
+</span>
+  <span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+  <span class="k">export</span> <span class="k">default</span> <span class="p">{}</span>
+  <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>
+  <span class="o">&lt;</span><span class="nx">style</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="sr">/style</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<h4 id="componentswishlistvue">components/WishList.vue</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="nx">ss</span>
+    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/template</span><span class="err">&gt;
+</span>
+  <span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+  <span class="k">export</span> <span class="k">default</span> <span class="p">{}</span>
+  <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>
+  <span class="o">&lt;</span><span class="nx">style</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="sr">/style</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<h3 id="부모-컴포넌트-정의">부모 컴포넌트 정의</h3>
+
+<p>부모 컴포넌트에서는 <code class="highlighter-rouge">&lt;router-view/&gt;</code> 를 통해 자식 컴포넌트를 원하는 위치에 랜더링합니다. <br /></p>
+
+<h4 id="viewsdashboardviewvue">views/DashBoardView.vue</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="err">대시보드</span><span class="o">&lt;</span><span class="nx">br</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">router</span><span class="o">-</span><span class="nx">view</span><span class="o">&gt;&lt;</span><span class="sr">/router-view</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/template</span><span class="err">&gt;
+</span>
+  <span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+  <span class="k">export</span> <span class="k">default</span> <span class="p">{}</span>
+  <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>
+  <span class="o">&lt;</span><span class="nx">style</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="sr">/style</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<h3 id="컴포넌트-로드-및-라우터-정의">컴포넌트 로드 및 라우터 정의</h3>
+
+<p>이제 앞서 정의한 컴포넌트를 불러와 각각의 URL 패턴에 맞도록 정의해줍니다. <br />
+자식 컴포넌트를 랜더링하기 위해서는 <code class="highlighter-rouge">children</code> 속성을 활용해야합니다. <br />
+<code class="highlighter-rouge">children</code> 속성 하위에 원하는 자식 컴포넌트들을 정의하고 해당 URL 패턴을 매치시켜줍니다. <br />
+이때 <code class="highlighter-rouge">path: ""</code>는 <code class="highlighter-rouge">/dashboard/</code>와 같이 자식 컴포넌트가 존재하지 않은 URL일 경우를 위한 라우팅입니다. <br /></p>
+
+<h4 id="routesindexjs">routes/index.js</h4>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">DashBoardView</span> <span class="k">from</span> <span class="s2">"../views/DashBoardView.vue"</span><span class="p">;</span>
+
+<span class="c1">// sub component for Dashboard</span>
+<span class="k">import</span> <span class="nx">DashBoard</span> <span class="k">from</span> <span class="s2">"../components/DashBoard.vue"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">WishList</span> <span class="k">from</span> <span class="s2">"../components/WishList.vue"</span><span class="p">;</span>
+
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">VueRouter</span><span class="p">);</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">VueRouter</span><span class="p">({</span>
+  <span class="na">routes</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="c1">// 홈 화면</span>
+      <span class="na">path</span><span class="p">:</span> <span class="s2">"/"</span><span class="p">,</span>
+      <span class="na">component</span><span class="p">:</span> <span class="nx">MainView</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="c1">// 유저 대시보드</span>
+      <span class="na">path</span><span class="p">:</span> <span class="s2">"/dashboard"</span><span class="p">,</span>
+      <span class="na">component</span><span class="p">:</span> <span class="nx">DashBoardView</span><span class="p">,</span>
+      <span class="na">children</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="c1">// 자삭 컴포넌트 없을 경우</span>
+          <span class="na">path</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+          <span class="na">component</span><span class="p">:</span> <span class="nx">DashBoard</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="c1">// 위시 리스트</span>
+          <span class="na">path</span><span class="p">:</span> <span class="s2">"wishlist"</span><span class="p">,</span>
+          <span class="na">component</span><span class="p">:</span> <span class="nx">WishList</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="c1">// ... 기타 child 컴포넌트 정의</span>
+        <span class="p">},</span>
+      <span class="p">],</span>
+    <span class="p">},</span>
+  <span class="p">],</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="참고-자료">참고 자료</h2>
+
+<ul>
+  <li>https://router.vuejs.org/kr/guide/essentials/nested-routes.html</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Vue-Router history mode 지원을 위한 Django 설정방법</title>
+	  <link>//django-history-mode</link>
+	  <author></author>
+	  <pubDate>2020-05-10T00:00:00+09:00</pubDate>
+	  <guid>//django-history-mode</guid>
+	  <description><![CDATA[
+	     <h2 id="vue-router와-django">Vue-router와 Django</h2>
+
+<p>Vue.js에서 <code class="highlighter-rouge">vue-router</code> 를 사용할 경우 기본적으로 URL에 # 가 포함되어 있습니다. <br />
+해시를 제거하기 위해서는 히스토리 모드를 적용해야 하는데 Django를 백엔드 서버로 두고 그대로 사용할 경우 문제가 생깁니다. <br /></p>
+
+<h2 id="문제점">문제점</h2>
+
+<p>만약 Vue.js에서 히스토리 모드를 적용한 후 <code class="highlighter-rouge">npm build</code> 를 통해 생성한 빌드 파일을 <br />
+Django의 <code class="highlighter-rouge">index.html</code> 로 설정한 다음 직접 URL로 특정 페이지를 요청할 경우 404 에러를 확인할 수 있습니다. <br /></p>
+
+<p>이는 Vue.js가 SPA(Single Page Application)이라서 Django 서버는 클라이언트에서 사용하는 특정 URL 패턴을 알 수 없는 상황에서 벌어진 일입니다. <br /></p>
+
+<p>그렇다면 Django에서 히스토리 모드를 사용하기 위해서는 어떻게 해야할까요? <br /></p>
+
+<h2 id="django에서-history-mode-지원을-위한-작업">Django에서 History mode 지원을 위한 작업</h2>
+
+<p>Django에서 히스토리 모드를 사용하기 위해서는 약간의 트릭을 이용해야합니다. <br /></p>
+
+<p>다음과 같이 <code class="highlighter-rouge">urls.py</code> 에서 가장 마지막 url 패턴을 정규표현식을 활용해 추가해주면 됩니다. <br />
+이렇게 하면 매칭되지 못한 URL은 다시 SPA 내에서 원하는 페이지를 찾을 수 있게 되는 것이죠. <br /></p>
+
+<h3 id="configurlspy">config/urls.py</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span><span class="p">,</span> <span class="n">include</span><span class="p">,</span> <span class="n">re_path</span>
+
+<span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">TemplateView</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">''</span><span class="p">,</span> <span class="n">TemplateView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="n">template_name</span><span class="o">=</span><span class="s">'index.html'</span><span class="p">)),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">'admin/'</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
+
+    <span class="c"># shopping app urls</span>
+    <span class="n">path</span><span class="p">(</span><span class="s">'shopping/'</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">'shopping.urls'</span><span class="p">)),</span>
+    <span class="c"># ... rest of your urls</span>
+<span class="p">]</span>
+
+<span class="c"># history mode 지원</span>
+<span class="n">urlpatterns</span> <span class="o">+=</span> <span class="p">[</span>
+     <span class="n">re_path</span><span class="p">(</span><span class="s">'^.*$'</span><span class="p">,</span> <span class="n">TemplateView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="n">template_name</span><span class="o">=</span><span class="s">'index.html'</span><span class="p">)),</span>
+<span class="p">]</span>
+
+</code></pre></div></div>
+
+<h3 id="참고-자료">참고 자료</h3>
+
+<ul>
+  <li>https://stackoverflow.com/questions/42864641/handling-single-page-application-url-and-django-url</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

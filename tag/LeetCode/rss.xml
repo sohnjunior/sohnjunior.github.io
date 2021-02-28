@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>sohnjunior.github.io/</title>
+   
+   <link>https://sohnjunior.github.io</link>
+   <description>PS와 웹 개발 관련내용을 기록합니다.</description>
+   <language>en-uk</language>
+   <managingEditor> </managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>LeetCode 63 -  Unique Paths II (Medium)</title>
+	  <link>//leetcode-63</link>
+	  <author></author>
+	  <pubDate>2021-02-04T00:00:00+09:00</pubDate>
+	  <guid>//leetcode-63</guid>
+	  <description><![CDATA[
+	     <h2 id="문제">문제</h2>
+
+<p><a href="https://leetcode.com/problems/unique-paths-ii/">LeetCode - 63번</a></p>
+
+<h2 id="풀이-과정">풀이 과정</h2>
+
+<p>시작 지점에서 목표 지점에 도달할 수 있는 경우의 수를 찾는 문제입니다.</p>
+
+<p><code class="highlighter-rouge">dp(x, y)</code> 를 <code class="highlighter-rouge">(x, y)</code> 에서 오른쪽 하단 모서리에 도달하는 경우의 수라고 한다면 다음과 같은 점화식을 정의할 수 있습니다.</p>
+
+<blockquote>
+  <p>dp(x, y) = dp(x + 1, y) + dp(x, y + 1)</p>
+</blockquote>
+
+<p>이때 <code class="highlighter-rouge">dp(x, y)</code> 에는 장애물이 없어야 하며 격자를 벗어나면 안됩니다.</p>
+
+<h2 id="코드">코드</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * @param {number[][]} obstacleGrid
+ * @return {number}
+ */</span>
+<span class="kd">var</span> <span class="nx">uniquePathsWithObstacles</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">obstacleGrid</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">obstacleGrid</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">obstacleGrid</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">length</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">memo</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nb">Array</span><span class="p">(</span><span class="nx">m</span><span class="p">),</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">n</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span>
+
+  <span class="kd">function</span> <span class="nx">checkValidation</span><span class="p">(</span><span class="nx">position</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span>
+      <span class="nx">position</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span>
+      <span class="nx">position</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="nx">m</span> <span class="o">||</span>
+      <span class="nx">position</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span>
+      <span class="nx">position</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="nx">n</span>
+    <span class="p">)</span>
+      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">obstacleGrid</span><span class="p">[</span><span class="nx">position</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="nx">position</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">function</span> <span class="nx">getPath</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">==</span> <span class="nx">m</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nx">y</span> <span class="o">==</span> <span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">memo</span><span class="p">[</span><span class="nx">x</span><span class="p">][</span><span class="nx">y</span><span class="p">]</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="nx">memo</span><span class="p">[</span><span class="nx">x</span><span class="p">][</span><span class="nx">y</span><span class="p">];</span>
+
+    <span class="nx">memo</span><span class="p">[</span><span class="nx">x</span><span class="p">][</span><span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="kd">const</span> <span class="nx">candidates</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span>
+      <span class="p">[</span><span class="nx">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">y</span><span class="p">],</span>
+    <span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">position</span> <span class="k">of</span> <span class="nx">candidates</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">checkValidation</span><span class="p">(</span><span class="nx">position</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">memo</span><span class="p">[</span><span class="nx">x</span><span class="p">][</span><span class="nx">y</span><span class="p">]</span> <span class="o">+=</span> <span class="nx">getPath</span><span class="p">(</span><span class="nx">position</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">position</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">memo</span><span class="p">[</span><span class="nx">x</span><span class="p">][</span><span class="nx">y</span><span class="p">];</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">obstacleGrid</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">===</span> <span class="mi">1</span> <span class="o">||</span> <span class="nx">obstacleGrid</span><span class="p">[</span><span class="nx">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">getPath</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>LeetCode 1011 -  Capacity To Ship Packages Within D Days (Medium)</title>
+	  <link>//leetcode-1011</link>
+	  <author></author>
+	  <pubDate>2021-01-26T00:00:00+09:00</pubDate>
+	  <guid>//leetcode-1011</guid>
+	  <description><![CDATA[
+	     <h2 id="문제">문제</h2>
+
+<p><a href="https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/">LeetCode - 1011번</a></p>
+
+<h2 id="풀이-과정">풀이 과정</h2>
+
+<p>화물들의 무게 <code class="highlighter-rouge">weights</code> 가 주어질 때 <code class="highlighter-rouge">D</code> 일에 모든 화물을 배송하기 위한 화물선의 최소 무게를 찾는 문제입니다.</p>
+
+<p>사실 문제 분류는 <code class="highlighter-rouge">이분 탐색</code> 으로 되어 있지만 입력의 크기를 고려 했을 때 <code class="highlighter-rouge">완전 탐색</code> 으로도 해결할 수 있을 것 같았습니다.</p>
+
+<p>그래도 <code class="highlighter-rouge">이분 탐색</code> 을 활용해보면 화물선의 최소 및 최대 무게를 정하고 모든 화물을 운반하기 위해 필요한 최소 일수를 구해서 비교하면 됩니다.</p>
+
+<p>회물선의 최소 무게는 모든 화물 중 가장 무거운 것이며 최대 무게는 모든 화물을 하루만에 배송하기 위한 무게(즉, 모든 화물 무게의 합) 입니다.</p>
+
+<h2 id="코드">코드</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * @param {number[]} weights
+ * @param {number} D
+ * @return {number}
+ */</span>
+<span class="kd">var</span> <span class="nx">shipWithinDays</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">weights</span><span class="p">,</span> <span class="nx">D</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">lo</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(...</span><span class="nx">weights</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">hi</span> <span class="o">=</span> <span class="nx">weights</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">weight</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">acc</span> <span class="o">+</span> <span class="nx">weight</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+
+  <span class="k">while</span> <span class="p">(</span><span class="nx">lo</span> <span class="o">&lt;=</span> <span class="nx">hi</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">mid</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">((</span><span class="nx">lo</span> <span class="o">+</span> <span class="nx">hi</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">day</span> <span class="o">=</span> <span class="nx">getShippingDay</span><span class="p">(</span><span class="nx">weights</span><span class="p">,</span> <span class="nx">mid</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">day</span> <span class="o">&lt;=</span> <span class="nx">D</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">answer</span> <span class="o">=</span> <span class="nx">mid</span><span class="p">;</span>
+      <span class="nx">hi</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">lo</span> <span class="o">=</span> <span class="nx">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">getShippingDay</span><span class="p">(</span><span class="nx">weights</span><span class="p">,</span> <span class="nx">capacity</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">day</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">acc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">weight</span> <span class="k">of</span> <span class="nx">weights</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">acc</span> <span class="o">+</span> <span class="nx">weight</span> <span class="o">&lt;=</span> <span class="nx">capacity</span><span class="p">)</span> <span class="nx">acc</span> <span class="o">+=</span> <span class="nx">weight</span><span class="p">;</span>
+    <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">acc</span> <span class="o">=</span> <span class="nx">weight</span><span class="p">;</span>
+      <span class="nx">day</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">day</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>LeetCode 187 -  Repeated DNA Sequences (Medium)</title>
+	  <link>//leetcode-187</link>
+	  <author></author>
+	  <pubDate>2021-01-25T00:00:00+09:00</pubDate>
+	  <guid>//leetcode-187</guid>
+	  <description><![CDATA[
+	     <h2 id="문제">문제</h2>
+
+<p><a href="https://leetcode.com/problems/repeated-dna-sequences/">LeetCode - 187번</a></p>
+
+<h2 id="풀이-과정">풀이 과정</h2>
+
+<p>주어진 문자열에서 10자 이상의 부분 문자열 중 2번 이상 반복되는 모든 부분 문자열의 종류를 찾는 문제입니다.</p>
+
+<p><code class="highlighter-rouge">해시 테이블</code> 를 사용하면 <code class="highlighter-rouge">O(N)</code> 에 모든 경우를 탐색할 수 있습니다.</p>
+
+<p>이외에도 두 개의 <code class="highlighter-rouge">Set</code> 을 사용하면 동일한 로직을 수행할 수도 있습니다. (구현은 이게 더 깔끔한 것 같습니다 😄)</p>
+
+<h2 id="코드">코드</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * @param {string} s
+ * @return {string[]}
+ */</span>
+<span class="kd">var</span> <span class="nx">findRepeatedDnaSequences</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">s</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="k">return</span> <span class="p">[];</span>
+
+  <span class="kd">const</span> <span class="nx">cache</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Map</span><span class="p">();</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">len</span> <span class="o">-</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">substring</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">10</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">cache</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">substring</span><span class="p">))</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">quantity</span> <span class="o">=</span> <span class="nx">cache</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">substring</span><span class="p">);</span>
+      <span class="nx">cache</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">substring</span><span class="p">,</span> <span class="nx">quantity</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">cache</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">substring</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">cache</span><span class="p">.</span><span class="nx">entries</span><span class="p">()].</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="p">[</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">])</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">value</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="nx">acc</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">acc</span><span class="p">;</span>
+  <span class="p">},</span> <span class="p">[]);</span>
+
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>LeetCode 3 - Longest Substring Without Repeating Characters (Medium)</title>
+	  <link>//leetcode-3</link>
+	  <author></author>
+	  <pubDate>2021-01-22T00:00:00+09:00</pubDate>
+	  <guid>//leetcode-3</guid>
+	  <description><![CDATA[
+	     <h2 id="문제">문제</h2>
+
+<p><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">LeetCode - 3번</a></p>
+
+<h2 id="풀이-과정">풀이 과정</h2>
+
+<p>중복된 문자가 없는 부분 문자열 중에서 가장 길이가 긴 것을 찾는 문제입니다.</p>
+
+<p>두 개의 포인터 <code class="highlighter-rouge">head, tail</code> 를 활용해서 윈도우를 나타내고 중복된 문자가 발견되면 현재 윈도우에서 중복된 문자의 위치로 <code class="highlighter-rouge">head</code> 를 이동시키면 됩니다.</p>
+
+<h2 id="코드">코드</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * @param {string} s
+ * @return {number}
+ */</span>
+<span class="kd">var</span> <span class="nx">lengthOfLongestSubstring</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">cache</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Map</span><span class="p">();</span>
+  <span class="kd">let</span> <span class="nx">head</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">tail</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(;</span> <span class="nx">tail</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">tail</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">cache</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">tail</span><span class="p">]))</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">duplicateIndex</span> <span class="o">=</span> <span class="nx">cache</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">tail</span><span class="p">]);</span>
+
+      <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">head</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">duplicateIndex</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">cache</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+      <span class="p">}</span>
+
+      <span class="nx">answer</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span><span class="nx">answer</span><span class="p">,</span> <span class="nx">tail</span> <span class="o">-</span> <span class="nx">head</span><span class="p">);</span>
+      <span class="nx">head</span> <span class="o">=</span> <span class="nx">duplicateIndex</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">cache</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">tail</span><span class="p">],</span> <span class="nx">tail</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nx">answer</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span><span class="nx">answer</span><span class="p">,</span> <span class="nx">tail</span> <span class="o">-</span> <span class="nx">head</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>LeetCode 881 -  Boats to Save People (Medium)</title>
+	  <link>//leetcode-881</link>
+	  <author></author>
+	  <pubDate>2021-01-17T00:00:00+09:00</pubDate>
+	  <guid>//leetcode-881</guid>
+	  <description><![CDATA[
+	     <h2 id="문제">문제</h2>
+
+<p><a href="https://leetcode.com/problems/boats-to-save-people/">LeetCode - 881번</a></p>
+
+<h2 id="풀이-과정">풀이 과정</h2>
+
+<p>최대 2명이 탈 수 있는 보트를 이용해서 모든 사람들을 옮기는 최소 왕복 이동 횟수를 구하는 <code class="highlighter-rouge">그리디</code> 문제입니다.</p>
+
+<p>우선 사람들의 몸무게로 내림차순 정렬해서 보트에 순서대로 태우도록 합니다.</p>
+
+<p>여기서 생각해볼 점은 <code class="highlighter-rouge">people[head] &lt; limit</code> 일 때 남은 사람은 <code class="highlighter-rouge">limit - people[head]</code> 보다 적은 몸무게 중</p>
+
+<p>가장 큰 무게 <code class="highlighter-rouge">A</code> 를 가지는 사람을 선택할 것인지 혹은 남은 사람들 중 가장 무게가 적게 나가는 사람 <code class="highlighter-rouge">B</code> 을 선택할 것인지 입니다.</p>
+
+<p>이때 <code class="highlighter-rouge">A</code> 를 선택하든 <code class="highlighter-rouge">B</code> 를 선택하든 선택되지 않은 다른 하나를 위해 보트가 하나 필요하다는 사실은 변하지 않습니다.</p>
+
+<p>따라서 가장 무게가 많이 나가는 사람을 가리키는 포인터 <code class="highlighter-rouge">head</code> 와 가장 무게가 적은 사람을 가리키는 <code class="highlighter-rouge">tail</code> 을 사용해서</p>
+
+<p>모든 사람을 옮기는데 필요한 보트의 수를 구하면 됩니다.</p>
+
+<h2 id="코드">코드</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * @param {number[]} people
+ * @param {number} limit
+ * @return {number}
+ */</span>
+<span class="kd">var</span> <span class="nx">numRescueBoats</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">people</span><span class="p">,</span> <span class="nx">limit</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">people</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">b</span> <span class="o">-</span> <span class="nx">a</span><span class="p">);</span>
+
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">head</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nx">tail</span> <span class="o">=</span> <span class="nx">people</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+
+  <span class="k">while</span> <span class="p">(</span><span class="nx">head</span> <span class="o">&lt;=</span> <span class="nx">tail</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">head</span> <span class="o">&lt;</span> <span class="nx">tail</span> <span class="o">&amp;&amp;</span> <span class="nx">people</span><span class="p">[</span><span class="nx">head</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">limit</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">people</span><span class="p">[</span><span class="nx">tail</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="nx">limit</span> <span class="o">-</span> <span class="nx">people</span><span class="p">[</span><span class="nx">head</span><span class="p">])</span> <span class="p">{</span>
+        <span class="nx">tail</span><span class="o">--</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="nx">head</span><span class="o">++</span><span class="p">;</span>
+    <span class="nx">answer</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>LeetCode 19 -  Remove Nth Node From End of List (Medium)</title>
+	  <link>//leetcode-19</link>
+	  <author></author>
+	  <pubDate>2021-01-16T00:00:00+09:00</pubDate>
+	  <guid>//leetcode-19</guid>
+	  <description><![CDATA[
+	     <h2 id="문제">문제</h2>
+
+<p><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/">LeetCode - 19번</a></p>
+
+<h2 id="풀이-과정">풀이 과정</h2>
+
+<p>링크드 리스트에서 뒤에서 <code class="highlighter-rouge">n</code> 번째 노드를 삭제하는 연산을 구현하는 문제입니다.</p>
+
+<p>뒤에서 <code class="highlighter-rouge">n</code> 번째 노드를 찾기 위해서 우선 리스트의 전체 크기를 알아낸 다음, 이동해야 하는 <code class="highlighter-rouge">offset</code> 을 계산합니다.</p>
+
+<p>이후 두 개의 포인터를 활용해서 <code class="highlighter-rouge">next</code> 속성을 재지정하면 됩니다.</p>
+
+<h2 id="코드">코드</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */</span>
+<span class="cm">/**
+ * @param {ListNode} head
+ * @param {number} n
+ * @return {ListNode}
+ */</span>
+<span class="kd">var</span> <span class="nx">removeNthFromEnd</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">head</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">offset</span> <span class="o">=</span> <span class="nx">getSize</span><span class="p">(</span><span class="nx">head</span><span class="p">)</span> <span class="o">-</span> <span class="nx">n</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">prev</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">cur</span> <span class="o">=</span> <span class="nx">head</span><span class="p">;</span>
+
+  <span class="k">while</span> <span class="p">(</span><span class="nx">offset</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">prev</span> <span class="o">=</span> <span class="nx">cur</span><span class="p">;</span>
+    <span class="nx">cur</span> <span class="o">=</span> <span class="nx">cur</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+    <span class="nx">offset</span><span class="o">--</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">prev</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">prev</span><span class="p">.</span><span class="nx">next</span> <span class="o">=</span> <span class="nx">cur</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">head</span> <span class="o">=</span> <span class="nx">head</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">head</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">getSize</span><span class="p">(</span><span class="nx">head</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">size</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">cur</span> <span class="o">=</span> <span class="nx">head</span><span class="p">;</span> <span class="nx">cur</span><span class="p">.</span><span class="nx">next</span><span class="p">;</span> <span class="nx">cur</span> <span class="o">=</span> <span class="nx">cur</span><span class="p">.</span><span class="nx">next</span><span class="p">)</span> <span class="nx">size</span><span class="o">++</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="nx">size</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>LeetCode 89 -  Gray Code (Medium)</title>
+	  <link>//leetcode-89</link>
+	  <author></author>
+	  <pubDate>2020-11-02T00:00:00+09:00</pubDate>
+	  <guid>//leetcode-89</guid>
+	  <description><![CDATA[
+	     <h2 id="문제">문제</h2>
+
+<p><a href="https://leetcode.com/problems/gray-code/">LeetCode - 89번</a></p>
+
+<h2 id="풀이-과정">풀이 과정</h2>
+
+<p><code class="highlighter-rouge">n</code> 자리의 <code class="highlighter-rouge">gray code</code> 를 생성하는 문제입니다. <br />
+<code class="highlighter-rouge">gray code</code> 는 인접한 비트 1개를 바꾸는 방식으로 만들어갑니다. <br />
+4자리의 <code class="highlighter-rouge">gray code</code> 를 보면 특정한 규칙성이 존재하는 것을 알 수 있습니다. <br />
+따라서 <code class="highlighter-rouge">재귀 호출</code> 로 가능한 모든 <code class="highlighter-rouge">gray code</code> 를 생성하고 10 진수롤 변환해서 반환하면 됩니다. <br /></p>
+
+<h2 id="코드">코드</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * @param {number} n
+ * @return {number[]}
+ */</span>
+<span class="kd">var</span> <span class="nx">grayCode</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+
+  <span class="kd">function</span> <span class="nx">code</span><span class="p">(</span><span class="nx">bit</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">bit</span> <span class="o">&gt;</span> <span class="nx">n</span><span class="p">)</span> <span class="k">return</span> <span class="p">[</span><span class="s2">""</span><span class="p">];</span>
+
+    <span class="kd">const</span> <span class="nx">subsets</span> <span class="o">=</span> <span class="nx">code</span><span class="p">(</span><span class="nx">bit</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">zeroStart</span> <span class="o">=</span> <span class="nx">subsets</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">sub</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s2">"0"</span> <span class="o">+</span> <span class="nx">sub</span><span class="p">);</span>
+    <span class="kd">const</span> <span class="nx">oneStart</span> <span class="o">=</span> <span class="nx">subsets</span><span class="p">.</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">map</span><span class="p">((</span><span class="nx">sub</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s2">"1"</span> <span class="o">+</span> <span class="nx">sub</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="nx">zeroStart</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">oneStart</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">code</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">map</span><span class="p">((</span><span class="nx">code</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">code</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>LeetCode 118 -  Pascal's Triangle (Easy)</title>
+	  <link>//leetcode-118</link>
+	  <author></author>
+	  <pubDate>2020-10-29T00:00:00+09:00</pubDate>
+	  <guid>//leetcode-118</guid>
+	  <description><![CDATA[
+	     <h2 id="문제">문제</h2>
+
+<p><a href="https://leetcode.com/problems/pascals-triangle/">LeetCode - 118번</a></p>
+
+<h2 id="풀이-과정">풀이 과정</h2>
+
+<p>파스칼 삼각형을 구현하는 문제입니다. <br />
+1번째 행과 2번째 행은 각각 <code class="highlighter-rouge">[1]</code> 과 <code class="highlighter-rouge">[1, 1]</code> 로 따로 처리해주고 <br />
+나머지 경우는 마지막 행의 인접한 요소들을 더해서 새로운 행을 만들면 됩니다. <br /></p>
+
+<h2 id="코드">코드</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * @param {number} numRows
+ * @return {number[][]}
+ */</span>
+<span class="kd">var</span> <span class="nx">generate</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">numRows</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="kd">let</span> <span class="nx">walker</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+  <span class="k">while</span> <span class="p">(</span><span class="nx">walker</span> <span class="o">&lt;=</span> <span class="nx">numRows</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">walker</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="nx">answer</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="mi">1</span><span class="p">]);</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">walker</span> <span class="o">===</span> <span class="mi">2</span><span class="p">)</span> <span class="nx">answer</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]);</span>
+    <span class="k">else</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">lastRow</span> <span class="o">=</span> <span class="nx">answer</span><span class="p">[</span><span class="nx">answer</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+      <span class="kd">const</span> <span class="nx">temp</span> <span class="o">=</span> <span class="p">[];</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">lastRow</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">temp</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">lastRow</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">+</span> <span class="nx">lastRow</span><span class="p">[</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]);</span>
+      <span class="p">}</span>
+
+      <span class="nx">answer</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="p">...</span><span class="nx">temp</span><span class="p">,</span> <span class="mi">1</span><span class="p">]);</span>
+    <span class="p">}</span>
+
+    <span class="nx">walker</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>LeetCode 771 -  Jewels and Stones (Easy)</title>
+	  <link>//leetcode-771</link>
+	  <author></author>
+	  <pubDate>2020-10-24T00:00:00+09:00</pubDate>
+	  <guid>//leetcode-771</guid>
+	  <description><![CDATA[
+	     <h2 id="문제">문제</h2>
+
+<p><a href="https://leetcode.com/problems/jewels-and-stones/">LeetCode - 771번</a></p>
+
+<h2 id="풀이-과정">풀이 과정</h2>
+
+<p>특정 문자열에 포함된 문자의 개수를 찾는 문제입니다. <br />
+문자 탐색의 기준이 되는 문자열 <code class="highlighter-rouge">J</code> 를 해싱해서 저장한 다은 <code class="highlighter-rouge">S</code> 를 하나씩 순회하며 해당 문자가 <code class="highlighter-rouge">J</code> 에 존재하는지 찾습니다. <br />
+이렇게 하면 <code class="highlighter-rouge">O(N)</code> 에 탐색을 수행할 수 있습니다.</p>
+
+<h2 id="코드">코드</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * @param {string} J
+ * @param {string} S
+ * @return {number}
+ */</span>
+<span class="kd">var</span> <span class="nx">numJewelsInStones</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">J</span><span class="p">,</span> <span class="nx">S</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">hashTable</span> <span class="o">=</span> <span class="p">{};</span>
+
+  <span class="p">[...</span><span class="nx">J</span><span class="p">].</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">hashTable</span><span class="p">[</span><span class="nx">c</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">));</span>
+  <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">S</span><span class="p">].</span><span class="nx">filter</span><span class="p">((</span><span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">hashTable</span><span class="p">[</span><span class="nx">c</span><span class="p">]);</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>LeetCode 234 -  Palindrome Linked List (Easy)</title>
+	  <link>//leetcode-234</link>
+	  <author></author>
+	  <pubDate>2020-10-20T00:00:00+09:00</pubDate>
+	  <guid>//leetcode-234</guid>
+	  <description><![CDATA[
+	     <h2 id="문제">문제</h2>
+
+<p><a href="https://leetcode.com/problems/palindrome-linked-list/">LeetCode - 234번</a></p>
+
+<h2 id="풀이-과정">풀이 과정</h2>
+
+<p>주어진 링크드리스트가 <code class="highlighter-rouge">팰린드롬</code> 인지 판단하는 문제입니다. <br />
+시간 복잡도가 <code class="highlighter-rouge">O(N)</code> 이면서 공간 복잡도가 <code class="highlighter-rouge">O(1)</code> 으로 구현하기 위해서 재귀 함수를 사용했습니다. <br />
+이를 위해 먼저 링크드 리스트의 길이를 구한 다음, 중앙 위치까지 이동해서 팰린드롬 유무를 판단합니다. <br />
+이는 <code class="highlighter-rouge">a[i] ~ a[j]</code> 까지의 링크드 리스트가 팰린드롬이기 위해서는 <code class="highlighter-rouge">a[i+1] ~ a[j-1]</code> 까지가 팰린드롬이고 <code class="highlighter-rouge">a[i] == a[j]</code> 이기 때문입니다. <br />
+그러므로 각각의 재귀 호출 과정에서 반환값으로 <code class="highlighter-rouge">팰린드롬 유무</code> 와 <code class="highlighter-rouge">tail 노드</code> 를 반환해서 재귀 호출 과정에서 각각의 서브 리스트의 양 끝 노드를 비교해줍니다. <br /></p>
+
+<h2 id="코드">코드</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */</span>
+<span class="cm">/**
+ * @param {ListNode} head
+ * @return {boolean}
+ */</span>
+<span class="kd">var</span> <span class="nx">isPalindrome</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">head</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">getLength</span><span class="p">(</span><span class="nx">head</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">half</span> <span class="o">=</span> <span class="nx">len</span> <span class="o">%</span> <span class="mi">2</span> <span class="p">?</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">len</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="p">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">len</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">len</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">answer</span><span class="p">]</span> <span class="o">=</span> <span class="nx">dfs</span><span class="p">(</span><span class="nx">len</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">half</span><span class="p">,</span> <span class="nx">head</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">dfs</span><span class="p">(</span><span class="nx">even</span><span class="p">,</span> <span class="nx">pivot</span><span class="p">,</span> <span class="nx">head</span><span class="p">,</span> <span class="nx">depth</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">depth</span> <span class="o">===</span> <span class="nx">pivot</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">even</span><span class="p">)</span> <span class="k">return</span> <span class="p">[</span><span class="nx">head</span><span class="p">.</span><span class="nx">val</span> <span class="o">===</span> <span class="nx">head</span><span class="p">.</span><span class="nx">next</span><span class="p">.</span><span class="nx">val</span><span class="p">,</span> <span class="nx">head</span><span class="p">.</span><span class="nx">next</span><span class="p">.</span><span class="nx">next</span><span class="p">];</span>
+    <span class="k">else</span> <span class="k">return</span> <span class="p">[</span><span class="kc">true</span><span class="p">,</span> <span class="nx">head</span><span class="p">.</span><span class="nx">next</span><span class="p">];</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">subCheck</span><span class="p">,</span> <span class="nx">tail</span><span class="p">]</span> <span class="o">=</span> <span class="nx">dfs</span><span class="p">(</span><span class="nx">even</span><span class="p">,</span> <span class="nx">pivot</span><span class="p">,</span> <span class="nx">head</span><span class="p">.</span><span class="nx">next</span><span class="p">,</span> <span class="nx">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="k">return</span> <span class="p">[</span><span class="nx">subCheck</span> <span class="o">&amp;&amp;</span> <span class="nx">head</span><span class="p">.</span><span class="nx">val</span> <span class="o">===</span> <span class="nx">tail</span><span class="p">.</span><span class="nx">val</span><span class="p">,</span> <span class="nx">tail</span><span class="p">?.</span><span class="nx">next</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">getLength</span><span class="p">(</span><span class="nx">head</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">head</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">getLength</span><span class="p">(</span><span class="nx">head</span><span class="p">.</span><span class="nx">next</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>
