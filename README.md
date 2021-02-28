@@ -1,71 +1,100 @@
-# Update 07/09/2018
+## Jasper
 
-I'm planning to refactor Leonids theme!!!
+[![Build Status](https://travis-ci.org/jekyller/jasper.svg?branch=master)](https://travis-ci.org/jekyller/jasper)
+[![Ruby](https://img.shields.io/badge/ruby-2.5.2-blue.svg?style=flat)](http://travis-ci.org/jekyller/jasper)
+[![Jekyll](https://img.shields.io/badge/jekyll-3.6.2-blue.svg?style=flat)](http://travis-ci.org/jekyller/jasper)
 
-The goal is really simple: make documentation more intuitive and deployment simpler!!!
+This is a port of Ghost's default theme [Casper](https://github.com/tryghost/casper) for Jekyll inspired by [Kasper](https://github.com/rosario/kasper).
 
-Here is the plan:
+You might well ask at this point why bother making a new Casper's clone?
+Although this is inspired by Kasper, there are several **additional** features which make this port closer
+to the original theme. This port is based on the last Casper v1.3.7 (same as v1.4.0 that runs in Ghost 1.0).
 
-| Version | Description | Date |
-| --- | --- | --- |
-| 1.1 | Jekyll version deployable with gem | 07/15/2018 |
-| 1.2 | New features: Pagination, Prev/Next post | 07/22/2018 |
-| 2.0 | Gatsby or Vuepress version (vote in Issues) | who knows... |
+**New:** Check out **[Jasper2](https://github.com/jekyller/jasper2)**, a new port of Casper version 2!
 
-As the project was and will be designed to improve your writing experience, only documentation, gem, deployment process with CI relevant PRs are acceptable in the future.
+## Live demo
 
-I want you to know how much I value your support.
+[Jasper Live Demo](https://jekyller.github.io/jasper)
 
-Share it to your timeline!
+[Casper's Original Here](https://demo.ghost.io)
 
-# Update 05/06/2016
+## Screenshots
 
-Important! It's better to download the gzipped files instead of forking the repo. I would really appreciate if you could give me a star. 😁
+**Home page**
+![home page](https://raw.githubusercontent.com/jekyller/jasper/master/assets/images/jasper_screen1.png)
 
-This project is under MIT license, so feel free to make it your own.
+**Post page**
+![post page](https://raw.githubusercontent.com/jekyller/jasper/master/assets/images/jasper_screen2.png)
 
-# Leonids Jekyll Themes
+**Author page**
+![author page](https://raw.githubusercontent.com/jekyller/jasper/master/assets/images/jasper_screen3.png)
 
-**[Leonids](http://renyuanz.github.io/leonids)** is a clean Jekyll theme perfect for powering your GitHub hosted blog.
+**Related posts page**
+![tag page](https://raw.githubusercontent.com/jekyller/jasper/master/assets/images/jasper_screen4.png)
 
-## What is Leonids?
+**Tags page with opened sidebar**
+![sidebar page](https://raw.githubusercontent.com/jekyller/jasper/master/assets/images/jasper_screen5.png)
 
-* Responsive templates. Looking good on mobile, tablet, and desktop.
-* Simple and clear permalink structure.
-* Support for Disqus Comments.
-* Support for multi-authors.
-* **And** the Leonids (/ˈliːənɪdz/ lee-ə-nidz) are a prolific meteor shower associated with the comet [Tempel-Tuttle](https://en.wikipedia.org/wiki/55P/Tempel%E2%80%93Tuttle).
+**404 page**
+![related page](https://raw.githubusercontent.com/jekyller/jasper/master/assets/images/jasper_screen6.png)
 
-See a [demo](http://renyuanz.github.io/leonids/) hosted on GitHub.
+## Jasper theme includes
 
-## Quick setup
+- Pagination
+- Google Analytics tracking
+- Author's profile with picture
+- Disqus comments (not Ghost standard)
+- Author page (New 07.02.2015)
+- Tag page(s) (New 07.02.2015)
+- 404 page (New 07.02.2015)
+- Toggleable sliding sidebar (New 07.02.2015)
+- Related posts view (New 30.10.2015)
+- Tag description(s) (New 30.10.2015)
+- Code Syntax Highlight (New 24.11.2015)
+- Code Syntax Highlight with [highlight.js](https://highlightjs.org/) (New 06.04.2016)
+- Rss updated to Jekyll v3 (New 06.04.2016)
+- Updated to Casper v1.3.7 **(New 17.11.2017)**
+- 'Out of the box' support for Multiple Authors **(New 17.11.2017)**
 
-```
-git clone https://github.com/renyuanz/leonids
-cd leonids
-jekyll server
-```
+## How to use it
 
-Check out your awesome blog at `http://localhost:4000` and Cheers!
+### Deployment
 
-## Running with Docker
+**Important:** For security reasons, Github does not allow plugins (under \_plugins/) when deploying with Github Pages. This means:
 
-```
-docker run --rm -it --volume=$PWD:/srv/jekyll -p 4000:4000 jekyll/jekyll:pages jekyll serve --watch --force_polling
-```
+**1)** that we need to generate your site locally (more details below) and push the resulting HTML to a Github repository;
 
-## Resume Page by [@Skn0tt](https://github.com/Skn0tt)
-Leonids features a simple resume page. It is divided up into five sections:
+**2)** built the site with [travis-ci](https://travis-ci.org/) (with goodies from [jekyll-travis](https://github.com/mfenner/jekyll-travis)) automatically pushing the generated _\_site/_ files to your _gh-pages_ branch.
+This later approach is the one I am currently using to generate the live demo.
 
-* Bio (Edit \_data/index/careers.yml)
-* Education (Edit \_data/index/education.yml)
-* Skills (Edit \_data/index/skills.yml)
-* Projects (Edit \_data/index/projects.yml)
-* About (Edit \_includes/sections/about.html)
+For option **1)** simply clone this repository (_master branch_), and then run `bundle exec jekyll serve` inside the directory. Upload the resulting _\_site/_ contents to your repository (_master branch_ if uploading as your personal page (username.github.io) or _gh-pages branch_ if uploading as a project page (as for the [demo](https://github.com/jekyller/jasper/tree/gh-pages)).
 
-You can put all your info into these files, and they will be featured on the resume page.
+For option **2)** you will need to set up travis-ci for your personal fork. Briefly all you need then is to change your details in _[\_config.yml](_config.yml)_ so that you can push to your github repo. You will also need to generate a secure key to add to your _[.travis.yml](.travis.yml)_ (you can find more info on how to do it in that file). Also make sure you read the documentation from [jekyll-travis](https://github.com/mfenner/jekyll-travis). This approach has clear advantages in that you simply push changes to your files and all the html files are generated for you. Also you get to know if everything is still fine with your site builds. Don't hesitate to contact me if you still have any issues (see below about issue tracking).
 
-## TODO
+### Author pages
 
-- [ ] Redesign categories page. Ref: [dribbble: blog category section By Ilja Miskov](https://dribbble.com/shots/2274792-Blog-Category-Selection)
-- [ ] Multi languages support.
+In order to properly generate author pages you need to rename the field _categories_ in the front matter of every post to match that of your each author _username_ as defined in the _[\_config.yml](_config.yml)_ file.
+With the latest update, multiple author blogs are now supported out of the box.
+
+## Issues and contributing
+
+This install builds well with Ruby v2.4.2 and Jekyll v3.7.4. If you run into any problems please log them on the [issue tracker](https://github.com/jekyller/jasper/issues).
+
+Feel free pull-request your patches and fixes.
+
+## Thanks
+
+Many thanks to the Ghost team for all the design work that allows to make this clone possible. Also many thanks to all contributors, that help keeping the project alive and updated :smile:
+
+## Copyright & License
+
+Same licence as the one provided by Ghost's team. See Casper's theme [license](GHOST.txt).
+
+Copyright (C) 2015-2017 - Released under the MIT License.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
