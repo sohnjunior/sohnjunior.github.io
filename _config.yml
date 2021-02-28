@@ -15,6 +15,7 @@ google_analytics: UA-69281367-1
 disqus: sohnjunior
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)
 baseurl: /
+url: https://sohnjunior.github.io
 
 # Permalinks
 permalink: /:title
