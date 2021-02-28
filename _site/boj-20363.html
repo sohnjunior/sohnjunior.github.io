@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Page Meta -->
+    <title>BOJ 20363 - 당근 키우기</title>
+    <meta name="description" content="PS와 웹 개발 관련내용을 기록합니다." />
+
+    <!-- Mobile Meta -->
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Brand icon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" >
+
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" />
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!-- Ghost outputs important style and meta data with this tag -->
+        <link rel="canonical" href="https://sohnjunior.github.io//boj-20363" />
+    <meta name="referrer" content="origin" />
+    <link rel="next" href="/page2/" />
+
+    <meta property="og:site_name" content="sohnjunior의 Dev Log" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="BOJ 20363 - 당근 키우기" />
+    <meta property="og:description" content="PS와 웹 개발 관련내용을 기록합니다." />
+    <meta property="og:url" content="https://sohnjunior.github.io//boj-20363" />
+    <meta property="og:image" content="/assets/images/cover2.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BOJ 20363 - 당근 키우기" />
+    <meta name="twitter:description" content="PS와 웹 개발 관련내용을 기록합니다." />
+    <meta name="twitter:url" content="https://sohnjunior.github.io//boj-20363" />
+    <meta name="twitter:image:src" content="/assets/images/cover2.jpg" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Website",
+        "publisher": "sohnjunior의 Dev Log",
+        "name": "BOJ 20363 - 당근 키우기",
+        "url": "https://sohnjunior.github.io//boj-20363",
+        "image": "/assets/images/cover2.jpg",
+        "description": "PS와 웹 개발 관련내용을 기록합니다."
+    }
+    </script>
+
+    <meta name="generator" content="Jekyll 3.0.0" />
+    <link rel="alternate" type="application/rss+xml" title="sohnjunior의 Dev Log" href="/feed.xml" />
+
+
+</head>
+<body class="home-template nav-closed">
+
+    <!-- The blog navigation links -->
+    <div class="nav">
+  <h3 class="nav-title">카테고리</h3>
+  <a href="#" class="nav-close">
+    <span class="hidden">닫기</span>
+  </a>
+  <ul>
+    <li
+      class="nav-home "
+      role="presentation"
+    >
+      <a href="/">Home</a>
+    </li>
+    <li
+      class="nav-about "
+      role="presentation"
+    >
+      <a href="/about">About Me</a>
+    </li>
+    <li
+      class="nav-fiction  nav-current"
+      role="presentation"
+    >
+      <a href="/tag/boj">BOJ</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/leetcode">LeetCode</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/programmers">Programmers</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/알고리즘 문제해결 전략">알고리즘 문제해결 전략</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/javascript">Javascript</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/typescript">Typescript</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/vuejs">Vue.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/reactjs">React.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/nodejs">Node.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/aws">AWS</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/book-review">서평</a>
+    </li>
+  </ul>
+  <a class="subscribe-button icon-feed" href="/feed.xml">구독하기</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The comment above "< default" means - insert everything in this file into -->
+<!-- the [body] of the default.hbs template, which contains our header/footer. -->
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<header
+  class="main-header post-head "
+  style="background-image: url(/assets/images/cover2.jpg) "
+>
+  <nav class="main-nav  overlay  clearfix">
+    <a class="blog-logo" href="/"
+      ><img src="/assets/images/ghost.png" alt="Blog Logo" /></a
+    > 
+    <a class="menu-button icon-menu" href="#"><span class="word">카테고리</span></a>
+    
+  </nav>
+</header>
+
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">BOJ 20363 - 당근 키우기</h1>
+      <section class="post-meta">
+        <!-- <a href='/'></a> -->
+
+         
+        <a href="/author/sohnjunior"
+          >sohnjunior</a
+        >
+         
+        <time class="post-date" datetime="2021-02-05"
+          >05 Feb 2021</time
+        >
+        <!-- [[tags prefix=" on "]] -->
+         on  
+        <a href="/tag/BOJ">Boj</a>
+          
+      </section>
+    </header>
+
+    <section class="post-content"><h2 id="문제">문제</h2>
+
+<p><a href="https://www.acmicpc.net/problem/20363">백준 온라인 저지 - 20363번</a></p>
+
+<h2 id="풀이-과정">풀이 과정</h2>
+
+<p>물과 햇빛을 주는 규칙이 주어질 때 목표 수치로 도달하기 위한 최소 횟수를 구하는 문제입니다.</p>
+
+<p>예시로 햇빛과 물의 목표치가 <code class="highlighter-rouge">123456, 12345</code> 일 경우를 생각해보겠습니다.</p>
+
+<p><code class="highlighter-rouge">10</code> 으로 나눈 몫 만큼 반대편 수치가 줄어들기 때문에 첫번째 시도에는 두 수치중 큰 수치를 먼저 만족시키는게 유리합니다.</p>
+
+<p>그런데 이때 <code class="highlighter-rouge">123456</code> 을 딱 맞춘 다음 <code class="highlighter-rouge">12345</code> 를 만족시키는 경우와 <code class="highlighter-rouge">123456</code> 보다 더 많은 수치를 부여한 뒤 <code class="highlighter-rouge">12345</code> 를 만족시키는</p>
+
+<p>이 두 가지 경우에서 어떤 것이 더 적은 횟수의 양분 공급을 필요로 할까요?</p>
+
+<p><code class="highlighter-rouge">10</code> 으로 나눈 몫 만큼 반대편 수치가 줄어들기 때문에 첫번째 경우 <code class="highlighter-rouge">1234, 123, 12, 1</code> 순서대로 양분 공급이 필요합니다.</p>
+
+<p>즉 첫번째 입력으로 주어지는 <code class="highlighter-rouge">X, Y</code> 중 더 작은 수의 자리수를 하나씩 줄여가며 모두 더한 값을 필요로 하는 것입니다.</p>
+
+<p>그런데 처음에 <code class="highlighter-rouge">123456</code> 보다 더 많은 수치인 <code class="highlighter-rouge">123456 + 1234</code> 만큼 양분을 주면 어떻게 될까요?</p>
+
+<p>이 경우 두 번의 시도만에 목표치에 달성할 수 있으며 총 드는 비용도 적습니다.</p>
+
+<p>이는 각 자리수를 줄여가며 모든 양수를 더하는 것이 항상 크기 때문에 발생하는 것으로 <code class="highlighter-rouge">그리디</code> 한 성질을 만족하기 때문에</p>
+
+<p>두 번째 방법으로 양분을 공급하면 항상 최소의 횟수로 당근을 키울 수 있습니다.</p>
+
+<h2 id="코드">코드</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+
+
+<span class="k">def</span> <span class="nf">solution</span><span class="p">():</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="n">Y</span><span class="p">)</span> <span class="o">+</span> <span class="n">Y</span> <span class="o">//</span> <span class="mi">10</span> <span class="k">if</span> <span class="n">X</span> <span class="o">&gt;=</span> <span class="n">Y</span> <span class="k">else</span> <span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="n">Y</span><span class="p">)</span> <span class="o">+</span> <span class="n">X</span> <span class="o">//</span> <span class="mi">10</span>
+
+    <span class="k">return</span> <span class="n">answer</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">solution</span><span class="p">())</span>
+
+</code></pre></div></div>
+</section>
+
+    <footer class="post-footer">
+      <!-- Everything inside the #author tags pulls data from the author -->
+      <!-- #author-->
+        
+      <figure class="author-image">
+        <a
+          class="img"
+          href="/author/sohnjunior"
+          style="background-image: url(/assets/images/avatar.png)"
+          ><span class="hidden">sohnjunior's Picture</span></a
+        >
+      </figure>
+      
+
+      <section class="author">
+        <h4>
+          <a href="/author/sohnjunior"
+            >sohnjunior</a
+          >
+        </h4>
+
+        
+        <p>주니어 웹 프론트엔드 개발자입니다. 😄</p>
+        
+        <div class="author-meta">
+          <span
+            class="author-location icon-location"
+          >
+            Seoul, Korea</span
+          > <span class="author-link icon-link"
+            ><a href="https://github.com/sohnjunior"> https://github.com/sohnjunior</a></span
+          >
+        </div>
+      </section>
+
+      <!-- /author  -->
+
+      <section class="share">
+        <h4>Share this post</h4>
+        <a
+          class="icon-twitter"
+          href="http://twitter.com/share?text=BOJ 20363 - 당근 키우기&amp;url=https://sohnjunior.github.ioboj-20363"
+          onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
+        >
+          <span class="hidden">Twitter</span>
+        </a>
+        <a
+          class="icon-facebook"
+          href="https://www.facebook.com/sharer/sharer.php?u=https://sohnjunior.github.ioboj-20363"
+          onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
+        >
+          <span class="hidden">Facebook</span>
+        </a>
+        <a
+          class="icon-google-plus"
+          href="https://plus.google.com/share?url=https://sohnjunior.github.ioboj-20363"
+          onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"
+        >
+          <span class="hidden">Google+</span>
+        </a>
+      </section>
+       
+
+      <!-- Add Disqus Comments -->
+      
+    </footer>
+  </article>
+</main>
+
+<aside class="read-next">
+  <!-- [[! next_post ]] --> 
+  <a
+    class="read-next-story "
+    style="background-image: url(/assets/images/cover2.jpg)"
+    href="/boj-14588"
+  >
+    <section class="post">
+      <h2>BOJ 14588 - Line Friends (Small)</h2>
+      <p>## 문제 [백준 온라인 저지 - 14588번](https://www.acmicpc.net/problem/14588) ## 풀이 과정 선분의 겹칩 유무를 이용해서 각...</p>
+    </section>
+  </a>
+  
+  <!-- [[! /next_post ]] -->
+  <!-- [[! prev_post ]] -->
+  
+  <a
+    class="read-next-story prev "
+    style="background-image: url(/assets/images/cover2.jpg)"
+    href="/leetcode-63"
+  >
+    <section class="post">
+      <h2>LeetCode 63 -  Unique Paths II (Medium)</h2>
+      <p>문제 LeetCode - 63번 풀이 과정 시작 지점에서 목표 지점에 도달할 수 있는 경우의 수를...</p>
+    </section>
+  </a>
+  
+  <!-- [[! /prev_post ]] -->
+</aside>
+
+<!-- /post -->
+
+
+        <!-- The tiny footer at the very bottom -->
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="/">sohnjunior의 Dev Log</a> &copy; 2021</section>
+          <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/jekyller/jasper">Jasper</a></section>
+        </footer>
+    </div>
+    <!-- highlight.js -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- jQuery needs to come before `` so that jQuery can be used in code injection -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Ghost outputs important scripts and data with this tag -->
+    <!--  -->
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i["GoogleAnalyticsObject"] = r;
+    (i[r] =
+      i[r] ||
+      function () {
+        (i[r].q = i[r].q || []).push(arguments);
+      }),
+      (i[r].l = 1 * new Date());
+    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(
+    window,
+    document,
+    "script",
+    "//www.google-analytics.com/analytics.js",
+    "ga"
+  );
+
+  ga("create", "UA-69281367-1", "auto");
+  ga("send", "pageview");
+</script>
+
+    <!-- Fitvids makes video embeds responsive and awesome -->
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <!-- The main JavaScript file for Casper -->
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>sohnjunior.github.io/</title>
+   
+   <link>https://sohnjunior.github.io</link>
+   <description>PS와 웹 개발 관련내용을 기록합니다.</description>
+   <language>en-uk</language>
+   <managingEditor> </managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>BOJ 10971 - 외판원 순회 2</title>
+	  <link>//boj-10971</link>
+	  <author></author>
+	  <pubDate>2020-06-10T19:00:00+09:00</pubDate>
+	  <guid>//boj-10971</guid>
+	  <description><![CDATA[
+	     <h2 id="문제">문제</h2>
+
+<p><a href="https://www.acmicpc.net/problem/10971">백준 온라인 저지 - 10971번</a></p>
+
+<h2 id="풀이-과정">풀이 과정</h2>
+
+<p>아주 유명한 np 문제 중 하나인 TSP(traveling salesman problem) 문제입니다. <br />
+문제에서 주어진 정점의 개수가 10개이므로 가능한 모든 경로를 만들 경우 <code class="highlighter-rouge">10! = 3628800</code> 의 경우의 수를 탐색하게 됩니다. <br />
+따라서 <code class="highlighter-rouge">백트래킹</code> 을 활용해 가능한 모든 경로를 만들어주고 최소 값을 찾도록 했습니다. <br />
+그런데 Python3로 그냥 제출할 경우 시간 초과가 발생하는 바람에 추가적인 가지치기를 진행해야했습니다. <br />
+다음 이동할 정점을 정할때, 현재까지 알려진 촤단 순회 경로의 비용보다 커질 경우는 해당 정점으로 탐색을 수행하지 않도록 했습니다. <br />
+이는 모든 간선의 가중치가 양수이기 때문에 어차피 해당 정점으로 가봤자 최단 경로를 갱신할 가능성이 없기 때문이죠 <br /></p>
+
+<h2 id="코드">코드</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+
+<span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">adj</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">adj</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())))</span>
+<span class="n">min_value</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">maxsize</span>
+
+
+<span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">here</span><span class="p">,</span> <span class="n">visit</span><span class="p">,</span> <span class="n">cost</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">min_value</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">visit</span><span class="p">)</span> <span class="o">==</span> <span class="n">N</span><span class="p">:</span>
+        <span class="c"># 처음 지점으로 돌아갈수 있는가?</span>
+        <span class="k">if</span> <span class="n">adj</span><span class="p">[</span><span class="n">visit</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]][</span><span class="n">visit</span><span class="p">[</span><span class="mi">0</span><span class="p">]]:</span>
+            <span class="n">min_value</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">min_value</span><span class="p">,</span> <span class="n">cost</span> <span class="o">+</span> <span class="n">adj</span><span class="p">[</span><span class="n">visit</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]][</span><span class="n">visit</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span>
+
+    <span class="k">for</span> <span class="n">there</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">there</span> <span class="o">!=</span> <span class="n">here</span> <span class="ow">and</span> <span class="n">adj</span><span class="p">[</span><span class="n">here</span><span class="p">][</span><span class="n">there</span><span class="p">]</span> <span class="ow">and</span> <span class="n">there</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visit</span><span class="p">:</span>
+            <span class="c"># 추가적인 가지치기</span>
+            <span class="k">if</span> <span class="n">cost</span> <span class="o">+</span> <span class="n">adj</span><span class="p">[</span><span class="n">here</span><span class="p">][</span><span class="n">there</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">min_value</span><span class="p">:</span>
+                <span class="n">visit</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">there</span><span class="p">)</span>
+                <span class="n">dfs</span><span class="p">(</span><span class="n">there</span><span class="p">,</span> <span class="n">visit</span><span class="p">,</span> <span class="n">cost</span> <span class="o">+</span> <span class="n">adj</span><span class="p">[</span><span class="n">here</span><span class="p">][</span><span class="n">there</span><span class="p">])</span>
+                <span class="n">visit</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">solution</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="n">dfs</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">min_value</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">solution</span><span class="p">())</span>
+
+</code></pre></div></div>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

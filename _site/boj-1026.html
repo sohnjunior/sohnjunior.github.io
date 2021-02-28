@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Page Meta -->
+    <title>BOJ 1026 - 보물</title>
+    <meta name="description" content="PS와 웹 개발 관련내용을 기록합니다." />
+
+    <!-- Mobile Meta -->
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Brand icon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" >
+
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" />
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!-- Ghost outputs important style and meta data with this tag -->
+        <link rel="canonical" href="https://sohnjunior.github.io//boj-1026" />
+    <meta name="referrer" content="origin" />
+    <link rel="next" href="/page2/" />
+
+    <meta property="og:site_name" content="sohnjunior의 Dev Log" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="BOJ 1026 - 보물" />
+    <meta property="og:description" content="PS와 웹 개발 관련내용을 기록합니다." />
+    <meta property="og:url" content="https://sohnjunior.github.io//boj-1026" />
+    <meta property="og:image" content="/assets/images/cover2.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BOJ 1026 - 보물" />
+    <meta name="twitter:description" content="PS와 웹 개발 관련내용을 기록합니다." />
+    <meta name="twitter:url" content="https://sohnjunior.github.io//boj-1026" />
+    <meta name="twitter:image:src" content="/assets/images/cover2.jpg" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Website",
+        "publisher": "sohnjunior의 Dev Log",
+        "name": "BOJ 1026 - 보물",
+        "url": "https://sohnjunior.github.io//boj-1026",
+        "image": "/assets/images/cover2.jpg",
+        "description": "PS와 웹 개발 관련내용을 기록합니다."
+    }
+    </script>
+
+    <meta name="generator" content="Jekyll 3.0.0" />
+    <link rel="alternate" type="application/rss+xml" title="sohnjunior의 Dev Log" href="/feed.xml" />
+
+
+</head>
+<body class="home-template nav-closed">
+
+    <!-- The blog navigation links -->
+    <div class="nav">
+  <h3 class="nav-title">카테고리</h3>
+  <a href="#" class="nav-close">
+    <span class="hidden">닫기</span>
+  </a>
+  <ul>
+    <li
+      class="nav-home "
+      role="presentation"
+    >
+      <a href="/">Home</a>
+    </li>
+    <li
+      class="nav-about "
+      role="presentation"
+    >
+      <a href="/about">About Me</a>
+    </li>
+    <li
+      class="nav-fiction  nav-current"
+      role="presentation"
+    >
+      <a href="/tag/boj">BOJ</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/leetcode">LeetCode</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/programmers">Programmers</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/알고리즘 문제해결 전략">알고리즘 문제해결 전략</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/javascript">Javascript</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/typescript">Typescript</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/vuejs">Vue.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/reactjs">React.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/nodejs">Node.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/aws">AWS</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/book-review">서평</a>
+    </li>
+  </ul>
+  <a class="subscribe-button icon-feed" href="/feed.xml">구독하기</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The comment above "< default" means - insert everything in this file into -->
+<!-- the [body] of the default.hbs template, which contains our header/footer. -->
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<header
+  class="main-header post-head "
+  style="background-image: url(/assets/images/cover2.jpg) "
+>
+  <nav class="main-nav  overlay  clearfix">
+    <a class="blog-logo" href="/"
+      ><img src="/assets/images/ghost.png" alt="Blog Logo" /></a
+    > 
+    <a class="menu-button icon-menu" href="#"><span class="word">카테고리</span></a>
+    
+  </nav>
+</header>
+
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">BOJ 1026 - 보물</h1>
+      <section class="post-meta">
+        <!-- <a href='/'></a> -->
+
+         
+        <a href="/author/sohnjunior"
+          >sohnjunior</a
+        >
+         
+        <time class="post-date" datetime="2020-05-18"
+          >18 May 2020</time
+        >
+        <!-- [[tags prefix=" on "]] -->
+         on  
+        <a href="/tag/BOJ">Boj</a>
+          
+      </section>
+    </header>
+
+    <section class="post-content"><h2 id="문제">문제</h2>
+
+<p><a href="https://www.acmicpc.net/problem/1026">백준 온라인 저지 - 1026번</a></p>
+
+<h2 id="풀이-과정">풀이 과정</h2>
+
+<p>구현은 간단하지만 그 과정에서 기억할만한 것들이 있어서 기록을 남긴다. <br />
+일단 문제를 보고 처음 떠오른 생각은 <code class="highlighter-rouge">DFS</code> 를 통해 A 배열에 대한 순열을 생성한 다음 주어진 연산을 해서 최소값을 찾아 반환해주는 것이었다. <br />
+하지만 최악의 경우 50개의 배열에 대한 순열을 체크해야하기 때문에 제한 시간내에 이를 탐색하는것은 불가능하다. <br /></p>
+
+<p>이 대신에 모든 수가 자연수임과 동시에 곱셈과 덧셈만으로 이루어진 수식의 계산 결과를 최소화하기 위해서는 B배열의 큰 값에 A 배열의 작은 값을 순서대로 매핑시켜주면 된다. <br /><br />
+실제 시험 환경에서는 모든 테스트 케이스가 제공되지 않으므로 입력 조건을 보고 효율적인 알고리즘을 선택하는 연습이 필요하다고 느꼈다. <br /></p>
+
+<h2 id="코드">코드</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">A</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+<span class="n">B</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+
+
+<span class="k">def</span> <span class="nf">solution</span><span class="p">():</span>
+    <span class="n">A</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">B</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+    <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="n">answer</span> <span class="o">+=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">answer</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">solution</span><span class="p">())</span>
+
+</code></pre></div></div>
+</section>
+
+    <footer class="post-footer">
+      <!-- Everything inside the #author tags pulls data from the author -->
+      <!-- #author-->
+        
+      <figure class="author-image">
+        <a
+          class="img"
+          href="/author/sohnjunior"
+          style="background-image: url(/assets/images/avatar.png)"
+          ><span class="hidden">sohnjunior's Picture</span></a
+        >
+      </figure>
+      
+
+      <section class="author">
+        <h4>
+          <a href="/author/sohnjunior"
+            >sohnjunior</a
+          >
+        </h4>
+
+        
+        <p>주니어 웹 프론트엔드 개발자입니다. 😄</p>
+        
+        <div class="author-meta">
+          <span
+            class="author-location icon-location"
+          >
+            Seoul, Korea</span
+          > <span class="author-link icon-link"
+            ><a href="https://github.com/sohnjunior"> https://github.com/sohnjunior</a></span
+          >
+        </div>
+      </section>
+
+      <!-- /author  -->
+
+      <section class="share">
+        <h4>Share this post</h4>
+        <a
+          class="icon-twitter"
+          href="http://twitter.com/share?text=BOJ 1026 - 보물&amp;url=https://sohnjunior.github.ioboj-1026"
+          onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
+        >
+          <span class="hidden">Twitter</span>
+        </a>
+        <a
+          class="icon-facebook"
+          href="https://www.facebook.com/sharer/sharer.php?u=https://sohnjunior.github.ioboj-1026"
+          onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
+        >
+          <span class="hidden">Facebook</span>
+        </a>
+        <a
+          class="icon-google-plus"
+          href="https://plus.google.com/share?url=https://sohnjunior.github.ioboj-1026"
+          onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"
+        >
+          <span class="hidden">Google+</span>
+        </a>
+      </section>
+       
+
+      <!-- Add Disqus Comments -->
+      
+    </footer>
+  </article>
+</main>
+
+<aside class="read-next">
+  <!-- [[! next_post ]] --> 
+  <a
+    class="read-next-story "
+    style="background-image: url(/assets/images/cover2.jpg)"
+    href="/boj-2606"
+  >
+    <section class="post">
+      <h2>BOJ 2606 - 바이러스</h2>
+      <p>## 문제 [백준 온라인 저지 - 2606번](https://www.acmicpc.net/problem/2606) ## 풀이 과정 1번 정점을 기준으로 도달 가능한...</p>
+    </section>
+  </a>
+  
+  <!-- [[! /next_post ]] -->
+  <!-- [[! prev_post ]] -->
+  
+  <a
+    class="read-next-story prev "
+    style="background-image: url(/assets/images/cover2.jpg)"
+    href="/boj-1018"
+  >
+    <section class="post">
+      <h2>BOJ 1028 - 체스판 다시 칠하기</h2>
+      <p>문제 백준 온라인 저지 - 1028번 풀이 과정 8x8 크기의 체스판을 잘라서 배치에 필요한 최소...</p>
+    </section>
+  </a>
+  
+  <!-- [[! /prev_post ]] -->
+</aside>
+
+<!-- /post -->
+
+
+        <!-- The tiny footer at the very bottom -->
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="/">sohnjunior의 Dev Log</a> &copy; 2021</section>
+          <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/jekyller/jasper">Jasper</a></section>
+        </footer>
+    </div>
+    <!-- highlight.js -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- jQuery needs to come before `` so that jQuery can be used in code injection -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Ghost outputs important scripts and data with this tag -->
+    <!--  -->
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i["GoogleAnalyticsObject"] = r;
+    (i[r] =
+      i[r] ||
+      function () {
+        (i[r].q = i[r].q || []).push(arguments);
+      }),
+      (i[r].l = 1 * new Date());
+    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(
+    window,
+    document,
+    "script",
+    "//www.google-analytics.com/analytics.js",
+    "ga"
+  );
+
+  ga("create", "UA-69281367-1", "auto");
+  ga("send", "pageview");
+</script>
+
+    <!-- Fitvids makes video embeds responsive and awesome -->
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <!-- The main JavaScript file for Casper -->
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+</body>
+</html>

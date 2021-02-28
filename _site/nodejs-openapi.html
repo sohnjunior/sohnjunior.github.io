@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Page Meta -->
+    <title>Node.js에서 네이버 Open API 활용하기</title>
+    <meta name="description" content="PS와 웹 개발 관련내용을 기록합니다." />
+
+    <!-- Mobile Meta -->
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Brand icon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" >
+
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" />
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!-- Ghost outputs important style and meta data with this tag -->
+        <link rel="canonical" href="https://sohnjunior.github.io//nodejs-openapi" />
+    <meta name="referrer" content="origin" />
+    <link rel="next" href="/page2/" />
+
+    <meta property="og:site_name" content="sohnjunior의 Dev Log" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Node.js에서 네이버 Open API 활용하기" />
+    <meta property="og:description" content="PS와 웹 개발 관련내용을 기록합니다." />
+    <meta property="og:url" content="https://sohnjunior.github.io//nodejs-openapi" />
+    <meta property="og:image" content="/assets/images/cover4.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Node.js에서 네이버 Open API 활용하기" />
+    <meta name="twitter:description" content="PS와 웹 개발 관련내용을 기록합니다." />
+    <meta name="twitter:url" content="https://sohnjunior.github.io//nodejs-openapi" />
+    <meta name="twitter:image:src" content="/assets/images/cover4.jpg" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Website",
+        "publisher": "sohnjunior의 Dev Log",
+        "name": "Node.js에서 네이버 Open API 활용하기",
+        "url": "https://sohnjunior.github.io//nodejs-openapi",
+        "image": "/assets/images/cover4.jpg",
+        "description": "PS와 웹 개발 관련내용을 기록합니다."
+    }
+    </script>
+
+    <meta name="generator" content="Jekyll 3.0.0" />
+    <link rel="alternate" type="application/rss+xml" title="sohnjunior의 Dev Log" href="/feed.xml" />
+
+
+</head>
+<body class="home-template nav-closed">
+
+    <!-- The blog navigation links -->
+    <div class="nav">
+  <h3 class="nav-title">카테고리</h3>
+  <a href="#" class="nav-close">
+    <span class="hidden">닫기</span>
+  </a>
+  <ul>
+    <li
+      class="nav-home "
+      role="presentation"
+    >
+      <a href="/">Home</a>
+    </li>
+    <li
+      class="nav-about "
+      role="presentation"
+    >
+      <a href="/about">About Me</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/boj">BOJ</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/leetcode">LeetCode</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/programmers">Programmers</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/알고리즘 문제해결 전략">알고리즘 문제해결 전략</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/javascript">Javascript</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/typescript">Typescript</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/vuejs">Vue.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/reactjs">React.js</a>
+    </li>
+    <li
+      class="nav-fiction  nav-current"
+      role="presentation"
+    >
+      <a href="/tag/nodejs">Node.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/aws">AWS</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/book-review">서평</a>
+    </li>
+  </ul>
+  <a class="subscribe-button icon-feed" href="/feed.xml">구독하기</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The comment above "< default" means - insert everything in this file into -->
+<!-- the [body] of the default.hbs template, which contains our header/footer. -->
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<header
+  class="main-header post-head "
+  style="background-image: url(/assets/images/cover4.jpg) "
+>
+  <nav class="main-nav  overlay  clearfix">
+    <a class="blog-logo" href="/"
+      ><img src="/assets/images/ghost.png" alt="Blog Logo" /></a
+    > 
+    <a class="menu-button icon-menu" href="#"><span class="word">카테고리</span></a>
+    
+  </nav>
+</header>
+
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">Node.js에서 네이버 Open API 활용하기</h1>
+      <section class="post-meta">
+        <!-- <a href='/'></a> -->
+
+         
+        <a href="/author/sohnjunior"
+          >sohnjunior</a
+        >
+         
+        <time class="post-date" datetime="2020-04-25"
+          >25 Apr 2020</time
+        >
+        <!-- [[tags prefix=" on "]] -->
+         on  
+        <a href="/tag/nodejs">Nodejs</a>
+          
+      </section>
+    </header>
+
+    <section class="post-content"><h2 id="네이버-오픈-api란">네이버 오픈 API란?</h2>
+
+<p>네이버는 개발자들이 활용할수있도록 다양한 기능들을 오픈 API 형태로 제공하고 있습니다. <br />
+이번 포스팅에서는 네이버 Open API에 대한 설명과 이를 활용할 수 있는 방법들에 대해 소개하겠습니다. <br /></p>
+
+<p>네이버 개발자 홈페이지에 가보면 다음과 같이 오픈 API를 정의하고 있습니다. <br /></p>
+
+<blockquote>
+  <p>네이버 오픈API는 네이버 플랫폼의 기능을 외부 개발자가 쉽게 이용할 수 있게 웹 또는 SDK 형태로 공개한 기술들입니다.</p>
+</blockquote>
+
+<p>쉽게 말해 네이버에서 외부 개발자들이 자사의 다양한 서비스들을 이용할 수 있도록 외부에 공개해놓은 것입니다. <br />
+저희는 해당 API를 사용하기 위해 주어진 형식에 맞춰 요청을 보내주기만 하면 됩니다. <br /></p>
+
+<p><a href="https://developers.naver.com/docs/common/openapiguide/">네이버 개발자 홈페이지</a>에 가면 활용 가능한 오픈 API들을 확인할 수 있습니다. <br /></p>
+
+<h2 id="네이버-오픈-api-활용하기">네이버 오픈 API 활용하기</h2>
+
+<p>네이버 오픈 API는 크게 두 가지로 분류됩니다.</p>
+
+<ul>
+  <li>로그인 방식</li>
+  <li>비로그인 방식</li>
+</ul>
+
+<p>로그인 방식은 회원 정보가 필요한 API(회원 정보 조회, 블로그 및 카페, 개인 일정 관련 기능)들을 사용할 때 이용하는 방식입니다. <br />
+해당 API를 사용하기 위해서는 먼저 로그인을 통해 인증과정을 거친 후 발급받은 토큰을 API 요청에 포함시켜줘야 합니다. <br /></p>
+
+<p>반대로 비로그인 방식은 별도의 인증 과정없이 개발자가 HTTP 헤더에 클라이언트 정보를 함께 전송하기만 하면 이용할 수 있는 방식입니다.</p>
+
+<blockquote>
+  <p>클라이언트 정보? <br />
+네이버 오픈 API를 활용하기 위해서는 기본적으로 원하는 API에 대해 사용 신청이 필요합니다. <br />
+이때 신청 후 발급받은 유저 정보를 의미합니다.</p>
+</blockquote>
+
+<h2 id="파파고-오픈-api">파파고 오픈 API</h2>
+
+<p>네이버 파파고 오픈 API는 자연어 처리 관련 다양한 인공지능 기술들을 개발자들이 쉽게 이용할 수 있도록 오픈 API로 제공하고 있습니다. <br />
+이번 포스팅에서는 파파고의 번역 기능을 활용하여 주어진 텍스트를 번역한 뒤 결과를 확인해보도록 하겠습니다. <br /></p>
+
+<p>우선 <a href="https://developers.naver.com/products/nmt/">네이버 파파고 API 홈페이지</a>로 가서 API 이용 신청을 해야합니다. <br /></p>
+
+<p><img src="assets/images/nodejs/api-first.png" alt="첫화면" width="800" /></p>
+
+<p>이용 신청을 누르면 다음과 같은 신청 폼을 작성하게 됩니다.</p>
+
+<ul>
+  <li>애플리케이션 이름 : 파파고 오픈 API를 활용할 애플리케이션 이름 작성</li>
+  <li>사용 API : 해당 애플리케이션에서 사용할 오픈 API들을 선택합니다. (복수 선택 가능)</li>
+  <li>비로그인 오픈 API 서비스 환경 : 네이버에게 어떤 환경에서 해당 API가 활용되는지 알려줍니다.</li>
+</ul>
+
+<p>저는 현재 로컬 환경에서 테스트를 진행한 후 WEB환경에서 이를 활용할 것이므로 <br />
+비로그인 오픈 API 환경을 <code class="highlighter-rouge">WEB</code> 로 하고 URL로 로컬 호스트임을 나타내는 <code class="highlighter-rouge">https://localhost:3000/</code> 를 입력하고 신청을 마치겠습니다.</p>
+
+<p><img src="assets/images/nodejs/api-info.png" alt="클라이언트" width="500" /></p>
+
+<p>모든 신청을 마무리하면 위와 같이 클라이언트 ID와 Password를 발급해줍니다. <br />
+이후의 샘플 코드에서 이 정보를 활용합니다.</p>
+
+<h2 id="샘플-코드-작성">샘플 코드 작성</h2>
+
+<p>이제 테스트 코드를 작성하고 해당 API가 잘 동작하는지 확인해보겠습니다. <br />
+이를 위해 새로운 프로젝트를 생성한 뒤 package.json을 생성하고 request 모듈을 설치합니다. <br /></p>
+
+<h3 id="프로젝트-npm-설정-packagejson-생성">프로젝트 npm 설정 (package.json 생성)</h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm init
+</code></pre></div></div>
+
+<h3 id="request-모듈-설치">request 모듈 설치</h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i request
+</code></pre></div></div>
+
+<blockquote>
+  <p>request 모듈은 http 통신을 위한 npm 패키지입니다.</p>
+</blockquote>
+
+<h3 id="samplejs">sample.js</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"request"</span><span class="p">);</span>
+
+<span class="c1">// api 요청 변수</span>
+<span class="kd">const</span> <span class="nx">api_url</span> <span class="o">=</span> <span class="s2">"https://openapi.naver.com/v1/papago/n2mt"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">client_id</span> <span class="o">=</span> <span class="s2">"your-client-id"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">client_secret</span> <span class="o">=</span> <span class="s2">"your-client-secret-key"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">query</span> <span class="o">=</span> <span class="s2">"papago open api translation success!"</span><span class="p">;</span>
+
+<span class="c1">// api 요청 옵션 (번역: 영어 -&gt; 한글)</span>
+<span class="kd">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">url</span><span class="p">:</span> <span class="nx">api_url</span><span class="p">,</span>
+  <span class="na">form</span><span class="p">:</span> <span class="p">{</span> <span class="na">source</span><span class="p">:</span> <span class="s2">"en"</span><span class="p">,</span> <span class="na">target</span><span class="p">:</span> <span class="s2">"ko"</span><span class="p">,</span> <span class="na">text</span><span class="p">:</span> <span class="nx">query</span> <span class="p">},</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"X-Naver-Client-Id"</span><span class="p">:</span> <span class="nx">client_id</span><span class="p">,</span>
+    <span class="s2">"X-Naver-Client-Secret"</span><span class="p">:</span> <span class="nx">client_secret</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">};</span>
+
+<span class="c1">// api 요청 보내고 콜백으로 결과 받기</span>
+<span class="nx">request</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="nx">options</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">error</span> <span class="o">&amp;&amp;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">body</span><span class="p">));</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"error = "</span> <span class="o">+</span> <span class="nx">response</span><span class="p">.</span><span class="nx">statusCode</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>앞서 설치한 request 모듈을 통해 API 주소로 http 요청을 보내면 해당 API가 클라이언트 검증을 한 뒤 결과값을 JSON 형식으로 반환해줍니다. <br />
+이때 request 모듈의 post 함수는 비동기 방식으로 수행되므로 콜백 함수를 등록하여 결과값을 확인합니다. <br /></p>
+
+<h2 id="결과-확인">결과 확인</h2>
+
+<p><img src="assets/images/nodejs/api-result.png" alt="결과사진" width="500" /></p>
+
+<p>만약 성공적으로 요청이 전송되면 위와 같은 결과를 확인할 수 있습니다. <br />
+주어진 입력 값에 따라 번역이 올바르게 진행된 것을 알 수 있습니다.</p>
+
+<h2 id="주의">주의!</h2>
+
+<p>request 모듈은 2020년 2월 11일 부로 <b>deprecated</b> 되었습니다. <br />
+이번 예제에서는 간단한 테스트를 위해 request 모듈을 사용했지만 <br />
+실제 서비스에서는 http 통신을 위해 다른 패키지를 사용하는 것을 검토할 필요가 있습니다. <br /></p>
+
+<p><a href="https://www.npmjs.com/package/request">request 모듈 deprecated 관련 공지</a> <br />
+<a href="https://github.com/request/request/issues/3143">request 모듈을 대체할 수 있는 패키지들</a></p>
+
+<h2 id="마치며">마치며</h2>
+
+<p>네이버 뿐만 아니라 다양한 기업 혹은 공공기관에서 제공하는 오픈 API를 활용하면 훨씬 더 다양한 애플리케이션 개발이 가능해집니다. <br />
+본인이 필요한 API를 검색해본 뒤 마찬가지 방법으로 활용하면 될 것입니다.</p>
+
+<h3 id="참고-자료">참고 자료</h3>
+
+<ul>
+  <li>https://developers.naver.com/docs/papago/papago-nmt-overview.md</li>
+</ul>
+</section>
+
+    <footer class="post-footer">
+      <!-- Everything inside the #author tags pulls data from the author -->
+      <!-- #author-->
+        
+      <figure class="author-image">
+        <a
+          class="img"
+          href="/author/sohnjunior"
+          style="background-image: url(/assets/images/avatar.png)"
+          ><span class="hidden">sohnjunior's Picture</span></a
+        >
+      </figure>
+      
+
+      <section class="author">
+        <h4>
+          <a href="/author/sohnjunior"
+            >sohnjunior</a
+          >
+        </h4>
+
+        
+        <p>주니어 웹 프론트엔드 개발자입니다. 😄</p>
+        
+        <div class="author-meta">
+          <span
+            class="author-location icon-location"
+          >
+            Seoul, Korea</span
+          > <span class="author-link icon-link"
+            ><a href="https://github.com/sohnjunior"> https://github.com/sohnjunior</a></span
+          >
+        </div>
+      </section>
+
+      <!-- /author  -->
+
+      <section class="share">
+        <h4>Share this post</h4>
+        <a
+          class="icon-twitter"
+          href="http://twitter.com/share?text=Node.js에서 네이버 Open API 활용하기&amp;url=https://sohnjunior.github.ionodejs-openapi"
+          onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
+        >
+          <span class="hidden">Twitter</span>
+        </a>
+        <a
+          class="icon-facebook"
+          href="https://www.facebook.com/sharer/sharer.php?u=https://sohnjunior.github.ionodejs-openapi"
+          onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
+        >
+          <span class="hidden">Facebook</span>
+        </a>
+        <a
+          class="icon-google-plus"
+          href="https://plus.google.com/share?url=https://sohnjunior.github.ionodejs-openapi"
+          onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"
+        >
+          <span class="hidden">Google+</span>
+        </a>
+      </section>
+       
+
+      <!-- Add Disqus Comments -->
+      
+    </footer>
+  </article>
+</main>
+
+<aside class="read-next">
+  <!-- [[! next_post ]] --> 
+  <a
+    class="read-next-story "
+    style="background-image: url(/assets/images/cover2.jpg)"
+    href="/boj-3190"
+  >
+    <section class="post">
+      <h2>BOJ 3190 - 뱀</h2>
+      <p>## 문제 [백준 온라인 저지 - 3190번](https://www.acmicpc.net/problem/3190) ## 풀이 과정 뱀 게임을 시뮬레이션해보는 문제입니다. 주의할...</p>
+    </section>
+  </a>
+  
+  <!-- [[! /next_post ]] -->
+  <!-- [[! prev_post ]] -->
+  
+  <a
+    class="read-next-story prev "
+    style="background-image: url(/assets/images/cover5.jpg)"
+    href="/django-aws-s3"
+  >
+    <section class="post">
+      <h2>Django와 AWS S3를 활용하여 데이터 관리하기</h2>
+      <p>왜 AWS S3를 사용할까? 이번에 딥랭킹 알고리즘을 활용한 장고 프로젝트를 진행하던 중, 딥러닝 모델 배포과정에서...</p>
+    </section>
+  </a>
+  
+  <!-- [[! /prev_post ]] -->
+</aside>
+
+<!-- /post -->
+
+
+        <!-- The tiny footer at the very bottom -->
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="/">sohnjunior의 Dev Log</a> &copy; 2021</section>
+          <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/jekyller/jasper">Jasper</a></section>
+        </footer>
+    </div>
+    <!-- highlight.js -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- jQuery needs to come before `` so that jQuery can be used in code injection -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Ghost outputs important scripts and data with this tag -->
+    <!--  -->
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i["GoogleAnalyticsObject"] = r;
+    (i[r] =
+      i[r] ||
+      function () {
+        (i[r].q = i[r].q || []).push(arguments);
+      }),
+      (i[r].l = 1 * new Date());
+    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(
+    window,
+    document,
+    "script",
+    "//www.google-analytics.com/analytics.js",
+    "ga"
+  );
+
+  ga("create", "UA-69281367-1", "auto");
+  ga("send", "pageview");
+</script>
+
+    <!-- Fitvids makes video embeds responsive and awesome -->
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <!-- The main JavaScript file for Casper -->
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+</body>
+</html>

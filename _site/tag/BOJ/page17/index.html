@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Page Meta -->
+    <title>sohnjunior의 Dev Log</title>
+    <meta name="description" content="PS와 웹 개발 관련내용을 기록합니다." />
+
+    <!-- Mobile Meta -->
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Brand icon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" >
+
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" />
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!-- Ghost outputs important style and meta data with this tag -->
+        <link rel="canonical" href="https://sohnjunior.github.io//tag/BOJ/page17/" />
+    <meta name="referrer" content="origin" />
+    <link rel="next" href="/page2/" />
+
+    <meta property="og:site_name" content="sohnjunior의 Dev Log" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="sohnjunior의 Dev Log" />
+    <meta property="og:description" content="PS와 웹 개발 관련내용을 기록합니다." />
+    <meta property="og:url" content="https://sohnjunior.github.io//tag/BOJ/page17/" />
+    <meta property="og:image" content="/assets/images/cover2.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="sohnjunior의 Dev Log" />
+    <meta name="twitter:description" content="PS와 웹 개발 관련내용을 기록합니다." />
+    <meta name="twitter:url" content="https://sohnjunior.github.io//tag/BOJ/page17/" />
+    <meta name="twitter:image:src" content="/assets/images/cover2.jpg" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Website",
+        "publisher": "sohnjunior의 Dev Log",
+        "name": "sohnjunior의 Dev Log",
+        "url": "https://sohnjunior.github.io//tag/BOJ/page17/",
+        "image": "/assets/images/cover2.jpg",
+        "description": "PS와 웹 개발 관련내용을 기록합니다."
+    }
+    </script>
+
+    <meta name="generator" content="Jekyll 3.0.0" />
+    <link rel="alternate" type="application/rss+xml" title="sohnjunior의 Dev Log" href="/feed.xml" />
+
+
+</head>
+<body class="paged archive-template nav-closed">
+
+    <!-- The blog navigation links -->
+    <div class="nav">
+  <h3 class="nav-title">카테고리</h3>
+  <a href="#" class="nav-close">
+    <span class="hidden">닫기</span>
+  </a>
+  <ul>
+    <li
+      class="nav-home "
+      role="presentation"
+    >
+      <a href="/">Home</a>
+    </li>
+    <li
+      class="nav-about "
+      role="presentation"
+    >
+      <a href="/about">About Me</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/boj">BOJ</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/leetcode">LeetCode</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/programmers">Programmers</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/알고리즘 문제해결 전략">알고리즘 문제해결 전략</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/javascript">Javascript</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/typescript">Typescript</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/vuejs">Vue.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/reactjs">React.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/nodejs">Node.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/aws">AWS</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/book-review">서평</a>
+    </li>
+  </ul>
+  <a class="subscribe-button icon-feed" href="/feed.xml">구독하기</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- dynamically overriding backgrounds for tags as well as descriptions -->
+
+
+<!-- default -->
+<!-- The tag above means - insert everything in this file into the [body] of the default.hbs template -->
+
+<!-- If we have a tag cover, display that - else blog cover - else nothing -->
+<header
+  class="main-header tag-head "
+  style="background-image: url(/assets/images/cover2.jpg) "
+>
+  <nav class="main-nav overlay clearfix">
+    
+      <a class="blog-logo" href="/">
+      <img src="/assets/images/ghost.png" alt="Blog Logo" /></a>
+     
+    
+      <a class="menu-button icon-menu" href="#">
+        <span class="word">카테고리</span>
+      </a>
+    
+  </nav>
+  <div class="vertical">
+    <div class="main-header-content inner">
+      <h1 class="page-title">Boj</h1>
+      <h2 class="page-description">
+         
+          287 개의 관련 포스트
+        
+      </h2>
+    </div>
+  </div>
+</header>
+
+<!-- The main content area on the homepage -->
+<main id="content" class="content" role="main">
+  <!-- The tag below includes the post loop - partials/loop.hbs -->
+  <!-- Previous/next page links - only displayed on page 2+ -->
+<div class="extra-pagination inner">
+   
+    <nav class="pagination" role="pagination">
+   
+  <a
+    class="newer-posts"
+    href="/tag/BOJ/page16/"
+    title="Previous Page"
+    >&laquo; Newer Posts</a
+  >
+   
+  <span class="page-number">
+    Page 17 of 29
+  </span>
+  
+  <a
+    class="older-posts"
+    href="/tag/BOJ/page18/"
+    title="Next Page"
+    >Older Posts &raquo;</a
+  >
+  
+</nav>
+ 
+  
+</div>
+
+<!-- This is the post loop - each post will be output using this markup -->
+
+<article class="post">
+  <header class="post-header">
+    <h2 class="post-title">
+      <a href="/boj-17608">BOJ 17608 - 막대기</a>
+    </h2>
+  </header>
+  <section class="post-excerpt">
+    <p>
+      문제 백준 온라인 저지 - 17608번 풀이 과정 오른쪽 방향에서 봤을 때, 보이는 막대기의 개수를 찾기 위해서는 막대기의 높이가 증가하는 개수를 따져주면 됩니다. 따라서 입려된 배열을...
+      <a class="read-more" href="/boj-17608">&raquo;</a>
+    </p>
+  </section>
+  <footer class="post-meta">
+     
+       
+        
+          <img
+            class="author-thumb"
+            src="/assets/images/avatar.png"
+            alt="Author image"
+            nopin="nopin"
+          />
+        
+        <!-- author -->
+        <a href="/author/sohnjunior">
+          sohnjunior
+        </a>
+       
+    
+
+    <!-- [[tags prefix=" on "]] -->
+     on 
+       
+        
+        <a href="/tag/BOJ">Boj</a>
+         
+       
+    
+    <time class="post-date" datetime="2020-07-12">
+      12 Jul 2020
+    </time>
+  </footer>
+</article>
+
+<article class="post">
+  <header class="post-header">
+    <h2 class="post-title">
+      <a href="/boj-2828">BOJ 2828 - 사과 담기 게임</a>
+    </h2>
+  </header>
+  <section class="post-excerpt">
+    <p>
+      문제 백준 온라인 저지 - 2828번 풀이 과정 바구니를 최소한으로 이동시키면서 떨어지는 모든 사과를 얻는 방법을 찾는 문제입니다. 한 시점에서 떨어지는 사과에 대해 이동하는 방법은 다음과...
+      <a class="read-more" href="/boj-2828">&raquo;</a>
+    </p>
+  </section>
+  <footer class="post-meta">
+     
+       
+        
+          <img
+            class="author-thumb"
+            src="/assets/images/avatar.png"
+            alt="Author image"
+            nopin="nopin"
+          />
+        
+        <!-- author -->
+        <a href="/author/sohnjunior">
+          sohnjunior
+        </a>
+       
+    
+
+    <!-- [[tags prefix=" on "]] -->
+     on 
+       
+        
+        <a href="/tag/BOJ">Boj</a>
+         
+       
+    
+    <time class="post-date" datetime="2020-07-11">
+      11 Jul 2020
+    </time>
+  </footer>
+</article>
+
+<article class="post">
+  <header class="post-header">
+    <h2 class="post-title">
+      <a href="/boj-16197">BOJ 16197 - 두 동전</a>
+    </h2>
+  </header>
+  <section class="post-excerpt">
+    <p>
+      문제 백준 온라인 저지 - 16197번 풀이 과정 각 턴마다 동전을 한 칸씩 이동시켜 하나만 보드에서 떨어뜨리는 최소 이동 횟수를 구하는 문제입니다. 두 동전은 서로 겹쳐있을...
+      <a class="read-more" href="/boj-16197">&raquo;</a>
+    </p>
+  </section>
+  <footer class="post-meta">
+     
+       
+        
+          <img
+            class="author-thumb"
+            src="/assets/images/avatar.png"
+            alt="Author image"
+            nopin="nopin"
+          />
+        
+        <!-- author -->
+        <a href="/author/sohnjunior">
+          sohnjunior
+        </a>
+       
+    
+
+    <!-- [[tags prefix=" on "]] -->
+     on 
+       
+        
+        <a href="/tag/BOJ">Boj</a>
+         
+       
+    
+    <time class="post-date" datetime="2020-07-10">
+      10 Jul 2020
+    </time>
+  </footer>
+</article>
+
+<article class="post">
+  <header class="post-header">
+    <h2 class="post-title">
+      <a href="/boj-2959">BOJ 2959 - 거북이</a>
+    </h2>
+  </header>
+  <section class="post-excerpt">
+    <p>
+      문제 백준 온라인 저지 - 2959번 풀이 과정 직사각형의 네 변이 주어질때 만들 수 있는 최대 크기를 구하는 문제입니다. 거북이는 한 변을 교차하여 지나갈 수 있기...
+      <a class="read-more" href="/boj-2959">&raquo;</a>
+    </p>
+  </section>
+  <footer class="post-meta">
+     
+       
+        
+          <img
+            class="author-thumb"
+            src="/assets/images/avatar.png"
+            alt="Author image"
+            nopin="nopin"
+          />
+        
+        <!-- author -->
+        <a href="/author/sohnjunior">
+          sohnjunior
+        </a>
+       
+    
+
+    <!-- [[tags prefix=" on "]] -->
+     on 
+       
+        
+        <a href="/tag/BOJ">Boj</a>
+         
+       
+    
+    <time class="post-date" datetime="2020-07-09">
+      09 Jul 2020
+    </time>
+  </footer>
+</article>
+
+<article class="post">
+  <header class="post-header">
+    <h2 class="post-title">
+      <a href="/boj-16922">BOJ 16922 - 로마 숫자 만들기</a>
+    </h2>
+  </header>
+  <section class="post-excerpt">
+    <p>
+      문제 백준 온라인 저지 - 16922번 풀이 과정 처음에는 단순 백트래킹 문제인줄 알고 모든 로마자 배치를 구하려고했습니다. 하지만 이렇게하면 최대 4^20 의 경우의 수를 만들어내기 때문에...
+      <a class="read-more" href="/boj-16922">&raquo;</a>
+    </p>
+  </section>
+  <footer class="post-meta">
+     
+       
+        
+          <img
+            class="author-thumb"
+            src="/assets/images/avatar.png"
+            alt="Author image"
+            nopin="nopin"
+          />
+        
+        <!-- author -->
+        <a href="/author/sohnjunior">
+          sohnjunior
+        </a>
+       
+    
+
+    <!-- [[tags prefix=" on "]] -->
+     on 
+       
+        
+        <a href="/tag/BOJ">Boj</a>
+         
+       
+    
+    <time class="post-date" datetime="2020-07-09">
+      09 Jul 2020
+    </time>
+  </footer>
+</article>
+
+<article class="post">
+  <header class="post-header">
+    <h2 class="post-title">
+      <a href="/boj-1439">BOJ 1439 - 뒤집기</a>
+    </h2>
+  </header>
+  <section class="post-excerpt">
+    <p>
+      문제 백준 온라인 저지 - 1439번 풀이 과정 탐욕적인 선택 에 의해 최적의 답을 구할 수 있는 문제입니다. 이 문제의 키 포인트는 0 혹은 1은 최대...
+      <a class="read-more" href="/boj-1439">&raquo;</a>
+    </p>
+  </section>
+  <footer class="post-meta">
+     
+       
+        
+          <img
+            class="author-thumb"
+            src="/assets/images/avatar.png"
+            alt="Author image"
+            nopin="nopin"
+          />
+        
+        <!-- author -->
+        <a href="/author/sohnjunior">
+          sohnjunior
+        </a>
+       
+    
+
+    <!-- [[tags prefix=" on "]] -->
+     on 
+       
+        
+        <a href="/tag/BOJ">Boj</a>
+         
+       
+    
+    <time class="post-date" datetime="2020-07-09">
+      09 Jul 2020
+    </time>
+  </footer>
+</article>
+
+<article class="post">
+  <header class="post-header">
+    <h2 class="post-title">
+      <a href="/boj-9576">BOJ 9576 - 책 나눠주기</a>
+    </h2>
+  </header>
+  <section class="post-excerpt">
+    <p>
+      문제 백준 온라인 저지 - 9576번 풀이 과정 총 N 개의 책을 학부생들의 의견을 최대한 반영하여 나눠주는 방법을 찾는 탐욕 알고리즘 을 활용하는 문제입니다. 1 ~...
+      <a class="read-more" href="/boj-9576">&raquo;</a>
+    </p>
+  </section>
+  <footer class="post-meta">
+     
+       
+        
+          <img
+            class="author-thumb"
+            src="/assets/images/avatar.png"
+            alt="Author image"
+            nopin="nopin"
+          />
+        
+        <!-- author -->
+        <a href="/author/sohnjunior">
+          sohnjunior
+        </a>
+       
+    
+
+    <!-- [[tags prefix=" on "]] -->
+     on 
+       
+        
+        <a href="/tag/BOJ">Boj</a>
+         
+       
+    
+    <time class="post-date" datetime="2020-07-08">
+      08 Jul 2020
+    </time>
+  </footer>
+</article>
+
+<article class="post">
+  <header class="post-header">
+    <h2 class="post-title">
+      <a href="/boj-3780">BOJ 3780 - 네트워크 연결</a>
+    </h2>
+  </header>
+  <section class="post-excerpt">
+    <p>
+      문제 백준 온라인 저지 - 3780번 풀이 과정 유니온 파인드 의 경로 압축 최적화의 동작 방식에 대한 이해가 필요한 문제입니다. 단순히 집합을 구성하는 것이 아닌 센터(집합의...
+      <a class="read-more" href="/boj-3780">&raquo;</a>
+    </p>
+  </section>
+  <footer class="post-meta">
+     
+       
+        
+          <img
+            class="author-thumb"
+            src="/assets/images/avatar.png"
+            alt="Author image"
+            nopin="nopin"
+          />
+        
+        <!-- author -->
+        <a href="/author/sohnjunior">
+          sohnjunior
+        </a>
+       
+    
+
+    <!-- [[tags prefix=" on "]] -->
+     on 
+       
+        
+        <a href="/tag/BOJ">Boj</a>
+         
+       
+    
+    <time class="post-date" datetime="2020-07-07">
+      07 Jul 2020
+    </time>
+  </footer>
+</article>
+
+<article class="post">
+  <header class="post-header">
+    <h2 class="post-title">
+      <a href="/boj-1786">BOJ 1786 - 찾기</a>
+    </h2>
+  </header>
+  <section class="post-excerpt">
+    <p>
+      문제 백준 온라인 저지 - 1786번 풀이 과정 KMP 알고리즘을 활용한 문자열 탐색 문제입니다. 입력으로 주어지는 문자열에 공백이 존재할 수 있다는 점을 제외하면 기존 알고리즘의 별다른...
+      <a class="read-more" href="/boj-1786">&raquo;</a>
+    </p>
+  </section>
+  <footer class="post-meta">
+     
+       
+        
+          <img
+            class="author-thumb"
+            src="/assets/images/avatar.png"
+            alt="Author image"
+            nopin="nopin"
+          />
+        
+        <!-- author -->
+        <a href="/author/sohnjunior">
+          sohnjunior
+        </a>
+       
+    
+
+    <!-- [[tags prefix=" on "]] -->
+     on 
+       
+        
+        <a href="/tag/BOJ">Boj</a>
+         
+       
+    
+    <time class="post-date" datetime="2020-07-07">
+      07 Jul 2020
+    </time>
+  </footer>
+</article>
+
+<article class="post">
+  <header class="post-header">
+    <h2 class="post-title">
+      <a href="/boj-1600">BOJ 1600 - 말이 되고픈 원숭이</a>
+    </h2>
+  </header>
+  <section class="post-excerpt">
+    <p>
+      문제 백준 온라인 저지 - 1600번 풀이 과정 말처럼 움직일 수 있는 횟수가 정해져 있다는 점이 특별한 BFS 문제입니다. 이와 유사한 문제로 벽 부수고 이동하기 가...
+      <a class="read-more" href="/boj-1600">&raquo;</a>
+    </p>
+  </section>
+  <footer class="post-meta">
+     
+       
+        
+          <img
+            class="author-thumb"
+            src="/assets/images/avatar.png"
+            alt="Author image"
+            nopin="nopin"
+          />
+        
+        <!-- author -->
+        <a href="/author/sohnjunior">
+          sohnjunior
+        </a>
+       
+    
+
+    <!-- [[tags prefix=" on "]] -->
+     on 
+       
+        
+        <a href="/tag/BOJ">Boj</a>
+         
+       
+    
+    <time class="post-date" datetime="2020-07-07">
+      07 Jul 2020
+    </time>
+  </footer>
+</article>
+
+
+<!-- Previous/next page links - displayed on every page -->
+ 
+  <nav class="pagination" role="pagination">
+   
+  <a
+    class="newer-posts"
+    href="/tag/BOJ/page16/"
+    title="Previous Page"
+    >&laquo; Newer Posts</a
+  >
+   
+  <span class="page-number">
+    Page 17 of 29
+  </span>
+  
+  <a
+    class="older-posts"
+    href="/tag/BOJ/page18/"
+    title="Next Page"
+    >Older Posts &raquo;</a
+  >
+  
+</nav>
+ 
+
+
+</main>
+
+
+        <!-- The tiny footer at the very bottom -->
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="/">sohnjunior의 Dev Log</a> &copy; 2021</section>
+          <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/jekyller/jasper">Jasper</a></section>
+        </footer>
+    </div>
+    <!-- highlight.js -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- jQuery needs to come before `` so that jQuery can be used in code injection -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Ghost outputs important scripts and data with this tag -->
+    <!--  -->
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i["GoogleAnalyticsObject"] = r;
+    (i[r] =
+      i[r] ||
+      function () {
+        (i[r].q = i[r].q || []).push(arguments);
+      }),
+      (i[r].l = 1 * new Date());
+    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(
+    window,
+    document,
+    "script",
+    "//www.google-analytics.com/analytics.js",
+    "ga"
+  );
+
+  ga("create", "UA-69281367-1", "auto");
+  ga("send", "pageview");
+</script>
+
+    <!-- Fitvids makes video embeds responsive and awesome -->
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <!-- The main JavaScript file for Casper -->
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+</body>
+</html>

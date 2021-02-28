@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Page Meta -->
+    <title>BOJ 16234 - 인구이동</title>
+    <meta name="description" content="PS와 웹 개발 관련내용을 기록합니다." />
+
+    <!-- Mobile Meta -->
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Brand icon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" >
+
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" />
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!-- Ghost outputs important style and meta data with this tag -->
+        <link rel="canonical" href="https://sohnjunior.github.io//boj-16234" />
+    <meta name="referrer" content="origin" />
+    <link rel="next" href="/page2/" />
+
+    <meta property="og:site_name" content="sohnjunior의 Dev Log" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="BOJ 16234 - 인구이동" />
+    <meta property="og:description" content="PS와 웹 개발 관련내용을 기록합니다." />
+    <meta property="og:url" content="https://sohnjunior.github.io//boj-16234" />
+    <meta property="og:image" content="/assets/images/cover2.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BOJ 16234 - 인구이동" />
+    <meta name="twitter:description" content="PS와 웹 개발 관련내용을 기록합니다." />
+    <meta name="twitter:url" content="https://sohnjunior.github.io//boj-16234" />
+    <meta name="twitter:image:src" content="/assets/images/cover2.jpg" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Website",
+        "publisher": "sohnjunior의 Dev Log",
+        "name": "BOJ 16234 - 인구이동",
+        "url": "https://sohnjunior.github.io//boj-16234",
+        "image": "/assets/images/cover2.jpg",
+        "description": "PS와 웹 개발 관련내용을 기록합니다."
+    }
+    </script>
+
+    <meta name="generator" content="Jekyll 3.0.0" />
+    <link rel="alternate" type="application/rss+xml" title="sohnjunior의 Dev Log" href="/feed.xml" />
+
+
+</head>
+<body class="home-template nav-closed">
+
+    <!-- The blog navigation links -->
+    <div class="nav">
+  <h3 class="nav-title">카테고리</h3>
+  <a href="#" class="nav-close">
+    <span class="hidden">닫기</span>
+  </a>
+  <ul>
+    <li
+      class="nav-home "
+      role="presentation"
+    >
+      <a href="/">Home</a>
+    </li>
+    <li
+      class="nav-about "
+      role="presentation"
+    >
+      <a href="/about">About Me</a>
+    </li>
+    <li
+      class="nav-fiction  nav-current"
+      role="presentation"
+    >
+      <a href="/tag/boj">BOJ</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/leetcode">LeetCode</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/programmers">Programmers</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/알고리즘 문제해결 전략">알고리즘 문제해결 전략</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/javascript">Javascript</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/typescript">Typescript</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/vuejs">Vue.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/reactjs">React.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/nodejs">Node.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/aws">AWS</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/book-review">서평</a>
+    </li>
+  </ul>
+  <a class="subscribe-button icon-feed" href="/feed.xml">구독하기</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The comment above "< default" means - insert everything in this file into -->
+<!-- the [body] of the default.hbs template, which contains our header/footer. -->
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<header
+  class="main-header post-head "
+  style="background-image: url(/assets/images/cover2.jpg) "
+>
+  <nav class="main-nav  overlay  clearfix">
+    <a class="blog-logo" href="/"
+      ><img src="/assets/images/ghost.png" alt="Blog Logo" /></a
+    > 
+    <a class="menu-button icon-menu" href="#"><span class="word">카테고리</span></a>
+    
+  </nav>
+</header>
+
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">BOJ 16234 - 인구이동</h1>
+      <section class="post-meta">
+        <!-- <a href='/'></a> -->
+
+         
+        <a href="/author/sohnjunior"
+          >sohnjunior</a
+        >
+         
+        <time class="post-date" datetime="2020-05-01"
+          >01 May 2020</time
+        >
+        <!-- [[tags prefix=" on "]] -->
+         on  
+        <a href="/tag/BOJ">Boj</a>
+          
+      </section>
+    </header>
+
+    <section class="post-content"><h2 id="출처">출처</h2>
+
+<p><a href="https://www.acmicpc.net/problem/16234">백준 온라인 저지 - 16234번</a></p>
+
+<h2 id="문제">문제</h2>
+
+<p><code class="highlighter-rouge">N×N</code>크기의 땅이 있고, 땅은 <code class="highlighter-rouge">1×1</code>개의 칸으로 나누어져 있다. 각각의 땅에는 나라가 하나씩 존재하며, r행 c열에 있는 나라에는 <code class="highlighter-rouge">A[r][c]</code>명이 살고 있다. <br />
+인접한 나라 사이에는 국경선이 존재한다. 모든 나라는 <code class="highlighter-rouge">1×1</code> 크기이기 때문에, 모든 국경선은 정사각형 형태이다. <br /></p>
+
+<p>오늘부터 인구 이동이 시작되는 날이다. <br />
+인구 이동은 다음과 같이 진행되고, 더 이상 아래 방법에 의해 인구 이동이 없을 때까지 지속된다. <br /></p>
+
+<ul>
+  <li>국경선을 공유하는 두 나라의 인구 차이가 L명 이상, R명 이하라면, 두 나라가 공유하는 국경선을 오늘 하루동안 연다.</li>
+  <li>위의 조건에 의해 열어야하는 국경선이 모두 열렸다면, 인구 이동을 시작한다.</li>
+  <li>국경선이 열려있어 인접한 칸만을 이용해 이동할 수 있으면, 그 나라를 오늘 하루 동안은 연합이라고 한다.</li>
+  <li>연합을 이루고 있는 각 칸의 인구수는 <code class="highlighter-rouge">(연합의 인구수) / (연합을 이루고 있는 칸의 개수)</code>가 된다. 편의상 소수점은 버린다.</li>
+  <li>연합을 해체하고, 모든 국경선을 닫는다.</li>
+</ul>
+
+<p>각 나라의 인구수가 주어졌을 때, 인구 이동이 몇 번 발생하는지 구하는 프로그램을 작성하시오.</p>
+
+<h2 id="입력">입력</h2>
+
+<p>첫째 줄에 N, L, R이 주어진다. <br />
+둘째 줄부터 N개의 줄에 각 나라의 인구수가 주어진다. r행 c열에 주어지는 정수는 <code class="highlighter-rouge">A[r][c]</code>의 값이다. <br />
+인구 이동이 발생하는 횟수가 2,000번 보다 작거나 같은 입력만 주어진다. <br /></p>
+
+<h2 id="출력">출력</h2>
+
+<p>인구 이동이 몇 번 발생하는지 첫째 줄에 출력한다.</p>
+
+<h2 id="풀이-과정">풀이 과정</h2>
+
+<p>각 단계별로 연합 국가를 찾은 다음, 인구 이동을 시키는 과정을 반복하면 된다. <br />
+문제 조건에 명시되어 있는대로 이를 총 두 단계로 나타낼 수 있다.</p>
+
+<ul>
+  <li>연합 국가 찾기</li>
+  <li>인구 이동하기</li>
+</ul>
+
+<h3 id="연합-국가-찾기">연합 국가 찾기</h3>
+
+<p>우선 연합 국가를 찾기 위해서는 모든 국가들을 탐색해보며 조건에 일치하는 것들끼리 묶어줘야한다. <br />
+이를 위해서 모든 지점을 방문할때까지 DFS를 수행하며 연합 국가들을 탐색하였다. <br /></p>
+
+<h3 id="인구-이동하기">인구 이동하기</h3>
+
+<p>국가들을 연합했다면 이제 이동할 인구수는 쉽게 구할 수 있다.<br />
+다만, 이제 생각해봐야 할 것은 어떻게 모든 국가간의 인구 이동이 발생하지 않았는지 판단할 방법이다. <br />
+국가간의 인구 이동이 발생하지 않는다면 어떠한 국가도 연합 국가를 형성하지 않는다는 뜻이므로 <br />
+DFS 이후 하나의 국가로 구성된 총 <code class="highlighter-rouge">N*N</code> 개의 그룹들이 생길 것이다. <br />
+이를 활용해서 탐색을 중지하고 결과를 반환해주면 된다. <br /></p>
+
+<h2 id="코드">코드</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="n">N</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">R</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+<span class="n">board</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())))</span>
+
+<span class="n">dx</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">dy</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+
+<span class="c"># (x, y) 지점에 대해 깊이 우선 탐색 수행</span>
+<span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">visit</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">visit</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">unions</span> <span class="o">=</span> <span class="p">[(</span><span class="n">board</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">],</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)]</span>  <span class="c"># 연합</span>
+    <span class="n">people</span> <span class="o">=</span> <span class="n">board</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span>  <span class="c"># 현재 위치 인구</span>
+
+    <span class="c"># 상하좌우 검사</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">next_x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">next_y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">dy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="c"># 범위 벗어나면 무시</span>
+        <span class="k">if</span> <span class="n">next_x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">next_x</span> <span class="o">&gt;=</span> <span class="n">N</span> <span class="ow">or</span> <span class="n">next_y</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">next_y</span> <span class="o">&gt;=</span> <span class="n">N</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">visit</span><span class="p">[</span><span class="n">next_x</span><span class="p">][</span><span class="n">next_y</span><span class="p">]</span> <span class="ow">and</span> <span class="n">L</span> <span class="o">&lt;=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">next_x</span><span class="p">][</span><span class="n">next_y</span><span class="p">]</span> <span class="o">-</span> <span class="n">people</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">R</span><span class="p">:</span>
+            <span class="n">unions</span> <span class="o">+=</span> <span class="n">dfs</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">visit</span><span class="p">,</span> <span class="n">next_x</span><span class="p">,</span> <span class="n">next_y</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">unions</span>
+
+
+<span class="k">def</span> <span class="nf">solution</span><span class="p">():</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="n">visit</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">False</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
+
+        <span class="c"># 모든 점에 대해 깊이우선 탐색 수행</span>
+        <span class="n">group</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">visit</span><span class="p">[</span><span class="n">r</span><span class="p">][</span><span class="n">c</span><span class="p">]:</span>
+                    <span class="n">group</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dfs</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">visit</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">group</span><span class="p">)</span> <span class="o">==</span> <span class="n">N</span><span class="o">**</span><span class="mi">2</span><span class="p">:</span>
+            <span class="k">break</span>
+
+        <span class="c"># 인구 이동 수행</span>
+        <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">group</span><span class="p">:</span>
+            <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">g</span><span class="p">])</span>
+            <span class="n">new_people</span> <span class="o">=</span> <span class="n">total</span> <span class="o">//</span> <span class="nb">len</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">g</span><span class="p">:</span>
+                <span class="n">board</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_people</span>
+
+        <span class="n">answer</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">answer</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">solution</span><span class="p">())</span>
+
+</code></pre></div></div>
+</section>
+
+    <footer class="post-footer">
+      <!-- Everything inside the #author tags pulls data from the author -->
+      <!-- #author-->
+        
+      <figure class="author-image">
+        <a
+          class="img"
+          href="/author/sohnjunior"
+          style="background-image: url(/assets/images/avatar.png)"
+          ><span class="hidden">sohnjunior's Picture</span></a
+        >
+      </figure>
+      
+
+      <section class="author">
+        <h4>
+          <a href="/author/sohnjunior"
+            >sohnjunior</a
+          >
+        </h4>
+
+        
+        <p>주니어 웹 프론트엔드 개발자입니다. 😄</p>
+        
+        <div class="author-meta">
+          <span
+            class="author-location icon-location"
+          >
+            Seoul, Korea</span
+          > <span class="author-link icon-link"
+            ><a href="https://github.com/sohnjunior"> https://github.com/sohnjunior</a></span
+          >
+        </div>
+      </section>
+
+      <!-- /author  -->
+
+      <section class="share">
+        <h4>Share this post</h4>
+        <a
+          class="icon-twitter"
+          href="http://twitter.com/share?text=BOJ 16234 - 인구이동&amp;url=https://sohnjunior.github.ioboj-16234"
+          onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
+        >
+          <span class="hidden">Twitter</span>
+        </a>
+        <a
+          class="icon-facebook"
+          href="https://www.facebook.com/sharer/sharer.php?u=https://sohnjunior.github.ioboj-16234"
+          onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
+        >
+          <span class="hidden">Facebook</span>
+        </a>
+        <a
+          class="icon-google-plus"
+          href="https://plus.google.com/share?url=https://sohnjunior.github.ioboj-16234"
+          onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"
+        >
+          <span class="hidden">Google+</span>
+        </a>
+      </section>
+       
+
+      <!-- Add Disqus Comments -->
+      
+    </footer>
+  </article>
+</main>
+
+<aside class="read-next">
+  <!-- [[! next_post ]] --> 
+  <a
+    class="read-next-story "
+    style="background-image: url(/assets/images/cover2.jpg)"
+    href="/pgs-block"
+  >
+    <section class="post">
+      <h2>프로그래머스 Level 3 - 블록 이동하기</h2>
+      <p>## 출처 [프로그래머스 - 블록 이동하기](https://programmers.co.kr/learn/courses/30/lessons/60063) ## 문제 ![이미지](/assets/images/programmers/block.jpg){: width="300"} 무지는 `N×N`크기의 지도 위에서 `2×1`크기의...</p>
+    </section>
+  </a>
+  
+  <!-- [[! /next_post ]] -->
+  <!-- [[! prev_post ]] -->
+  
+  <a
+    class="read-next-story prev "
+    style="background-image: url(/assets/images/cover2.jpg)"
+    href="/boj-3190"
+  >
+    <section class="post">
+      <h2>BOJ 3190 - 뱀</h2>
+      <p>문제 백준 온라인 저지 - 3190번 풀이 과정 뱀 게임을 시뮬레이션해보는 문제입니다. 주의할 점은 N초...</p>
+    </section>
+  </a>
+  
+  <!-- [[! /prev_post ]] -->
+</aside>
+
+<!-- /post -->
+
+
+        <!-- The tiny footer at the very bottom -->
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="/">sohnjunior의 Dev Log</a> &copy; 2021</section>
+          <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/jekyller/jasper">Jasper</a></section>
+        </footer>
+    </div>
+    <!-- highlight.js -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- jQuery needs to come before `` so that jQuery can be used in code injection -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Ghost outputs important scripts and data with this tag -->
+    <!--  -->
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i["GoogleAnalyticsObject"] = r;
+    (i[r] =
+      i[r] ||
+      function () {
+        (i[r].q = i[r].q || []).push(arguments);
+      }),
+      (i[r].l = 1 * new Date());
+    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(
+    window,
+    document,
+    "script",
+    "//www.google-analytics.com/analytics.js",
+    "ga"
+  );
+
+  ga("create", "UA-69281367-1", "auto");
+  ga("send", "pageview");
+</script>
+
+    <!-- Fitvids makes video embeds responsive and awesome -->
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <!-- The main JavaScript file for Casper -->
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+</body>
+</html>

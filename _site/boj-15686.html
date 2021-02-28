@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Page Meta -->
+    <title>BOJ 15686 - 치킨배달</title>
+    <meta name="description" content="PS와 웹 개발 관련내용을 기록합니다." />
+
+    <!-- Mobile Meta -->
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Brand icon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" >
+
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" />
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!-- Ghost outputs important style and meta data with this tag -->
+        <link rel="canonical" href="https://sohnjunior.github.io//boj-15686" />
+    <meta name="referrer" content="origin" />
+    <link rel="next" href="/page2/" />
+
+    <meta property="og:site_name" content="sohnjunior의 Dev Log" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="BOJ 15686 - 치킨배달" />
+    <meta property="og:description" content="PS와 웹 개발 관련내용을 기록합니다." />
+    <meta property="og:url" content="https://sohnjunior.github.io//boj-15686" />
+    <meta property="og:image" content="/assets/images/cover2.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BOJ 15686 - 치킨배달" />
+    <meta name="twitter:description" content="PS와 웹 개발 관련내용을 기록합니다." />
+    <meta name="twitter:url" content="https://sohnjunior.github.io//boj-15686" />
+    <meta name="twitter:image:src" content="/assets/images/cover2.jpg" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Website",
+        "publisher": "sohnjunior의 Dev Log",
+        "name": "BOJ 15686 - 치킨배달",
+        "url": "https://sohnjunior.github.io//boj-15686",
+        "image": "/assets/images/cover2.jpg",
+        "description": "PS와 웹 개발 관련내용을 기록합니다."
+    }
+    </script>
+
+    <meta name="generator" content="Jekyll 3.0.0" />
+    <link rel="alternate" type="application/rss+xml" title="sohnjunior의 Dev Log" href="/feed.xml" />
+
+
+</head>
+<body class="home-template nav-closed">
+
+    <!-- The blog navigation links -->
+    <div class="nav">
+  <h3 class="nav-title">카테고리</h3>
+  <a href="#" class="nav-close">
+    <span class="hidden">닫기</span>
+  </a>
+  <ul>
+    <li
+      class="nav-home "
+      role="presentation"
+    >
+      <a href="/">Home</a>
+    </li>
+    <li
+      class="nav-about "
+      role="presentation"
+    >
+      <a href="/about">About Me</a>
+    </li>
+    <li
+      class="nav-fiction  nav-current"
+      role="presentation"
+    >
+      <a href="/tag/boj">BOJ</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/leetcode">LeetCode</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/programmers">Programmers</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/알고리즘 문제해결 전략">알고리즘 문제해결 전략</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/javascript">Javascript</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/typescript">Typescript</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/vuejs">Vue.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/reactjs">React.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/nodejs">Node.js</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/aws">AWS</a>
+    </li>
+    <li
+      class="nav-fiction "
+      role="presentation"
+    >
+      <a href="/tag/book-review">서평</a>
+    </li>
+  </ul>
+  <a class="subscribe-button icon-feed" href="/feed.xml">구독하기</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The comment above "< default" means - insert everything in this file into -->
+<!-- the [body] of the default.hbs template, which contains our header/footer. -->
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<header
+  class="main-header post-head "
+  style="background-image: url(/assets/images/cover2.jpg) "
+>
+  <nav class="main-nav  overlay  clearfix">
+    <a class="blog-logo" href="/"
+      ><img src="/assets/images/ghost.png" alt="Blog Logo" /></a
+    > 
+    <a class="menu-button icon-menu" href="#"><span class="word">카테고리</span></a>
+    
+  </nav>
+</header>
+
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">BOJ 15686 - 치킨배달</h1>
+      <section class="post-meta">
+        <!-- <a href='/'></a> -->
+
+         
+        <a href="/author/sohnjunior"
+          >sohnjunior</a
+        >
+         
+        <time class="post-date" datetime="2020-05-03"
+          >03 May 2020</time
+        >
+        <!-- [[tags prefix=" on "]] -->
+         on  
+        <a href="/tag/BOJ">Boj</a>
+          
+      </section>
+    </header>
+
+    <section class="post-content"><h2 id="출처">출처</h2>
+
+<p><a href="https://www.acmicpc.net/problem/15686">백준 온라인 저지 - 15686번</a></p>
+
+<h2 id="문제">문제</h2>
+
+<p>크기가 N×N인 도시가 있다. 도시는 1×1크기의 칸으로 나누어져 있다. 도시의 각 칸은 빈 칸, 치킨집, 집 중 하나이다. <br />
+도시의 칸은 (r, c)와 같은 형태로 나타내고, r행 c열 또는 위에서부터 r번째 칸, 왼쪽에서부터 c번째 칸을 의미한다. r과 c는 1부터 시작한다. <br /></p>
+
+<p>이 도시에 사는 사람들은 치킨을 매우 좋아한다. 따라서, 사람들은 “치킨 거리”라는 말을 주로 사용한다. 치킨 거리는 집과 가장 가까운 치킨집 사이의 거리이다. <br />
+즉, 치킨 거리는 집을 기준으로 정해지며, 각각의 집은 치킨 거리를 가지고 있다. 도시의 치킨 거리는 모든 집의 치킨 거리의 합이다. <br /></p>
+
+<p>임의의 두 칸 (r1, c1)과 (r2, c2) 사이의 거리는 <code class="highlighter-rouge">|r1-r2| + |c1-c2|</code>로 구한다. <br /></p>
+
+<p>예를 들어, 아래와 같은 지도를 갖는 도시를 살펴보자.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    0 2 0 1 0
+    1 0 1 0 0
+    0 0 0 0 0
+    0 0 0 1 1
+    0 0 0 1 2
+</code></pre></div></div>
+
+<p>0은 빈 칸, 1은 집, 2는 치킨집이다.</p>
+
+<p>(2, 1)에 있는 집과 (1, 2)에 있는 치킨집과의 거리는 |<code class="highlighter-rouge">2-1| + |1-2| = 2</code>, (5, 5)에 있는 치킨집과의 거리는 <code class="highlighter-rouge">|2-5| + |1-5| = 7</code>이다.<br />
+따라서, (2, 1)에 있는 집의 치킨 거리는 2이다. <br /></p>
+
+<p>(5, 4)에 있는 집과 (1, 2)에 있는 치킨집과의 거리는 <code class="highlighter-rouge">|5-1| + |4-2| = 6</code>, (5, 5)에 있는 치킨집과의 거리는 <code class="highlighter-rouge">|5-5| + |4-5| = 1</code>이다. <br />
+따라서, (5, 4)에 있는 집의 치킨 거리는 1이다. <br /></p>
+
+<p>이 도시에 있는 치킨집은 모두 같은 프랜차이즈이다. 프렌차이즈 본사에서는 수익을 증가시키기 위해 일부 치킨집을 폐업시키려고 한다. <br />
+오랜 연구 끝에 이 도시에서 가장 수익을 많이 낼 수 있는 치킨집의 개수는 최대 M개라는 사실을 알아내었다. <br /></p>
+
+<p>도시에 있는 치킨집 중에서 최대 M개를 고르고, 나머지 치킨집은 모두 폐업시켜야 한다. <br />
+어떻게 고르면, 도시의 치킨 거리가 가장 작게 될지 구하는 프로그램을 작성하시오. <br /></p>
+
+<h2 id="입력">입력</h2>
+
+<p>첫째 줄에 N(2 ≤ N ≤ 50)과 M(1 ≤ M ≤ 13)이 주어진다. <br />
+둘째 줄부터 N개의 줄에는 도시의 정보가 주어진다.</p>
+
+<p>도시의 정보는 0, 1, 2로 이루어져 있고, 0은 빈 칸, 1은 집, 2는 치킨집을 의미한다. 집의 개수는 2N개를 넘지 않으며, 적어도 1개는 존재한다. <br />
+치킨집의 개수는 M보다 크거나 같고, 13보다 작거나 같다.</p>
+
+<h2 id="출력">출력</h2>
+
+<p>첫째 줄에 폐업시키지 않을 치킨집을 최대 M개를 골랐을 때, 도시의 치킨 거리의 최솟값을 출력한다.</p>
+
+<h2 id="풀이-과정">풀이 과정</h2>
+
+<p>문제를 보고 입력 값의 크기가 작으므로 모든 조합을 만들어보고 최솟값을 구하면 될 것이라고 생각했다. <br />
+처음에는 최대 M개를 선택한다는 조건을 고려해서 1~M개의 치킨집을 선택하는 조합을 만들어서 최솟값을 구했다. (이렇게 해도 답은 같게 나온다) <br />
+근데 조금만 생각해보니 M개의 치킨집을 선택하는 것이 M-1개의 치킨집을 선택하는 것보다 최소의 치킨 거리를 위해 절대적으로 유리하므로 <br />
+굳이 1 ~ M-1개로 이루어진 조합들을 만들어본 다음 최솟값을 위해 비교할 필요가 없다는 것을 알았다. <br /></p>
+
+<p>나는 <code class="highlighter-rouge">combinations</code>를 활용해서 조합을 만들었지만 <code class="highlighter-rouge">DFS</code>등을 활용해도 좋은 방법이 될 수 있을 것 같다.</p>
+
+<h2 id="코드">코드</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span>
+
+
+<span class="n">N</span><span class="p">,</span> <span class="n">M</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+<span class="n">board</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())))</span>
+
+
+<span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+
+<span class="k">def</span> <span class="nf">calculate_distance</span><span class="p">(</span><span class="n">houses</span><span class="p">,</span> <span class="n">picks</span><span class="p">):</span>
+    <span class="n">minimum</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">maxsize</span>
+    <span class="k">for</span> <span class="n">pick</span> <span class="ow">in</span> <span class="n">picks</span><span class="p">:</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">house</span> <span class="ow">in</span> <span class="n">houses</span><span class="p">:</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">maxsize</span>
+            <span class="k">for</span> <span class="n">store</span> <span class="ow">in</span> <span class="n">pick</span><span class="p">:</span>
+                <span class="n">temp</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">distance</span><span class="p">(</span><span class="n">house</span><span class="p">,</span> <span class="n">store</span><span class="p">))</span>
+            <span class="n">ret</span> <span class="o">+=</span> <span class="n">temp</span>
+        <span class="n">minimum</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">minimum</span><span class="p">,</span> <span class="n">ret</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">minimum</span>
+
+
+<span class="k">def</span> <span class="nf">solution</span><span class="p">():</span>
+    <span class="n">houses</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">chickens</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">board</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">col</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+               <span class="n">houses</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">col</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">chickens</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">r</span><span class="p">,</span> <span class="n">c</span><span class="p">])</span>
+
+    <span class="n">picks</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">combinations</span><span class="p">(</span><span class="n">chickens</span><span class="p">,</span> <span class="n">M</span><span class="p">))</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">calculate_distance</span><span class="p">(</span><span class="n">houses</span><span class="p">,</span> <span class="n">picks</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">ret</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">solution</span><span class="p">())</span>
+
+</code></pre></div></div>
+</section>
+
+    <footer class="post-footer">
+      <!-- Everything inside the #author tags pulls data from the author -->
+      <!-- #author-->
+        
+      <figure class="author-image">
+        <a
+          class="img"
+          href="/author/sohnjunior"
+          style="background-image: url(/assets/images/avatar.png)"
+          ><span class="hidden">sohnjunior's Picture</span></a
+        >
+      </figure>
+      
+
+      <section class="author">
+        <h4>
+          <a href="/author/sohnjunior"
+            >sohnjunior</a
+          >
+        </h4>
+
+        
+        <p>주니어 웹 프론트엔드 개발자입니다. 😄</p>
+        
+        <div class="author-meta">
+          <span
+            class="author-location icon-location"
+          >
+            Seoul, Korea</span
+          > <span class="author-link icon-link"
+            ><a href="https://github.com/sohnjunior"> https://github.com/sohnjunior</a></span
+          >
+        </div>
+      </section>
+
+      <!-- /author  -->
+
+      <section class="share">
+        <h4>Share this post</h4>
+        <a
+          class="icon-twitter"
+          href="http://twitter.com/share?text=BOJ 15686 - 치킨배달&amp;url=https://sohnjunior.github.ioboj-15686"
+          onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
+        >
+          <span class="hidden">Twitter</span>
+        </a>
+        <a
+          class="icon-facebook"
+          href="https://www.facebook.com/sharer/sharer.php?u=https://sohnjunior.github.ioboj-15686"
+          onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
+        >
+          <span class="hidden">Facebook</span>
+        </a>
+        <a
+          class="icon-google-plus"
+          href="https://plus.google.com/share?url=https://sohnjunior.github.ioboj-15686"
+          onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"
+        >
+          <span class="hidden">Google+</span>
+        </a>
+      </section>
+       
+
+      <!-- Add Disqus Comments -->
+      
+    </footer>
+  </article>
+</main>
+
+<aside class="read-next">
+  <!-- [[! next_post ]] --> 
+  <a
+    class="read-next-story "
+    style="background-image: url(/assets/images/cover2.jpg)"
+    href="/pgs-holiday-traffic"
+  >
+    <section class="post">
+      <h2>프로그래머스 Level 3 - 추석 트래픽</h2>
+      <p>## 출처 [프로그래머스 - 추석 트래픽](https://programmers.co.kr/learn/courses/30/lessons/17676) ## 문제 이번 추석에도 시스템 장애가 없는 명절을 보내고...</p>
+    </section>
+  </a>
+  
+  <!-- [[! /next_post ]] -->
+  <!-- [[! prev_post ]] -->
+  
+  <a
+    class="read-next-story prev "
+    style="background-image: url(/assets/images/cover2.jpg)"
+    href="/boj-14499"
+  >
+    <section class="post">
+      <h2>BOJ 14499 - 주사위 굴리기</h2>
+      <p>출처 백준 온라인 저지 - 14499번 문제 크기가 N×M인 지도가 존재한다. 지도의 오른쪽은 동쪽, 위쪽은...</p>
+    </section>
+  </a>
+  
+  <!-- [[! /prev_post ]] -->
+</aside>
+
+<!-- /post -->
+
+
+        <!-- The tiny footer at the very bottom -->
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="/">sohnjunior의 Dev Log</a> &copy; 2021</section>
+          <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/jekyller/jasper">Jasper</a></section>
+        </footer>
+    </div>
+    <!-- highlight.js -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- jQuery needs to come before `` so that jQuery can be used in code injection -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Ghost outputs important scripts and data with this tag -->
+    <!--  -->
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i["GoogleAnalyticsObject"] = r;
+    (i[r] =
+      i[r] ||
+      function () {
+        (i[r].q = i[r].q || []).push(arguments);
+      }),
+      (i[r].l = 1 * new Date());
+    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(
+    window,
+    document,
+    "script",
+    "//www.google-analytics.com/analytics.js",
+    "ga"
+  );
+
+  ga("create", "UA-69281367-1", "auto");
+  ga("send", "pageview");
+</script>
+
+    <!-- Fitvids makes video embeds responsive and awesome -->
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <!-- The main JavaScript file for Casper -->
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+</body>
+</html>
