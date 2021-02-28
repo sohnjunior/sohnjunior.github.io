@@ -14,6 +14,8 @@ short_url: "sohnjunior.github.io/"
 google_analytics: UA-69281367-1
 disqus: sohnjunior
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)
+baseurl: "/"
+url: "https://sohnjunior.github.io"
 
 # Permalinks
 permalink: /:title
@@ -46,10 +48,10 @@ lsi: false
 username: sohnjunior
 repo: https://github.com/sohnjunior/sohnjunior.github.io.git
 branch: master
-relative_source: ../jasper/
+relative_source: ../
 destination: ./_site/
 production_url: https://sohnjunior.github.io/
-source_url: https://github.com/sohnjunior/
+source_url: https://github.com/sohnjunior/sohnjunior.github.io/
 
 exclude:
   - README.md
@@ -62,3 +64,6 @@ exclude:
   - .travis.yml
   - node_modules
   - .git
+
+include:
+  - .nojekyll
