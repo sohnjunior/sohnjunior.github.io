@@ -12,7 +12,7 @@ description: "PS와 웹 개발 관련내용을 기록합니다."
 
 short_url: "sohnjunior.github.io/"
 google_analytics: UA-69281367-1
-disqus: sohnjunior
+disqus: jekyllblog-2
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)
 baseurl: "/"
 url: "https://sohnjunior.github.io"

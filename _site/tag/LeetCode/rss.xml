@@ -12,6 +12,72 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>LeetCode 112 -  Path Sum (Easy)</title>
+	  <link>//leetcode-112</link>
+	  <author></author>
+	  <pubDate>2021-02-28T00:00:00+09:00</pubDate>
+	  <guid>//leetcode-112</guid>
+	  <description><![CDATA[
+	     <h2 id="문제">문제</h2>
+
+<p><a href="https://leetcode.com/problems/path-sum/">LeetCode - 112번</a></p>
+
+<h2 id="풀이-과정">풀이 과정</h2>
+
+<p>루트 노드부터 시작해서 잎 노드까지의 경로 중 합이 <code class="highlighter-rouge">S</code> 인 경우가 존재하는지 찾는 문제입니다.</p>
+
+<p><code class="highlighter-rouge">DFS</code> 를 활용해서 모든 경우를 탐색할 수 있으며 루트 노드 배열이 비어있는 경우에 유의하면 쉽게 해결할 수 있습니다.</p>
+
+<h2 id="코드">코드</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */</span>
+<span class="cm">/**
+ * @param {TreeNode} root
+ * @param {number} targetSum
+ * @return {boolean}
+ */</span>
+<span class="kd">var</span> <span class="nx">hasPathSum</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">root</span><span class="p">,</span> <span class="nx">targetSum</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">function</span> <span class="nx">isLeaf</span><span class="p">(</span><span class="nx">root</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">root</span><span class="p">.</span><span class="nx">left</span> <span class="o">===</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="nx">root</span><span class="p">.</span><span class="nx">right</span> <span class="o">===</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">function</span> <span class="nx">isNotEmpty</span><span class="p">(</span><span class="nx">root</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">root</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">function</span> <span class="nx">dfs</span><span class="p">(</span><span class="nx">root</span><span class="p">,</span> <span class="nx">sum</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">isLeaf</span><span class="p">(</span><span class="nx">root</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">sum</span> <span class="o">+</span> <span class="nx">root</span><span class="p">.</span><span class="nx">val</span> <span class="o">===</span> <span class="nx">targetSum</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">let</span> <span class="nx">isSatisfied</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">isSatisfied</span> <span class="o">=</span> <span class="nx">dfs</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">,</span> <span class="nx">sum</span> <span class="o">+</span> <span class="nx">root</span><span class="p">.</span><span class="nx">val</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">isSatisfied</span> <span class="o">=</span> <span class="nx">isSatisfied</span> <span class="o">||</span> <span class="nx">dfs</span><span class="p">(</span><span class="nx">root</span><span class="p">.</span><span class="nx">right</span><span class="p">,</span> <span class="nx">sum</span> <span class="o">+</span> <span class="nx">root</span><span class="p">.</span><span class="nx">val</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">isSatisfied</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="nx">isNotEmpty</span><span class="p">(</span><span class="nx">root</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">dfs</span><span class="p">(</span><span class="nx">root</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>LeetCode 63 -  Unique Paths II (Medium)</title>
 	  <link>//leetcode-63</link>
 	  <author></author>
@@ -512,67 +578,6 @@
   <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">S</span><span class="p">].</span><span class="nx">filter</span><span class="p">((</span><span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">hashTable</span><span class="p">[</span><span class="nx">c</span><span class="p">]);</span>
   <span class="k">return</span> <span class="nx">answer</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
 <span class="p">};</span>
-</code></pre></div></div>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>LeetCode 234 -  Palindrome Linked List (Easy)</title>
-	  <link>//leetcode-234</link>
-	  <author></author>
-	  <pubDate>2020-10-20T00:00:00+09:00</pubDate>
-	  <guid>//leetcode-234</guid>
-	  <description><![CDATA[
-	     <h2 id="문제">문제</h2>
-
-<p><a href="https://leetcode.com/problems/palindrome-linked-list/">LeetCode - 234번</a></p>
-
-<h2 id="풀이-과정">풀이 과정</h2>
-
-<p>주어진 링크드리스트가 <code class="highlighter-rouge">팰린드롬</code> 인지 판단하는 문제입니다. <br />
-시간 복잡도가 <code class="highlighter-rouge">O(N)</code> 이면서 공간 복잡도가 <code class="highlighter-rouge">O(1)</code> 으로 구현하기 위해서 재귀 함수를 사용했습니다. <br />
-이를 위해 먼저 링크드 리스트의 길이를 구한 다음, 중앙 위치까지 이동해서 팰린드롬 유무를 판단합니다. <br />
-이는 <code class="highlighter-rouge">a[i] ~ a[j]</code> 까지의 링크드 리스트가 팰린드롬이기 위해서는 <code class="highlighter-rouge">a[i+1] ~ a[j-1]</code> 까지가 팰린드롬이고 <code class="highlighter-rouge">a[i] == a[j]</code> 이기 때문입니다. <br />
-그러므로 각각의 재귀 호출 과정에서 반환값으로 <code class="highlighter-rouge">팰린드롬 유무</code> 와 <code class="highlighter-rouge">tail 노드</code> 를 반환해서 재귀 호출 과정에서 각각의 서브 리스트의 양 끝 노드를 비교해줍니다. <br /></p>
-
-<h2 id="코드">코드</h2>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
- * Definition for singly-linked list.
- * function ListNode(val, next) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.next = (next===undefined ? null : next)
- * }
- */</span>
-<span class="cm">/**
- * @param {ListNode} head
- * @return {boolean}
- */</span>
-<span class="kd">var</span> <span class="nx">isPalindrome</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">head</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">getLength</span><span class="p">(</span><span class="nx">head</span><span class="p">);</span>
-  <span class="kd">let</span> <span class="nx">half</span> <span class="o">=</span> <span class="nx">len</span> <span class="o">%</span> <span class="mi">2</span> <span class="p">?</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">len</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="p">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">len</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-
-  <span class="k">if</span> <span class="p">(</span><span class="nx">len</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">answer</span><span class="p">]</span> <span class="o">=</span> <span class="nx">dfs</span><span class="p">(</span><span class="nx">len</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">half</span><span class="p">,</span> <span class="nx">head</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">};</span>
-
-<span class="kd">function</span> <span class="nx">dfs</span><span class="p">(</span><span class="nx">even</span><span class="p">,</span> <span class="nx">pivot</span><span class="p">,</span> <span class="nx">head</span><span class="p">,</span> <span class="nx">depth</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">depth</span> <span class="o">===</span> <span class="nx">pivot</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">even</span><span class="p">)</span> <span class="k">return</span> <span class="p">[</span><span class="nx">head</span><span class="p">.</span><span class="nx">val</span> <span class="o">===</span> <span class="nx">head</span><span class="p">.</span><span class="nx">next</span><span class="p">.</span><span class="nx">val</span><span class="p">,</span> <span class="nx">head</span><span class="p">.</span><span class="nx">next</span><span class="p">.</span><span class="nx">next</span><span class="p">];</span>
-    <span class="k">else</span> <span class="k">return</span> <span class="p">[</span><span class="kc">true</span><span class="p">,</span> <span class="nx">head</span><span class="p">.</span><span class="nx">next</span><span class="p">];</span>
-  <span class="p">}</span>
-
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">subCheck</span><span class="p">,</span> <span class="nx">tail</span><span class="p">]</span> <span class="o">=</span> <span class="nx">dfs</span><span class="p">(</span><span class="nx">even</span><span class="p">,</span> <span class="nx">pivot</span><span class="p">,</span> <span class="nx">head</span><span class="p">.</span><span class="nx">next</span><span class="p">,</span> <span class="nx">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
-  <span class="k">return</span> <span class="p">[</span><span class="nx">subCheck</span> <span class="o">&amp;&amp;</span> <span class="nx">head</span><span class="p">.</span><span class="nx">val</span> <span class="o">===</span> <span class="nx">tail</span><span class="p">.</span><span class="nx">val</span><span class="p">,</span> <span class="nx">tail</span><span class="p">?.</span><span class="nx">next</span><span class="p">];</span>
-<span class="p">}</span>
-
-<span class="kd">function</span> <span class="nx">getLength</span><span class="p">(</span><span class="nx">head</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">head</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="k">return</span> <span class="nx">getLength</span><span class="p">(</span><span class="nx">head</span><span class="p">.</span><span class="nx">next</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span>
 </code></pre></div></div>
 
 	  ]]></description>
